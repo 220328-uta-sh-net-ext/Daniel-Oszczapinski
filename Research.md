@@ -20,5 +20,13 @@
     - The basic shell architecture looks like a pipeline.
     - You can manipulate files, execute programs, and print tests.
     - One of the best advantages of writing a shell script is that the commands and syntax are the same as the when entered in the command line.
-    - Using a shell allows the user to customize their envirment and setting their variables. 
+    - Using a shell allows the user to customize their environment and setting their variables. 
     
+3. Getting to know Shell Programming
+
+    -Example of simple programing using shell
+    #!/bin/bash
+    echo "Hello, Everyone!"
+    echo "I hope you are doing well today."
+    -Once this code is placed in a text document you can run the file
+    -There are multiple ways to run the file you can use ./filename or a different command.
