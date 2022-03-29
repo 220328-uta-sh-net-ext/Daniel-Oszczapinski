@@ -25,8 +25,8 @@
 3. Getting to know Shell Programming
 
     -Example of simple programing using shell
-    #!/bin/bash
-    echo "Hello, Everyone!"
-    echo "I hope you are doing well today."
+    #!/bin/bash  
+    echo "Hello, Everyone!"  
+    echo "I hope you are doing well today."  
     -Once this code is placed in a text document you can run the file
     -There are multiple ways to run the file you can use ./filename or a different command.
