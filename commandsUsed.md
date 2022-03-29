@@ -1,4 +1,4 @@
-##Get commands used so far during training 
+##Git commands used so far during training 
 
 git log
 
