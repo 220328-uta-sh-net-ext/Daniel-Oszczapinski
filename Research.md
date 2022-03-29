@@ -1,17 +1,24 @@
-# History of Shell Scripting and Linux using markdowns
+## History of Shell Scripting and Linux using markdowns
 # Author : Daniel Oszczapinski
-This will be research the history of shell scripting, Linux, Shell programming, shell variables and enviorments.
+ This will be research the history of shell scripting, Linux, Shell programming, shell variables and environments.
 
-1. History of linux
-    - Linux is a open- source operating system of Unix.
+1. History of Linux
+    - Linux is an open- source operating system of Unix.
     - Unix is one of the most popular operating systems worldwide.  
-    - October 5th 1991, The first official version of Lixux was announced.
-    - Linux wans written by Finnish-American software engineer Linus Benedict Torvalds.
-    - Linux is able to run on a wide range of hardware and can be installed along side pre-exising systems
-    - It requires low amount of resources to run. 
-    - A core component in Linux is kernel, which is developed independetly from other operating system components.
-    - Kernel allows the computer hardware and its processes to comunicate efficiently. 
+    - October 5th, 1991, the first official version of Linux was announced.
+    - Linux was written by Finnish American software engineer Linus Benedict Torvalds.
+    - Linux can run on a wide range of hardware and can be installed alongside pre-existing systems
+    - It requires low number of resources to run. 
+    - A core component in Linux is kernel, which is developed independently from other operating system components.
+    - Kernel allows the computer hardware and its processes to communicate efficiently. 
 
 2. History of Shell Scripting
-    - Shells are command line interpreters and was first created by Ken Thompson
-    - The basic shell srchitecture looks similar to a pipeline 
+    - Shells are command line interpreters and was first created by Ken Thompson and uses the Unix shell.
+    - Stephen Bourne created the first standard UNIX shell in 1979.
+    - In 1988, Bourne introduced *bash*, which was the default shell for the Linux operating system.
+    - This new shell gave way to more features and popularity to the system. 
+    - The basic shell architecture looks like a pipeline.
+    - You can manipulate files, execute programs, and print tests.
+    - One of the best advantages of writing a shell script is that the commands and syntax are the same as the when entered in the command line.
+    - Using a shell allows the user to customize their envirment and setting their variables. 
+    
