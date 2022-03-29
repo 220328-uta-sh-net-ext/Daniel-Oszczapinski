@@ -21,3 +21,5 @@ git branch  List all of the branches in your repository. This is synonymous with
 git checkout -b ＜new-branch＞simultaneously creates and checks out ＜new-branch＞
 
 git push --set-upstream origin feature-1
+
+clear
