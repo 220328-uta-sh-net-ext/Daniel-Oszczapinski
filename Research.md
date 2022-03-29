@@ -1,8 +1,9 @@
-## History of Shell Scripting and Linux using markdowns
-# Author : Daniel Oszczapinski
+# History of Shell Scripting and Linux using markdowns
+### Author : Daniel Oszczapinski
  This will be research the history of shell scripting, Linux, Shell programming, shell variables and environments.
 
 1. History of Linux
+
     - Linux is an open- source operating system of Unix.
     - Unix is one of the most popular operating systems worldwide.  
     - October 5th, 1991, the first official version of Linux was announced.
@@ -13,6 +14,7 @@
     - Kernel allows the computer hardware and its processes to communicate efficiently. 
 
 2. History of Shell Scripting
+
     - Shells are command line interpreters and was first created by Ken Thompson and uses the Unix shell.
     - Stephen Bourne created the first standard UNIX shell in 1979.
     - In 1988, Bourne introduced *bash*, which was the default shell for the Linux operating system.
@@ -24,11 +26,20 @@
     
 3. Getting to know Shell Programming
 
-    -Example of simple programing using shell  
+    - Example of simple programing using shell  
 
     #!/bin/bash  
     echo "Hello, Everyone!"  
     echo "I hope you are doing well today."  
-    
-    -Once this code is placed in a text document you can run the file
-    -There are multiple ways to run the file you can use ./filename or a different command.
+
+    - Once this code is placed in a text document you can run the file
+    - There are multiple ways to run the file you can use ./filename or a different command.
+
+4. Shell Variables and Environment
+
+    - The shell environment gives the user the ability to store commands in a file and build those function. 
+    - In Linux shell scripting variables play an important role in system defined variables and user defined variables.
+    - Variables are when you are referencing numeric or character values in your code.
+    - The system defined variables are variables that are created in the operating system.
+    - User defined variables are created by the user and stored temporarily for the use of that code. 
+    - There are many commands that allow the user to set and use variables to code and get their desired outcome.
