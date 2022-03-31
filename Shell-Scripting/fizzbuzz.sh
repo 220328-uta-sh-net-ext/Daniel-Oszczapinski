@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 
 read -p "What is your number: " number # Allows user to choose a number
-if (( $number <=0 )) || (( $number >= 20 )) # If you choose a number not from 1-20 you will get a message to choose another number.
+if (( $number <=0 )) || (( $number >= 21 )) # If you choose a number not from 1-20 you will get a message to choose another number.
 then
     echo "Choose a number 1-20!"
 elif (($number%5 == 0 )) && (($number%3 == 0)) # If else statement that will verify if a number is divisible by 3 and 5. 
