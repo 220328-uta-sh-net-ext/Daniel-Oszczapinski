@@ -1,4 +1,5 @@
 #! /usr/bin/bash
+function Fizzbuzz {
 
 read -p "What is your number: " number # Allows user to choose a number
 if (( $number <=0 )) || (( $number >= 21 )) # If you choose a number not from 1-20 you will get a message to choose another number.
@@ -22,4 +23,12 @@ then
         echo "Nothing!"
     
 fi
+}
 
+quit=n
+while [[ "$quit" != q ]]
+do 
+    Fizzbuzz
+    read -p "Press 'enter' to try again or 'q' to 
+    quit: " quit
+done
