@@ -1,7 +1,10 @@
 #! /usr/bin/bash
 
 read -p "What is your number: " number
-if (($number%5 == 0 )) && (($number%3 == 0))
+if (( $number <=0 )) || (( $number >= 20 ))
+then
+    echo "Choose a number 1-20!"
+elif (($number%5 == 0 )) && (($number%3 == 0))
 then
     echo "Fizzbuzz!"
 
