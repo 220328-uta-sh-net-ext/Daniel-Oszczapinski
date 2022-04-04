@@ -1,4 +1,4 @@
-
+#! /usr/bin/bash
 # single line comment
 : '
 this is 
@@ -7,7 +7,7 @@ comment
 '
 
 #shebang/hash bang - mentions which shell to be used and its location in OS
-#! /usr/bin/bash
+
 
 # print Hello world when this file is run
 echo "hello world"
@@ -17,7 +17,7 @@ echo "hello world"
 echo "My shell name is $BASH"
 echo "My shell version $BASH_VERSION"
 echo "My current directiory is $PWD"
-echo my home directory is $HOME
+echo "my home directory is $HOME"
 
 # User defined variables, use A-Z, a-z, 0-9 or _
 name=Daniel

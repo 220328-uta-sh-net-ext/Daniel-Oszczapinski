@@ -1,7 +1,14 @@
 # Chapter 4-6 Notes
 ### Author : Daniel Oszczapinski
 <details><summary>Chapter 4 - Conditional Execution</summary>
-
+	- test command is used to check file types and compare values
+    - If statementts test a condition, if the condition is true then the commands will execute.
+    - if else statements give a choice based on if the condition is true or false. If true it will execute the then command and if false it will execute the else command.
+    - nested if's have if statements within each other. 
+    - elif statements give various possibilites with multiple conditions. 
+    - Logical && - if both condition are true then it will execute.
+    - Logical || - if either of the conditions are true it will execute.
+    - Logical ! - condition executes if the condition is false. 
 	- Condition is an expression that evaluates the Boolean value
 	- Conditions are used in loops and if statements 
 	- if statements will execute the command if the condition is true, if false then the statement will not run the command.
@@ -9,6 +16,9 @@
 	- Logical AND (&&)- Will only run if the first command is successful 
 	- Logical OR (||)- Will only run if the second command is not successful
 	- Logical NOT (!) -Will test if the condition is true or not 
+	- Case Statement - better use of a mutilevel if-then-else statement. it enables you to 
+	match several values against one variable.
+	-  
 </details>
 
 <details><summary>Special Parameters</summary>
