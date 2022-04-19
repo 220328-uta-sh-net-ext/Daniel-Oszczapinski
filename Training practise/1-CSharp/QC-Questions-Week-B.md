@@ -1,14 +1,16 @@
 # Questions that maybe used in 1 on 1's or QC's.(There are 9 Questions from week B )
 
-1. Types of Version Control Systems
+<font size="4"> <span style="color: orange;">1. Types of Version Control Systems</span></font>
 
-    - [Local-VCS] - Saved by the local machine and always is acccessable by the developer but you have no backup available if something goes wrong and other developers cannot access the code you are working which mean that there will be less updates of the code.
+    - [Version-control-System] - also known as source control, is the practice of tracking and managing changes to software code.
 
-    - [Centralized-VCS] - Code that is saved on the server which allows for multiple developers to access that code and make changes. Unfortuanatly, this vcs does merges all code into one repository.
+    - [Local-VCS] - Saved by the local machine and always is acccessable by the developer but you have no backup available if something goes wrong you cannot access the code or you could loose all your code.
 
-    - [Distributedd-VCS] - We use git as out Distrubuted VCS.  The main code is also saved on a server similar to centralized but deverlopers are allowed to make their own server/Repository so they can work on the code locally. Developers can then branch the main code and then create a pull requests to allow push their code and once reviewed it can be merged. DVCS's also provide ever developer with the code history. Allows for multiple levels of protection.
+    - [Centralized-VCS] - allows the Code to be saved on a server/repository which allows for multiple developers to access that code and make changes. Unfortuanatly, this vcs does merges all code into one repository.
 
-2. Difference between the loops and statements ?
+    - [Distributedd-VCS] - We use git as our Distrubuted VCS.  The main code is also saved on a server similar to centralized but deverlopers are allowed to make their own server/Repository so they can work on the code locally. Developers can then branch the main code and then create a pull requests to allow push their code and once reviewed it can be merged. DVCS's also provide ever developer with the code history. Allows for multiple levels of protection.
+
+<font size="4"> <span style="color: orange;">2. Difference between the loops and statements?</span></font>
 
     - [For-Loop] - Exectutes a sequence of statements multiple times based on the condition given.(iteration)
 
@@ -22,35 +24,37 @@
 
     - [Switch-Case] - executes code of one of the conditions based on a pattern match with the specified match expression.
 
-3. 3 Components of a .Net Framwork
+<font size="4"> <span style="color: orange;">3. 3 Components of a .Net Framwork</span></font>
 
-    - [Languages] - First Level, these a .net compliant languages and Languages inclue c#, F#, Vb and more.
+    - [Languages] - First Level, these a .net compliant languages and Languages include c#, F#, Vb and more.
 
     - [Libraries] - Which are a collection of reusable types that are tightly integrate with the CLR. System.Object is a library used in .net.
 
-    - [Runtime/CLR] - Manages memory, thread execution, code execution, compilation and
+    - [Runtime/CLR] - Enviorment that provides a service such as Managing memory, thread execution, code execution, compilation and
     - exception handling which are errors that occur when the application is executed. from the System.SystemException namespace.
     - garbage collection - process of removing unwanted resources where no logic requires.
 
-4. LifeCycle of a program
+<font size="4"> <span style="color: orange;">4. LifeCycle of a program</span></font>
 
-    - The developer maching includes the .Net Compliant languages and C# is the language we are using.
-    This then goes to the language specific compiler.
-    Then the CIL or Common Intermidate Language creates a deployable code which is a exe and dLL which are non-readable.
-    Then in the Target machine the DIL goes to the CLR(Common Language Runtime) which is the main engine of .Net.
-    Finally it becomes machine code.
+    - The developer machine includes the .Net Compliant languages and C# is the language we are using.
+    This then goes to the language specific compiler which converts the source code to the CIL.
+    The CIL or Common Intermidate Language creates a deployable code which is a exe and dLL( Dynamic Link Library can not run itself, used as a supportive file to other application.).
+    Then in the Target machine the DIL goes to the CLR(Common Language Runtime) which is the main engine of .Net and runs the code and provides services that make the development process easier.
+    Finally it becomes machine code which is the byte-code the processor understands.
 
-5. What are datatypes?
+<font size="4"> <span style="color: orange;">5. What are datatypes?</span></font>
 
-    - [Value-Type] - A variable of a value type contains an instance of the type. Value types value is store in the memory Stack
-    The Predifined value types are int, long, short, and more
+    - [Value-Type] - A data type is a value type if it holds the data within its own memory allocation. Value types value is stored in the memory Stack
+    The [Predifined] value types are int, long, short, and more
         Also [Structs] like a class but stored in the stack
         [Enums] defines a set of named integral constants
 
-    - [Reference-Types] - They are datatypes that are stored in the heap and Variables of reference types store references to their (objects)
-    Predefined -> string, arrays, collections etc, Classes, interface, Delegates.
+    - [Reference-Types] - Variables of reference types store references to their data (objects).
+    These objects are stored in the heap.
+    With reference types, two variables can reference the same object.
+    [Predefined] refrence types are -> string, arrays, collections, Classes, interface, Delegates.
 
-6. What are the two types Conversion?
+<font size="4"> <span style="color: orange;">6. What are the two types Conversion?</span></font>
 
     - [Implicit-type-Conversion] - it is when you can convert the type without any data loss and Mostly used with numerical datatypes.
     [Boxing] is an implicit conversion of a value type to the type object
@@ -60,12 +64,12 @@
     [Unboxing] is an explicit conversion from the type object to a value type
     or from an interface type to a value type that implements the interface.
 
-7. What are Collections ?
+<font size="4"> <span style="color: orange;">7. What are Collections ?</span></font>
 
-    - [Collections] - Specialized classes for data storage and retrieval. 
+    - [Collections] - Specialized classes for data storage and retrieval.
 
-    - [Non-generic] collections store items as Object, require casting. Uses the System.Collections namespace. [ArrayList], [HashTable], [Stack], [queue]. 
-    - [Generic] collections are type-safe at compile time. Because of this, generic collections typically offer better performance. Uses the System.Collection.Generic namepace
+    - [Non-generic] collections which store items as Object, require casting. Uses the System.Collections namespace. [ArrayList], [HashTable], [Stack], [queue].
+    - [Generic] collections are type-safe at compile time which means methods and classes specify the data type. Because of this, generic collections typically offer better performance. Uses the System.Collection.Generic namepace
     Types of generic collections:
     - [Stack]
         - LIFO - It is a Last-in, First-out list
@@ -119,17 +123,18 @@
             - RemoveFirst() - Removes the node at the start of the LinkedList.
             - RemoveLast() - Removes the node at the end of the LinkedList.
 
-8. What is Exeption Handeling?
+<font size="4"> <span style="color: orange;">8. What is Exeption Handeling?</span></font>
 
-    - An [exception] is an event that occurs during the execution of a program that distrupts the normal flow of instructions
+    - An [exception] is an event that occurs during the execution of a program that distrupts the normal flow of the program
 
     - [Errors] - A serious problem that for the most part cannot be handled by the developer -They are fatal to the program at runtime
     - 3 types of errors
         - [Usage-error] - error in your program logic and can be solve by modifying/restructuring your code
-        - [Program-Error] - run-time error that cannot be avoided even with a bug-free code (Ex: Your SDK is corrupt and can't compile or translate it to machine code properly)
+        - [Program-Error] - run-time error that cannot be avoided even with a bug-free code (Ex: Your SDK(software development kit) is corrupt and can't compile or translate it to machine code properly)
         - [System-Failures] - run-time error that cannot be handled programmatically in a meaninful way (Ex: your ram hardware is faulty)
 
-    - [Exception-Handling] - by handling exceptions gracefully so the user is provided with information as to why the application is not responding as anticipated for better user experience.
-    - Using a [try-catch-block] and optionally finally block, The catch block will then "catch" that exception and will run instead its block of code which can tell the use how to fix their problem.
-    - You can [throw-an-exception] yourself in your code by using the throw keyword
+    - [Exception-Handling] - by handling exceptions gracefully so the user is provided with information as to why the application is not responding as anticipated this is for better user experience.
+    - you can Use a [try-catch-block] to handle exceptions,
+    which consists of a try block and The catch block will then "catch" that exception and will run the developers block of code which can tell the user how to fix their problem.
+    - by Using [throw-an-exception] yourself in your code by using the throw keyword
     - General rule is the most [specific] exception should be the very first catch block and the least specific exception is at the very last catch block.
