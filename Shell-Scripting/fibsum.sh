@@ -20,7 +20,7 @@ else
     echo "choose number 0 to 40."
 fi
 c=$((b+f))
-fsum=$((sum+b))
+#fsum=$((sum+b))
 sum=$((sum+c))
-final=$((fsum-sum))
+#final=$((fsum-sum))
 echo -n "$b"

@@ -1,0 +1,7 @@
+    - Instance of a class is called a object.
+    - The .NET Class Library contains definitions for data types used in C#.
+    - Which symbol is the method invocation operator, which actually executes a method? ()
+    - A code block is a collection of one or more lines of code that are defined by an opening and closing curly brace symbol { }. 
+    - An array is a sequence of individual data elements accessible through a single variable name. You use a zero-based numeric index to access each element of an array. As you'll see, arrays allow us to collect together similar data that shares a common purpose or characteristics in a single data structure for easier processing
+    - The foreach statement loops through each element in an array, running the code block below its declaration, substituting the value in a temporary variable for the value of the array that the current loop represents
+    - 
