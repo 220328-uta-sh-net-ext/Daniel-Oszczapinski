@@ -180,20 +180,3 @@ Non-derived class
 
 * Struct members, including nested classes and structs, can be declared public, internal, or private. Class members, including nested classes and structs, can be public, protected internal, protected, internal, private protected, or private.
 * Class and struct members, including nested classes and structs, have [private] access by default.
-
-## SOLID Principle
-
-* [SOLID] design principles in C# are basic design principles. SOLID stands for [Single-Responsibility-Principle] (SRP), [Open-closed-Principle] (OSP), [Liskov-substitution-Principle] (LSP), [Interface-Segregation-Principle] (ISP), and [Dependency-Inversion-Principle] (DIP)
-
-  * [SRP] says "Every software module should have only one reason to change".
-
-  * The [LSP] states that "you should be able to use any derived class instead of a parent class and have it behave in the same manner without modification".
-
-  * The [ISP] states "that clients should not be forced to implement interfaces they don't use. Instead of one fat interface, many small interfaces are preferred based on groups of methods, each one serving one submodule.".
-
-  * The [DIP] states that high-level modules/classes should not depend on low-level modules/classes. Both should depend upon abstractions. Secondly, abstractions should not depend upon details.
-
-## Singleton Design Pattern
-
-* Singleton design pattern in C# is one of the most popular design patterns. In this pattern, a class has only one instance in the program that provides a global point of access to it. In other words, a singleton is a class that allows only a single instance of itself to be created and usually gives simple access to that instance.
-

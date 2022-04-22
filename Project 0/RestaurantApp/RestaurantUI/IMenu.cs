@@ -19,7 +19,7 @@ namespace RestaurantUI
         /// <returns>Return the menu that will change your screen</returns>
         string UserChoice();
 
-        string Login();
+        //string Login();
 
     }
 }

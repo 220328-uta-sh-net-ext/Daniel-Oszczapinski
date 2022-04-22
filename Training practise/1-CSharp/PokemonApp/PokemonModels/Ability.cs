@@ -14,18 +14,18 @@ namespace PokemonModels
         {
             get { return _PP; }
 
-            set 
+            set
             {
                 if (value > 0)
                     _PP = value;
                 else
                     throw new Exception("You cannot set PP lower than 0!");
-            }    
-
+            }
+        }
             public int Power { get; set; }
             public int Accuracy { get; set; }
 
-
-        }
+ 
+        
     }
 }

@@ -43,15 +43,19 @@ while (repeat)
             break;
         case "Display Restaurant":
             //call RestaurantLogin method
-            Console.WriteLine("RestaurantDisplay() Method implementation is in progress\n");
+            Console.WriteLine("--------------Retreiving all Restaurant Information---------------");
+            RestaurantOperations.GetRestaurantInfo();
             break;
         case "Create Restaurant":
             //call RestaurantLogin method
-            Console.WriteLine("RestaurantCreate() Method implementation is in progress\n");
+            menu = new AddRestaurantMenu();
             break;
-        case "Create User":
+        case "Display Rating":
             //call RestaurantLogin method
-            Console.WriteLine("RestaurantUser() Method implementation is in progress\n");
+            Console.WriteLine("RestaurantUser() Method implementation is in progress\n"); 
+            break;
+        case "MainMenu":
+            menu = new MainMenu();
             break;
         case "Exit":
             repeat = false;

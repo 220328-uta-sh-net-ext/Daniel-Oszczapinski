@@ -21,7 +21,7 @@ namespace RestaurantUI
             Console.WriteLine("Press <0> Exit");
         }
 
-        public string Login()
+        /*public string Login()
         {
             string userInput = Console.ReadLine();
             //Login menu
@@ -39,7 +39,7 @@ namespace RestaurantUI
                     Console.ReadLine();
                     return "MainMenu";
             }
-        }
+        }*/
         public string UserChoice()
         {
             string otherinpute = Console.ReadLine();
@@ -50,7 +50,7 @@ namespace RestaurantUI
                 case "1":
                     return "Login";
                 case "2":
-                    return "Create User";
+                    return "Display Rating";
                 case "3":
                     return "Display Restaurant";
                 case "4":

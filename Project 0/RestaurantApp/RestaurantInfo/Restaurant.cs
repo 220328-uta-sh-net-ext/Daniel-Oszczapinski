@@ -9,28 +9,38 @@ namespace RestaurantInfo
     public class Restaurant
     {
         public string Name { get; set; }
-        public string Add { get; set; }
+        public long Phone { get; set; }
         public string Address { get; set; }
-        private int _Rating;
-        public int AverageRating { get 
+        //public int Rating { get; set; }
+        private List<Info> _infoes;
+        public List<Info> Infoes { 
+            get 
             {
-                return _Rating;
+                return _infoes;
             } 
             set 
             {
-                if (value > 0)
-                    _Rating = value;
+                if (value.Count <=5)
+                    _infoes = value;
                 else
-                    throw new Exception("You cannot have a rating lower than 0.");
+                    throw new Exception("Connot have a more than a rating of 5.");
             }
         }
 
         public Restaurant()
         {
-            Name = "Jimmy Johns";
-            Address = "123 W Hollywood, California 70453";
-            AverageRating = 0;
+            Name = "Restaurant Name";
+            Address = "Restaurant Address";
+            Phone = 9994448888;
 
+            _infoes = new List<Info>()
+            {
+                new Info()
+            };
+        }
+        public override string ToString()
+        {
+            return $"Restaurant Name: {Name}\nAddress: {Address}\nPhone Number: {Phone}\n";
         }
     }
 }

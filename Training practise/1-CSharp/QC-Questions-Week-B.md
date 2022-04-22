@@ -42,7 +42,7 @@
     Then in the Target machine the DIL goes to the CLR(Common Language Runtime) which is the main engine of .Net and runs the code and provides services that make the development process easier.
     Finally it becomes machine code which is the byte-code the processor understands.
 
-<font size="4"> <span style="color: orange;">5. What are datatypes?</span></font>
+<font size="4"> <span style="color: orange;">5. What are datatypes?
 
     - [Value-Type] - A data type is a value type if it holds the data within its own memory allocation. Value types value is stored in the memory Stack
     The [Predifined] value types are int, long, short, and more
@@ -54,7 +54,7 @@
     With reference types, two variables can reference the same object.
     [Predefined] refrence types are -> string, arrays, collections, Classes, interface, Delegates.
 
-<font size="4"> <span style="color: orange;">6. What are the two types Conversion?</span></font>
+<font size="4"> <span style="color: orange;">6. What are the two types Conversion?
 
     - [Implicit-type-Conversion] - it is when you can convert the type without any data loss and Mostly used with numerical datatypes.
     [Boxing] is an implicit conversion of a value type to the type object
@@ -64,7 +64,7 @@
     [Unboxing] is an explicit conversion from the type object to a value type
     or from an interface type to a value type that implements the interface.
 
-<font size="4"> <span style="color: orange;">7. What are Collections ?</span></font>
+<font size="4"> <span style="color: orange;">7. What are Collections ?
 
     - [Collections] - Specialized classes for data storage and retrieval.
 
@@ -123,7 +123,7 @@
             - RemoveFirst() - Removes the node at the start of the LinkedList.
             - RemoveLast() - Removes the node at the end of the LinkedList.
 
-<font size="4"> <span style="color: orange;">8. What is Exeption Handeling?</span></font>
+<font size="4"> <span style="color: orange;">8. What is Exeption Handeling?
 
     - An [exception] is an event that occurs during the execution of a program that distrupts the normal flow of the program
 
