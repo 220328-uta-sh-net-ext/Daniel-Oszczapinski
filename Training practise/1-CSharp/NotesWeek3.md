@@ -69,6 +69,33 @@
   * [Method Overloading] is an example of compile time polymorphism, which is method with same name behaves differently based on signatures (parameters).  
   * [Method Overriding] is an example of runtime polymorphism, which is re-defining the method of parent class into child class.
 
+### Fields
+
+* A [field] is a variable of any type that is declared directly in a class or struct. Fields are members of their containing type.
+
+* Fields are variables declared at class scope. A field may be a built-in numeric type or an instance of another class. For example, a calendar class may have a field that contains the current date.
+
+### Constants
+
+* [Constants] are fields whose value is set at compile time and cannot be changed.
+
+### Methods
+
+* [Methods] define the actions that a class can perform. Methods can take parameters that provide input data, and can return output data through parameters. Methods can also return a value directly, without using a parameter.
+
+### Events
+
+* [Events] provide notifications about occurrences, such as button clicks or the successful completion of a method, to other objects. Events are defined and triggered by using delegates.
+
+### Properties
+
+* Smart fields in C# which are used to expose a private variable outsid the class
+  You can use conditionals with your properties.
+  properties can be created in 3 ways:
+    read-only - with only get block.
+    write-only - with only set block.
+    read-write property - with both get and set block.
+
 ### Method Overloading
 
 * known as static or compile time polymorphism
