@@ -18,3 +18,5 @@ C:\Revature\dotnet-training-220328\Daniel-Oszczapinski\Project 0\RestaurantApp\R
 C:\Revature\dotnet-training-220328\Daniel-Oszczapinski\Project 0\RestaurantApp\RestaurantUI\obj\Debug\net6.0\RestaurantUI.pdb
 C:\Revature\dotnet-training-220328\Daniel-Oszczapinski\Project 0\RestaurantApp\RestaurantUI\obj\Debug\net6.0\RestaurantUI.genruntimeconfig.cache
 C:\Revature\dotnet-training-220328\Daniel-Oszczapinski\Project 0\RestaurantApp\RestaurantUI\obj\Debug\net6.0\ref\RestaurantUI.dll
+C:\Revature\dotnet-training-220328\Daniel-Oszczapinski\Project 0\RestaurantApp\RestaurantUI\bin\Debug\net6.0\RestaurantBL.dll
+C:\Revature\dotnet-training-220328\Daniel-Oszczapinski\Project 0\RestaurantApp\RestaurantUI\bin\Debug\net6.0\RestaurantBL.pdb

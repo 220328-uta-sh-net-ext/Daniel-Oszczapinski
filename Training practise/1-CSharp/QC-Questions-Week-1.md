@@ -1,6 +1,6 @@
 # Questions that maybe used in 1 on 1's or QC's.(There are  Questions from week 1 )
 
-<font size="4"> <span style="color: orange;">1. What are the 4 Basic priciples of OOP?</span></font>
+1. What are the 4 Basic priciples of OOP?
 
     - [Encapsulation] - Wrapping up of the data and data hiding, to provide protection from the outside world. We use Access modifiers to provide various levels of access.
 
@@ -19,7 +19,7 @@
     [Method-Overloading] is an example of compile time polymorphism, where a method with same name behaves differently based on the parameters
     [Method-Overriding] is an example of runtime polymorphism, which is re-defining the method of a parent class into child class.
 
-<font size="4"> <span style="color: orange;">2. advantages of OOP over Procedure oriented Programming.</span></font>
+2. advantages of OOP over Procedure oriented Programming.
 
     - [OOP] makes development maintenance easier whereas [procedure] oriented programming is not as easy to manage as the code grows.
     - [OOP] provides data hiding while [Procedure] oriented programming has not have a proper way of data hding
@@ -28,7 +28,7 @@
     - [OOP] is based on real world.
     - [Procedural] programming is based on unreal world.
 
-<font size="4"> <span style="color: orange;">3. Difference between virtual and abstract and interface?</span></font>
+3. Difference between virtual and abstract and interface?
 
     - [Virtual] - Virtual methods have an implementation and provide the derived classes with the option of overriding it.
 
@@ -44,13 +44,13 @@
 
     - The interface is a blueprint that can be used to implement a class. . All the methods of an interface are abstract methods.
 
-<font size="4"> <span style="color: orange;">4. Comparison Between Properties and Indexers.</span></font>
+4. Comparison Between Properties and Indexers.
 
     - [Properties] - Allows methods to be called as if they were public data members. Accessed through a simple name.
 
     - [Indexer] - Allows elements of an internal collection of an object to be accessed by using array notation on the object itself. Accessed through an index.
 
-<font size="4"> <span style="color: orange;">5. what are Access modifier and what are the 6?</span></font>
+5. what are Access modifier and what are the 6?
 
     - [Access-Modifiers] - give permission level to classes, methods, variables.
 
@@ -66,7 +66,7 @@
 
     - [private-protected] - The type or member can be accessed by types derived from the class that are declared within its containing assembly.
 
-<font size="4"> <span style="color: orange;">6. What are Non Access Modifiers?</span></font>
+6. What are Non Access Modifiers?
 
     - [Non-Access-Modifiers] are those keywords that do not have anything related to the level of access but they provide a special functionality when specified
     - the modifiers include - [Virtual], [Abstract], [Readonly], [Override], [Static]
@@ -83,7 +83,7 @@
 
     - [Static] - Static classes cannot be instantiated or inherited, its members must also be static. Static class members belongs to the class itself rather than to a specific object
 
-<font size="4"> <span style="color: orange;">7. [Default-Modifiers]</span></font>
+7. What are Default Modifiers?
 
     - [Default-Modifiers] - are when no modifier is declared
 

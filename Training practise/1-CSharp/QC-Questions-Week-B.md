@@ -1,6 +1,6 @@
 # Questions that maybe used in 1 on 1's or QC's.(There are 9 Questions from week B )
 
-<font size="4"> <span style="color: orange;">1. Types of Version Control Systems</span></font>
+1. Types of Version Control Systems
 
     - [Version-control-System] - also known as source control, is the practice of tracking and managing changes to software code.
 
@@ -10,7 +10,7 @@
 
     - [Distributedd-VCS] - We use git as our Distrubuted VCS.  The main code is also saved on a server similar to centralized but deverlopers are allowed to make their own server/Repository so they can work on the code locally. Developers can then branch the main code and then create a pull requests to allow push their code and once reviewed it can be merged. DVCS's also provide ever developer with the code history. Allows for multiple levels of protection.
 
-<font size="4"> <span style="color: orange;">2. Difference between the loops and statements?</span></font>
+2. Difference between the loops and statements?
 
     - [For-Loop] - Exectutes a sequence of statements multiple times based on the condition given.(iteration)
 
@@ -24,7 +24,7 @@
 
     - [Switch-Case] - executes code of one of the conditions based on a pattern match with the specified match expression.
 
-<font size="4"> <span style="color: orange;">3. 3 Components of a .Net Framwork</span></font>
+3. 3 Components of a .Net Framwork
 
     - [Languages] - First Level, these a .net compliant languages and Languages include c#, F#, Vb and more.
 
@@ -34,7 +34,7 @@
     - exception handling which are errors that occur when the application is executed. from the System.SystemException namespace.
     - garbage collection - process of removing unwanted resources where no logic requires.
 
-<font size="4"> <span style="color: orange;">4. LifeCycle of a program</span></font>
+4. LifeCycle of a program
 
     - The developer machine includes the .Net Compliant languages and C# is the language we are using.
     This then goes to the language specific compiler which converts the source code to the CIL.
@@ -42,7 +42,7 @@
     Then in the Target machine the DIL goes to the CLR(Common Language Runtime) which is the main engine of .Net and runs the code and provides services that make the development process easier.
     Finally it becomes machine code which is the byte-code the processor understands.
 
-<font size="4"> <span style="color: orange;">5. What are datatypes?</span></font>
+5. What are datatypes?
 
     - [Value-Type] - A data type is a value type if it holds the data within its own memory allocation. Value types value is stored in the memory Stack
     The [Predifined] value types are int, long, short, and more
@@ -54,7 +54,7 @@
     With reference types, two variables can reference the same object.
     [Predefined] refrence types are -> string, arrays, collections, Classes, interface, Delegates.
 
-<font size="4"> <span style="color: orange;">6. What are the two types Conversion?</span></font>
+6. What are the two types Conversion?
 
     - [Implicit-type-Conversion] - it is when you can convert the type without any data loss and Mostly used with numerical datatypes.
     [Boxing] is an implicit conversion of a value type to the type object
@@ -64,7 +64,7 @@
     [Unboxing] is an explicit conversion from the type object to a value type
     or from an interface type to a value type that implements the interface.
 
-<font size="4"> <span style="color: orange;">7. What are Collections?</span></font>
+7. What are Collections?
 
     - [Collections] - Specialized classes for data storage and retrieval.
 
@@ -123,7 +123,7 @@
             - RemoveFirst() - Removes the node at the start of the LinkedList.
             - RemoveLast() - Removes the node at the end of the LinkedList.
 
-<font size="4"> <span style="color: orange;">8. What is Exeption Handeling?</span></font>
+8. What is Exeption Handeling?
 
     - An [exception] is an event that occurs during the execution of a program that distrupts the normal flow of the program
 

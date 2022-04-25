@@ -1,6 +1,8 @@
 ﻿using RestaurantUI;
+using RestaurantBL;
 bool repeat = true;
 IMenu menu = new MainMenu();
+OperationsBL BLInner = new OperationsBL();
 
 /*while (repeat)
 {
@@ -44,7 +46,7 @@ while (repeat)
         case "Display Restaurant":
             //call RestaurantLogin method
             Console.WriteLine("--------------Retreiving all Restaurant Information---------------");
-            RestaurantOperations.GetRestaurantInfo();
+            BLInner.GetAllRestaurants();
             break;
         case "Create Restaurant":
             //call RestaurantLogin method

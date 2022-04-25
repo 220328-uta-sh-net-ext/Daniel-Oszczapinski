@@ -92,3 +92,13 @@
 ### Singleton Design Pattern
 
 * Singleton design pattern in C# is one of the most popular design patterns. In this pattern, a class has only one instance in the program that provides a global point of access to it. In other words, a singleton is a class that allows only a single instance of itself to be created and usually gives simple access to that instance.
+
+Advantages:
+
+* Provides a global point of access from multiple classes
+* It is easy to maintain since there is only one instance of that class
+
+Disadvantages:
+
+* Very difficult to unit testing since it has global access
+* Definitely do not put any security sensitive information in a singleton

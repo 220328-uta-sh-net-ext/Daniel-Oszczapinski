@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v6.0": {
       "RestaurantUI/1.0.0": {
         "dependencies": {
+          "RestaurantBL": "1.0.0",
           "RestaurantDL": "1.0.0"
         },
         "runtime": {
           "RestaurantUI.dll": {}
+        }
+      },
+      "RestaurantBL/1.0.0": {
+        "dependencies": {
+          "RestaurantDL": "1.0.0"
+        },
+        "runtime": {
+          "RestaurantBL.dll": {}
         }
       },
       "RestaurantDL/1.0.0": {
@@ -31,6 +40,11 @@
   },
   "libraries": {
     "RestaurantUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RestaurantBL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
