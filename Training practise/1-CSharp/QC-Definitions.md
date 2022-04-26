@@ -39,3 +39,5 @@
 
 19. [Classes] - They are the building blocks of your code.
 They are the blueprints to creating objects that your process in your program
+
+20. [Object] - bjects are also called instances, and they can be stored in either a named variable or in an array or collection

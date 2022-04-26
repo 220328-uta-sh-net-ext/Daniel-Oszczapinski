@@ -10,7 +10,7 @@
 
     - [Distributedd-VCS] - We use git as our Distrubuted VCS.  The main code is also saved on a server similar to centralized but deverlopers are allowed to make their own server/Repository so they can work on the code locally. Developers can then branch the main code and then create a pull requests to allow push their code and once reviewed it can be merged. DVCS's also provide ever developer with the code history. Allows for multiple levels of protection.
 
-2. Difference between the loops and statements?
+2. Difference between the loops and statements(iterating through code)?
 
     - [For-Loop] - Exectutes a sequence of statements multiple times based on the condition given.(iteration)
 
