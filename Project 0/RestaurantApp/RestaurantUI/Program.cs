@@ -52,9 +52,9 @@ while (repeat)
             //call RestaurantLogin method
             menu = new AddRestaurantMenu();
             break;
-        case "Display Rating":
+        case "Create User":
             //call RestaurantLogin method
-            Console.WriteLine("RestaurantUser() Method implementation is in progress\n"); 
+            menu = new AddUsercs();
             break;
         case "MainMenu":
             menu = new MainMenu();

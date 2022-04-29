@@ -12,7 +12,7 @@ namespace RestaurantUI
     {
         private static Restaurant NewRestaurant = new Restaurant();
 
-        private IRepository _repository = new Repository();
+        private IRepository _repository = new SqlRepository();
         public void Display()
         {
                Console.WriteLine("Enter Restaurant Information");
@@ -45,7 +45,7 @@ namespace RestaurantUI
                     return "Create Restaurant";
                 case "4":
                     Console.Write("Please enter a phone: ");
-                    NewRestaurant.Phone = Convert.ToInt64(Console.ReadLine());
+                    NewRestaurant.Phone = Convert.ToString(Console.ReadLine());
                     return "Create Restaurant";
                 case "5":
                     Console.Write("Please enter a name: ");

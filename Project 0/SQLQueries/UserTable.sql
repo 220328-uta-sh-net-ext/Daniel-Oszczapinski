@@ -1,0 +1,9 @@
+DROP TABLE User;
+CREATE TABLE User(
+ RestID INT IDENTITY,
+    Name NVARCHAR(100),
+    Address NVARCHAR(100),
+    Phone CHAR(10),
+    CONSTRAINT PK_Restaurant PRIMARY KEY CLUSTERED (RestId)
+)
+SELECT * FROM Restaurant

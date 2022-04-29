@@ -16,6 +16,7 @@ namespace RestaurantDL
         public Restaurant AddRestaurant(Restaurant rest)
         {
             var restaurants = GetRestaurantInfo();
+            
             restaurants.Add(rest);
             var restaurantString = JsonSerializer.Serialize<List<Restaurant>>(restaurants, new JsonSerializerOptions { WriteIndented = true });
        
@@ -127,6 +128,11 @@ namespace RestaurantDL
             {
                 return null;
             }
+        }
+
+        public User AddUser(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,6 +12,8 @@ namespace RestaurantBL
         List<Restaurant> SearchRestaurant(string searchString);
         List<Restaurant> GetAllRestaurants();
 
+        List<Restaurant> GetUser();
+        void AddUser(Restaurant user);
         void AddRestaurant(Restaurant restaurantToAdd);
         void AddReview(int reviewId, Review review);
 

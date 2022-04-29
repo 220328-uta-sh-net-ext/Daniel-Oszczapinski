@@ -10,7 +10,7 @@ namespace RestaurantBL
 {
     public class OperationsBL : IBL
     {
-        static Repository repository = new Repository();
+        static IRepository repository = new SqlRepository();
         public void AddRestaurant(Restaurant restaurantToAdd)
         {
             throw new NotImplementedException();
@@ -20,6 +20,12 @@ namespace RestaurantBL
         {
             throw new NotImplementedException();
         }
+
+        public void AddUser(Restaurant user)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Calculate average rating, need to connect to database to get the array of ratingss
         /// </summary>
@@ -38,9 +44,22 @@ namespace RestaurantBL
                 foreach (var rest in restaurants)
                 {
                     Console.WriteLine(rest.ToString());
+                    Console.WriteLine("*******************");
                 }
                 return restaurants;
             
+        }
+
+        public List<Restaurant> GetUser()
+        {
+            /*var users = repository.GetRestaurantInfo;
+            foreach(var user in users) 
+            { 
+                Console.WriteLine(users.ToString());
+               
+            }
+            return users;*/
+            throw new NotImplementedException();
         }
 
         public List<Restaurant> SearchRestaurant(string searchString)

@@ -50,7 +50,7 @@ namespace RestaurantUI
                 case "1":
                     return "Login";
                 case "2":
-                    return "Display Rating";
+                    return "Create User";
                 case "3":
                     return "Display Restaurant";
                 case "4":

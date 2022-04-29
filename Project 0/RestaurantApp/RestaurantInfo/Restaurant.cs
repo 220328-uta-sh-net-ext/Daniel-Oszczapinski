@@ -9,7 +9,7 @@ namespace RestaurantInfo
     public class Restaurant
     {
         public string Name { get; set; }
-        public long Phone { get; set; }
+        public string Phone { get; set; }
         public string Address { get; set; }
         //public int Rating { get; set; }
        /* private List<Info> _infoes;
@@ -31,7 +31,7 @@ namespace RestaurantInfo
         {
             Name = "Restaurant Name";
             Address = "Restaurant Address";
-            Phone = 9994448888;
+            Phone = "9994448888";
 
             /*_infoes = new List<Info>()
             {
