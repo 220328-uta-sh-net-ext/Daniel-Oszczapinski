@@ -30,7 +30,11 @@ namespace RestaurantDL
         /// The method rating average results
         /// </summary>
         /// <returns></returns>
-       //List<Restaurant> GetRestaurantResult();
-        
+        //List<Restaurant> GetRestaurantResult();
+
+        Review AddReview(int restaurantId, Review reviewToAdd);
+        List<Review> GetReviewInfo();
+        List<Restaurant> SearchRestaurants(string searchTerm);
+        bool IsDuplicate(Restaurant restaurant);
     }
 }

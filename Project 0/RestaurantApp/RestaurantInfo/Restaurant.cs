@@ -12,7 +12,7 @@ namespace RestaurantInfo
         public long Phone { get; set; }
         public string Address { get; set; }
         //public int Rating { get; set; }
-        private List<Info> _infoes;
+       /* private List<Info> _infoes;
         public List<Info> Infoes { 
             get 
             {
@@ -25,7 +25,7 @@ namespace RestaurantInfo
                 else
                     throw new Exception("Connot have a more than a rating of 5.");
             }
-        }
+        }*/
 
         public Restaurant()
         {
@@ -33,10 +33,10 @@ namespace RestaurantInfo
             Address = "Restaurant Address";
             Phone = 9994448888;
 
-            _infoes = new List<Info>()
+            /*_infoes = new List<Info>()
             {
                 new Info()
-            };
+            };*/
         }
         public override string ToString()
         {

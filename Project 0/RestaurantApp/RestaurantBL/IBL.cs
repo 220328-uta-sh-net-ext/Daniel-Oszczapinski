@@ -14,5 +14,7 @@ namespace RestaurantBL
 
         void AddRestaurant(Restaurant restaurantToAdd);
         void AddReview(int reviewId, Review review);
+
+        void AverageRating(int Rating, int Sum);
     }
 }

@@ -9,7 +9,7 @@
 
         //Resturant has a name, Adress, Rating 
 
-        private int _Rating;
+       /* private int _Rating;
         public int Rating { 
             get { return _Rating; }
 
@@ -28,7 +28,7 @@
         {
             Rating = 1;
 
-        }
+        }*/
         
     }
 }
