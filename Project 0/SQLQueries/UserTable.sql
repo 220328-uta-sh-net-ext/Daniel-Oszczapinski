@@ -1,9 +1,9 @@
-DROP TABLE User;
-CREATE TABLE User(
- RestID INT IDENTITY,
+DROP TABLE newUser;
+CREATE TABLE newUser(
+ UserId INT IDENTITY,
     Name NVARCHAR(100),
-    Address NVARCHAR(100),
-    Phone CHAR(10),
-    CONSTRAINT PK_Restaurant PRIMARY KEY CLUSTERED (RestId)
+    Email NVARCHAR(100),
+    Password CHAR(1000),
+    CONSTRAINT PK_User PRIMARY KEY  (UserId)
 )
-SELECT * FROM Restaurant
+SELECT * FROM newUser

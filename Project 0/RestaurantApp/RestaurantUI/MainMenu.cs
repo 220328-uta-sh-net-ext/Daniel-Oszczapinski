@@ -13,11 +13,13 @@ namespace RestaurantUI
         public void Display()
         {
             Console.WriteLine("Welcome to this Restuarant Application.");
-            Console.WriteLine("Please choose to login or create a user.");
+            Console.WriteLine("Please choose an option.");
+            Console.WriteLine("Press <6> Display Review");
+            Console.WriteLine("Press <5> Display User");
             Console.WriteLine("Press <4> Create Restaurant");
             Console.WriteLine("Press <3> Display Restaurant");
-            Console.WriteLine("Press <2> Create user");
-            Console.WriteLine("Press <1> Login");
+            Console.WriteLine("Press <2> Create User");
+            Console.WriteLine("Press <1> Create Review");
             Console.WriteLine("Press <0> Exit");
         }
 
@@ -48,13 +50,17 @@ namespace RestaurantUI
                 case "0":
                     return "Exit";
                 case "1":
-                    return "Login";
+                    return "Create Review";
                 case "2":
                     return "Create User";
                 case "3":
                     return "Display Restaurant";
                 case "4":
                     return "Create Restaurant";
+                case "5":
+                    return "Display User";
+                case "6":
+                    return "Display Review";
                 default:
                     Console.WriteLine("View does not exist");
                     Console.WriteLine("Please press <enter> to continue");

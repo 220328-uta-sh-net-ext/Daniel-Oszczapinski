@@ -16,7 +16,7 @@ namespace RestaurantBL
             throw new NotImplementedException();
         }
 
-        public void AddReview(int reviewId, Review reviewToAdd)
+        public void AddReview(Review reviewToAdd)
         {
             throw new NotImplementedException();
         }
@@ -50,16 +50,27 @@ namespace RestaurantBL
             
         }
 
-        public List<Restaurant> GetUser()
+        public List<Review> GetAllReviews()
         {
-            /*var users = repository.GetRestaurantInfo;
+            var reviews = repository.GetReviewInfo();
+            foreach (var view in reviews)
+            {
+                Console.WriteLine(view.ToString());
+                Console.WriteLine("*******************");
+            }
+            return reviews;
+        }
+
+        public List<User> GetUser()
+        {
+            var users = repository.GetUsersInfo();
             foreach(var user in users) 
             { 
-                Console.WriteLine(users.ToString());
-               
+                Console.WriteLine(user.ToString());
+                Console.WriteLine("*******************");
             }
-            return users;*/
-            throw new NotImplementedException();
+            return users;
+            
         }
 
         public List<Restaurant> SearchRestaurant(string searchString)

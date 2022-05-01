@@ -39,9 +39,17 @@ while (repeat)
     string choice = menu.UserChoice();
     switch (choice)
     {
-        case "Login":
+        case "Display Review":
+            Console.WriteLine("--------------Retreiving all Review Information---------------");
+            BLInner.GetAllReviews();
+            break;
+        case "Display User":
+            Console.WriteLine("--------------Retreiving all User Information---------------");
+            BLInner.GetUser();
+            break;
+        case "Create Review":
             //call RestaurantLogin method
-            Console.WriteLine("RestaurantLogin() Method implementation is in progress\n");
+            menu = new AddReview();
             break;
         case "Display Restaurant":
             //call RestaurantLogin method
@@ -54,7 +62,7 @@ while (repeat)
             break;
         case "Create User":
             //call RestaurantLogin method
-            menu = new AddUsercs();
+            menu = new AddUser();
             break;
         case "MainMenu":
             menu = new MainMenu();

@@ -8,19 +8,18 @@ using System.Threading.Tasks;
 
 namespace RestaurantUI
 {
-    internal class AddUsercs :IMenu
+    internal class AddUser :IMenu
     {
         private static User NewUser = new User();
 
         private IRepository _repository = new SqlRepository();
         public void Display()
         {
-            Console.WriteLine("Enter Restaurant Information");
+            Console.WriteLine("Enter User Information");
 
             Console.WriteLine("<4> Name - " + NewUser.Name);
             Console.WriteLine("<3> Email - " + NewUser.Email);
             Console.WriteLine("<2> Password - " + NewUser.Password);
-            
             Console.WriteLine("<1> Save");
             Console.WriteLine("<0> Go Back");
         }
@@ -33,7 +32,7 @@ namespace RestaurantUI
                     return "MainMenu";
                 case "1":
                     _repository.AddUser(NewUser);
-                    Console.WriteLine("----New Restaurant Added----");
+                    Console.WriteLine("----New User Added----");
                     return "MainMenu";
                 case "2":
                     Console.Write("Please enter a password: ");

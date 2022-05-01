@@ -9,35 +9,48 @@ namespace RestaurantInfo
     public class Review
     {
 
-        public int Id { get; set; }
-
-        public int RestaurantId { get; set; }
         public Review() { }
 
+        //Example of constructor overloading
         public Review(int rating)
         {
             this.Rating = rating;
         }
 
-        private int _rating;
-        public int Rating 
-        { 
-            get => _rating;
+        public Review(int rating, string note, string name, string username, int average)
+        {
+            this.Rating = rating;
+            this.Note = note;
+            this.Name = name;
+            this.UserName = username;
+            this.Average = average;
+        }
 
-            set 
+
+        public int Average { get; set; }
+        private int _rating;
+        public int Rating
+        {
+            get => _rating;
+            //For the setter, we are checking that the rating is between 1 and 5
+            set
             {
-                if(value < 0 || value > 5)
+                if (value <= 0 || value > 5)
                 {
-                    throw new ArgumentOutOfRangeException("Rating must be between 1 and 5!");
+                    throw new Exception("Rating must be between 1 and 5");
                 }
                 this._rating = value;
             }
-        
         }
+        public string Note { get; set; }
+        public string Name { get; set; }
+        public string UserName { get; set; }
+        //override Review's ToString Method for me here
+        //That outputs $"Rating: {review.Rating} \t Note: {review.Note}"
 
         public override string ToString()
         {
-            return $"Rating: {this.Rating}";
+            return $"Restaurant name: {this.Name}\nUser: {this.UserName}\nRating: {this.Rating}\nAverage Rating: {this.Average} \t Note: {this.Note}";
         }
 
 

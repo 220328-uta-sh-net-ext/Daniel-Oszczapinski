@@ -17,10 +17,9 @@ namespace RestaurantUI
         {
                Console.WriteLine("Enter Restaurant Information");
             
-            Console.WriteLine("<5> Name - " + NewRestaurant.Name);
-            Console.WriteLine("<4> Phone - " + NewRestaurant.Phone);
-            Console.WriteLine("<3> Address - " + NewRestaurant.Address);
-            //Console.WriteLine("<2> Rating - " + NewRestaurant.Rating);
+            Console.WriteLine("<4> Name - " + NewRestaurant.Name);
+            Console.WriteLine("<3> City - " + NewRestaurant.City);
+            Console.WriteLine("<2> State - " + NewRestaurant.State);
             Console.WriteLine("<1> Save");
             Console.WriteLine("<0> Go Back");
         }
@@ -36,19 +35,15 @@ namespace RestaurantUI
                     Console.WriteLine("----New Restaurant Added----");
                     return "MainMenu";
                 case "2":
-                    Console.Write("Please enter a Rating: ");
-                    //NewRestaurant.Rating = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Please enter a State: ");
+                    NewRestaurant.State = Console.ReadLine();
                     return "Create Restaurant";
                 case "3":
-                    Console.Write("Please enter a address: ");
-                    NewRestaurant.Address = Console.ReadLine();
+                    Console.Write("Please enter a City: ");
+                    NewRestaurant.City = Convert.ToString(Console.ReadLine());
                     return "Create Restaurant";
                 case "4":
-                    Console.Write("Please enter a phone: ");
-                    NewRestaurant.Phone = Convert.ToString(Console.ReadLine());
-                    return "Create Restaurant";
-                case "5":
-                    Console.Write("Please enter a name: ");
+                    Console.Write("Please enter a Restaurant Name: ");
                     NewRestaurant.Name = Console.ReadLine();
                     return "Create Restaurant";
                 /// Add more cases for any other attributes of pokemon

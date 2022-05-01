@@ -32,11 +32,14 @@ namespace RestaurantDL
         /// <returns></returns>
         //List<Restaurant> GetRestaurantResult();
 
-        Review AddReview(int restaurantId, Review reviewToAdd);
+        Review AddReview(Review reviewToAdd);
+       
         List<Review> GetReviewInfo();
         List<Restaurant> SearchRestaurants(string searchTerm);
         bool IsDuplicate(Restaurant restaurant);
 
        User AddUser(User user);
+       List<User> GetUsersInfo();
+       // List<Review> GetAverage();
     }
 }

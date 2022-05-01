@@ -1,8 +1,9 @@
+DROP TABLE Restaurant
 CREATE TABLE Restaurant(
- RestID INT IDENTITY,
-    RestName NVARCHAR(100),
-    Address NVARCHAR(100),
-    Phone INT,
-    CONSTRAINT PK_Restaurant PRIMARY KEY CLUSTERED (RestId)
-
+ RestId INT IDENTITY,
+    Name NVARCHAR(100),
+    City NVARCHAR(100),
+    State CHAR(10),
+    CONSTRAINT PK_Restaurant PRIMARY KEY (RestId)
 )
+SELECT * FROM Restaurant

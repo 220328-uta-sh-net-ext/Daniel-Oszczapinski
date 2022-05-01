@@ -9,7 +9,7 @@ using System.IO;
 
 namespace RestaurantDL
 {
-    public class Repository : IRepository
+    public class Repository
     {
         private string filePath = "../RestaurantDL/Database/";
         private string jsonString;
@@ -77,7 +77,7 @@ namespace RestaurantDL
         {
             throw new NotImplementedException();
         }
-        public Review AddReview(int restaurantId, Review reviewToAdd)
+        public Review AddReview(Review reviewToAdd)
         {
             var reviews = GetReviewInfo();
             reviews.Add(reviewToAdd);
@@ -134,5 +134,7 @@ namespace RestaurantDL
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }
