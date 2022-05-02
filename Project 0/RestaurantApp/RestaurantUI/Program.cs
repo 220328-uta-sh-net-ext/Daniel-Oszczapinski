@@ -1,38 +1,17 @@
-﻿using RestaurantUI;
+﻿global using Serilog;
+using RestaurantUI;
 using RestaurantBL;
+
 bool repeat = true;
 IMenu menu = new MainMenu();
 OperationsBL BLInner = new OperationsBL();
 
-/*while (repeat)
-{
-    menu.Display();
-    string ans = menu.Login();
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console().MinimumLevel.Debug()
+    .WriteTo.File("C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantUI/Logging.txt").MinimumLevel.Debug().MinimumLevel.Information()// we want to save the ;ogs in this file
+    .CreateLogger();
 
-    switch (ans)
-    {
-        case "Login":
-            //call RestaurantLogin method
-            Console.WriteLine("RestaurantLogin() Method implementation is in progress....");
-            break;
-        case "Create":
-            //call RestaurantAdd method
-            Console.WriteLine("RestuarantAdd() Method implementaion is in progress....");
-            break;
-        case "MainMenu":
-            menu = new MainMenu();
-            break;
-        case "Exit":
-            repeat = false;
-            break;
-        default:
-            Console.WriteLine("View does not exist");
-            Console.WriteLine("Please press <enter> to continue");
-            Console.ReadLine();
-            break;
-    }
-  
-}*/
+
 while (repeat)
 {
     menu.Display();
@@ -40,34 +19,42 @@ while (repeat)
     switch (choice)
     {
         case "Display Review":
+            Log.Information("Display All Review Information");
             Console.WriteLine("--------------Retreiving all Review Information---------------");
             BLInner.GetAllReviews();
             break;
         case "Display User":
+            Log.Information("Display All User Information");
             Console.WriteLine("--------------Retreiving all User Information---------------");
             BLInner.GetUser();
             break;
         case "Create Review":
+            Log.Information("Creating a Review");
             //call RestaurantLogin method
             menu = new AddReview();
             break;
         case "Display Restaurant":
+            Log.Information("Display All Restaurant Information");
             //call RestaurantLogin method
             Console.WriteLine("--------------Retreiving all Restaurant Information---------------");
             BLInner.GetAllRestaurants();
             break;
-        case "Create Restaurant":
+        case "Creating Restaurant":
+            Log.Information("Creating Restaurant");
             //call RestaurantLogin method
             menu = new AddRestaurantMenu();
             break;
         case "Create User":
+            Log.Information("Creating User");
             //call RestaurantLogin method
             menu = new AddUser();
             break;
         case "MainMenu":
+            Log.Information("Going back to Main Menu");
             menu = new MainMenu();
             break;
         case "Exit":
+            Log.Information("Leaving Application");
             repeat = false;
             break;
         default:

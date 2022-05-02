@@ -15,7 +15,7 @@
     Types of Syntax for SQL:
     - SELECT
     - DISTINCT
-    - WHERE
+    - [WHERE] - locates which database/schema/table where a row is located
     - AND/OR
     - IN
     and more
@@ -47,3 +47,12 @@
             - Essentially, one column references Table A and one column references Table B
         - Ex: A pokemon can have many abilities and An ability can have many pokemon
             - Basically Tackle can exist to many pokemons and can share it and pokemon can have many abilities beyond just tackle
+
+4. What is SQL Injection?
+
+    - Using Parameters to take inputes from users
+
+5. What ADO.Net Data providrs can be used with sql Servee
+
+6. Which method is used in order to grab records from a database using SqlDataReader?
+    - Read()

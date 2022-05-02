@@ -106,7 +106,7 @@
 - [FROM] clause is usually required on the SELECT statement. The exception is when no table columns are listed, and the only items listed are literals or variables or arithmetic expressions.
 
 - [WHERE] - filters only the rows that are evaluated to true. If the condition evaluates to false or unknown, the rows will not be filtered causing an error.
-
+  - locates which database/schema/table where a row is located
 - [CTE] - Specifies a temporary named result set, known as a common table expression (CTE). This is derived from a simple query and defined within the execution scope of a single SELECT, INSERT, UPDATE, DELETE or MERGE statement. This clause can also be used in a CREATE VIEW statement as part of its defining SELECT statement. A common table expression can include references to itself. This is referred to as a recursive common table expression.
 
 ## DDL - Keywords(CREATE, ALTER, DROP, TRUNCATE, TABLE)
@@ -186,12 +186,13 @@ Return a status value to a calling program to indicate success or failure (and t
 - multiple statements can be encapsulated as one operation that
 - either entirely succeeds or takes no effect at all.
 - BEGIN TRANSACTION, COMMIT, ROLLBACK, SAVE TRANSACTION
-
+- TCL Manages changes by which type of statements
 - A [transaction] is a single unit of work. If a transaction is successful, all of the data modifications made during the transaction are committed and become a permanent part of the database. If a transaction encounters errors and must be canceled or rolled back, then all of the data modifications are erased.
+- TCL Manages changes made by the DML
 
 ## Transaction - ACID
 
-- [Atomicity] - means that a transaction either fully completes or not at all. It cannot be left in the middle in an inconsistent state 
+- [Atomicity] - means that a transaction either fully completes or not at all. It cannot be left in the middle in an inconsistent state
 
 - [Consistency] - ensures that a transaction will always bring the database from one consistent state to another.
 

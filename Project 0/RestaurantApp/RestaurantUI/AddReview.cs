@@ -30,24 +30,30 @@ namespace RestaurantUI
             switch (userInput)
             {
                 case "0":
+                    Log.Information("Return to Main Menu");
                     return "MainMenu";
                 case "1":
+                    Log.Information("Saving Information");
                     _repository.AddReview(NewReview);
-                    Console.WriteLine("----New Restaurant Added----");
+                    Console.WriteLine("----New Review Added----");
                     return "MainMenu";
                 case "2":
+                    Log.Information("Adding Note - " + NewReview.Note);
                     Console.Write("Please write a review: ");
                     NewReview.Note = Convert.ToString(Console.ReadLine());
                     return "Create Review";
                 case "3":
+                    Log.Information("Adding Rating - " + NewReview.Rating);
                     Console.Write("Please enter a rating: ");
                     NewReview.Rating = Convert.ToInt32(Console.ReadLine());
                     return "Create Review";
                 case "4":
-                   Console.Write("Please enter a user name: ");
+                    Log.Information("Adding Username - " + NewReview.UserName);
+                    Console.Write("Please enter a username: ");
                     NewReview.UserName = Convert.ToString(Console.ReadLine());
                     return "Create Review";
                 case "5":
+                    Log.Information("Adding Restaurant Name - " + NewReview.Name);
                     Console.Write("Please enter a restaurant name: ");
                     NewReview.Name = Convert.ToString(Console.ReadLine());
                     return "Create Review";

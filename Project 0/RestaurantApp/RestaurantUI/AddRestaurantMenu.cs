@@ -29,20 +29,25 @@ namespace RestaurantUI
             switch (userInput)
             {
                 case "0":
+                    Log.Information("Returning To Main Menu");
                     return "MainMenu";
                 case "1":
+                    Log.Information("Saving Information");
                     _repository.AddRestaurant(NewRestaurant);
                     Console.WriteLine("----New Restaurant Added----");
                     return "MainMenu";
                 case "2":
+                    Log.Information("Adding State - " + NewRestaurant.State);
                     Console.Write("Please enter a State: ");
                     NewRestaurant.State = Console.ReadLine();
                     return "Create Restaurant";
                 case "3":
+                    Log.Information("Addiing City - " + NewRestaurant.City);
                     Console.Write("Please enter a City: ");
                     NewRestaurant.City = Convert.ToString(Console.ReadLine());
                     return "Create Restaurant";
                 case "4":
+                    Log.Information("Adding Restaurant Name - " + NewRestaurant.Name);
                     Console.Write("Please enter a Restaurant Name: ");
                     NewRestaurant.Name = Console.ReadLine();
                     return "Create Restaurant";
