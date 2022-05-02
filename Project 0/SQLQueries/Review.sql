@@ -21,7 +21,7 @@ UNION ALL
 SELECT Name,Username,  AVG(Rating) as Average From Review GROUP BY Name, UserName
 
 SELECT * FROM (SELECT * FROM Review) AS t1 
-INNER JOIN (SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 ON t1.Name = t2.Name ORDER BY ReviewId DESC
+INNER JOIN (SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 ON t1.Name = t2.Name ORDER BY ReviewId ASC
 
 --SELECT  DISTINCT on (Name) * FROM Review ORDER BY Name
 
@@ -37,4 +37,7 @@ ORDER BY Nume
 
 SELECT Name, UserName, Note, Rating, AVG(Rating) AS Average FROM Review GROUP BY Name, UserName, Note, Rating
 
-INSERT INTO 
+-- This is the query that Groups all rows and returns Average
+SELECT * FROM (SELECT * FROM Review) AS t1 
+INNER JOIN (SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 
+ON t1.Name = t2.Name ORDER BY ReviewId ASC
