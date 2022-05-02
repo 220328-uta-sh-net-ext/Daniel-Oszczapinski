@@ -35,7 +35,7 @@ namespace RestaurantDL
         Review AddReview(Review reviewToAdd);
        
         List<Review> GetReviewInfo();
-        List<Restaurant> SearchRestaurants(string searchTerm);
+        List<Review> SearchRestaurants(string searchTerm);
         bool IsDuplicate(Restaurant restaurant);
 
        User AddUser(User user);

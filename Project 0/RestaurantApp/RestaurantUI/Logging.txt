@@ -1,4 +1,35 @@
-﻿{
+﻿
 
-}2022-05-02 14:31:03.508 -05:00 [INF] Display All Review Information
+2022-05-02 14:31:03.508 -05:00 [INF] Display All Review Information
 2022-05-02 14:31:08.957 -05:00 [INF] Leaving Application
+2022-05-02 16:44:00.784 -05:00 [INF] Display All Review Information
+2022-05-02 16:45:13.143 -05:00 [INF] Display All Review Information
+2022-05-02 16:56:48.396 -05:00 [INF] Display All Review Information
+2022-05-02 16:56:54.428 -05:00 [INF] Display All Review Information
+2022-05-02 16:57:12.754 -05:00 [INF] Display All Review Information
+2022-05-02 16:59:52.570 -05:00 [INF] Display All Review Information
+2022-05-02 16:59:56.612 -05:00 [INF] Display All Review Information
+2022-05-02 17:00:04.359 -05:00 [INF] Display All Review Information
+2022-05-02 17:00:08.976 -05:00 [INF] Display All Review Information
+2022-05-02 17:00:12.669 -05:00 [INF] Display All Review Information
+2022-05-02 17:00:16.018 -05:00 [INF] Display All Review Information
+2022-05-02 17:00:18.738 -05:00 [INF] Display All Review Information
+2022-05-02 17:00:30.057 -05:00 [INF] Display All Review Information
+2022-05-02 17:07:26.536 -05:00 [INF] Display All Review Information
+2022-05-02 17:07:31.079 -05:00 [INF] Display All Review Information
+2022-05-02 17:07:41.761 -05:00 [INF] Display All Review Information
+2022-05-02 17:08:36.453 -05:00 [INF] Display All Review Information
+2022-05-02 17:08:41.594 -05:00 [INF] Going back to Main Menu
+2022-05-02 17:08:48.436 -05:00 [INF] Leaving Application
+2022-05-02 17:09:55.973 -05:00 [INF] Display All Review Information
+2022-05-02 17:10:01.354 -05:00 [INF] Display All Review Information
+2022-05-02 17:10:13.479 -05:00 [INF] Going back to Main Menu
+2022-05-02 17:17:11.290 -05:00 [INF] Display All Review Information
+2022-05-02 17:17:56.043 -05:00 [INF] Going back to Main Menu
+2022-05-02 17:24:37.534 -05:00 [INF] Display All Review Information
+2022-05-02 17:24:48.245 -05:00 [INF] Going back to Main Menu
+2022-05-02 17:24:51.905 -05:00 [INF] Leaving Application
+2022-05-02 17:31:32.226 -05:00 [INF] Display All Review Information
+2022-05-02 17:31:37.976 -05:00 [INF] Going back to Main Menu
+2022-05-02 17:31:40.768 -05:00 [INF] Display All Review Information
+2022-05-02 17:31:47.810 -05:00 [INF] Going back to Main Menu

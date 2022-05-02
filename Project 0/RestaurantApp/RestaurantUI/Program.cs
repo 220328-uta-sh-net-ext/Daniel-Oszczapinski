@@ -7,7 +7,7 @@ IMenu menu = new MainMenu();
 OperationsBL BLInner = new OperationsBL();
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console().MinimumLevel.Debug()
+    .MinimumLevel.Debug()
     .WriteTo.File("C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantUI/Logging.txt").MinimumLevel.Debug().MinimumLevel.Information()// we want to save the ;ogs in this file
     .CreateLogger();
 
@@ -18,6 +18,11 @@ while (repeat)
     string choice = menu.UserChoice();
     switch (choice)
     {
+        case "Filtered Search":
+            Log.Information("Display All Review Information");
+            Console.WriteLine("--------------Retreiving Information By Filter---------------");
+            menu = new FilteredMenu();
+            break;
         case "Display Review":
             Log.Information("Display All Review Information");
             Console.WriteLine("--------------Retreiving all Review Information---------------");

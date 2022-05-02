@@ -10,18 +10,28 @@ namespace RestaurantBL
 {
     public class OperationsBL : IBL
     {
-        
+        /// <summary>
+        /// 
+        /// </summary>
         static IRepository repository = new SqlRepository();
         public void AddRestaurant(Restaurant restaurantToAdd)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="reviewToAdd"></param>
+        /// <exception cref="NotImplementedException"></exception>
         public void AddReview(Review reviewToAdd)
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <exception cref="NotImplementedException"></exception>
         public void AddUser(Restaurant user)
         {
             throw new NotImplementedException();
@@ -37,7 +47,10 @@ namespace RestaurantBL
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Restaurant> GetAllRestaurants()
         {
             
@@ -50,7 +63,10 @@ namespace RestaurantBL
                 return restaurants;
             
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Review> GetAllReviews()
         {
             List<Review> reviews = repository.GetReviewInfo();
@@ -67,12 +83,19 @@ namespace RestaurantBL
             return reviews;
            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public List<Review> GetAverage()
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<User> GetUser()
         {
             var users = repository.GetUsersInfo();
@@ -84,10 +107,19 @@ namespace RestaurantBL
             return users;
             
         }
-
-        public List<Restaurant> SearchRestaurant(string searchString)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="searchString"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        /*public List<Review> SearchRestaurant(string searchTerm)
         {
-            throw new NotImplementedException();
-        }
+            var restaurants = repository.GetReviewInfo();
+            var filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(searchTerm)).ToList();
+
+            return filteredRestaurants;
+
+        }*/
     }
 }

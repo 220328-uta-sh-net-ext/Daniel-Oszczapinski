@@ -14,6 +14,7 @@ namespace RestaurantUI
         {
             Console.WriteLine("Welcome to this Restuarant Application.");
             Console.WriteLine("Please choose an option.");
+            Console.WriteLine("Press <7> Display Review");
             Console.WriteLine("Press <6> Display Review");
             Console.WriteLine("Press <5> Display User");
             Console.WriteLine("Press <4> Create Restaurant");
@@ -61,6 +62,8 @@ namespace RestaurantUI
                     return "Display User";
                 case "6":
                     return "Display Review";
+                case "7":
+                    return "Filtered Search";
                 default:
                     Console.WriteLine("View does not exist");
                     Console.WriteLine("Please press <enter> to continue");

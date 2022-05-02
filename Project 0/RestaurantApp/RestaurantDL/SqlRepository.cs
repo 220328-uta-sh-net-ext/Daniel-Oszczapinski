@@ -14,7 +14,9 @@ namespace RestaurantDL
         private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantDL/connection-string.txt";
         private readonly string connectionString;
       
-
+        /// <summary>
+        /// 
+        /// </summary>
         public SqlRepository()
         {
             connectionString = File.ReadAllText(connectionStringFilePath);
@@ -32,7 +34,11 @@ namespace RestaurantDL
 
             return rest;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="reviewToAdd"></param>
+        /// <returns></returns>
         public Review AddReview(Review reviewToAdd)
         {
             string commandString = "INSERT INTO Review (Name, UserName, Rating, Note) " +
@@ -49,7 +55,11 @@ namespace RestaurantDL
 
             return reviewToAdd;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public User AddUser(User user)
         {
             string commandString = "INSERT INTO NewUser (Name, Email, Password) VALUES (@name, @email, @password);";
@@ -64,10 +74,13 @@ namespace RestaurantDL
             return user;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Restaurant> GetRestaurantInfo()
         {
-            string commandString = "SELECT * FROM Restaurant";
+            string commandString = $"SELECT * FROM Restaurant";
 
            
             using SqlConnection connection = new(connectionString);
@@ -88,7 +101,10 @@ namespace RestaurantDL
             }
             return restaurants;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Review> GetAverage()
         {
             string commandString =  "SELECT AVG(Rating) as Average From Review GROUP BY Name";
@@ -110,7 +126,10 @@ namespace RestaurantDL
             }
             return average;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<Review> GetReviewInfo()
         {
             string commandString = "SELECT* FROM(SELECT* FROM Review) AS t1 INNER JOIN(SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 ON t1.Name = t2.Name ORDER BY ReviewId ASC";
@@ -136,7 +155,10 @@ namespace RestaurantDL
             }
             return reviews;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<User> GetUsersInfo()
         {
             string commandString = "SELECT * FROM newUser";
@@ -160,36 +182,47 @@ namespace RestaurantDL
             }
             return users;
         }
-        /*public List<Review> GetAverage()
-        {
-
-            string commandString = "SELECT Name, AVG(RATING) FROM Review GROUP BY Name";
-
-
-            using SqlConnection connection = new(connectionString);
-            using SqlCommand cmd = new SqlCommand(commandString, connection);
-            connection.Open();
-            using SqlDataReader reader = cmd.ExecuteReader();
-
-            var reviews = new List<Review>();
-
-            while (reader.Read())
-            {
-                reviews.Add(new Review
-                {
-                    Rating = reader.GetInt32(4)
-                });
-            }
-            return reviews;
-        }*/
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="restaurant"></param>
+       /// <returns></returns>
+       /// <exception cref="NotImplementedException"></exception>
         public bool IsDuplicate(Restaurant restaurant)
         {
             throw new NotImplementedException();
         }
-
-        public List<Restaurant> SearchRestaurants(string searchTerm)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="searchTerm"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public List<Review> SearchRestaurants(string searchTerm)
         {
-            throw new NotImplementedException();
+            return GetReviewInfo();
         }
+        /*public List<Review> GetAverage()
+       {
+
+           string commandString = "SELECT Name, AVG(RATING) FROM Review GROUP BY Name";
+
+
+           using SqlConnection connection = new(connectionString);
+           using SqlCommand cmd = new SqlCommand(commandString, connection);
+           connection.Open();
+           using SqlDataReader reader = cmd.ExecuteReader();
+
+           var reviews = new List<Review>();
+
+           while (reader.Read())
+           {
+               reviews.Add(new Review
+               {
+                   Rating = reader.GetInt32(4)
+               });
+           }
+           return reviews;
+       }*/
     }
 }
