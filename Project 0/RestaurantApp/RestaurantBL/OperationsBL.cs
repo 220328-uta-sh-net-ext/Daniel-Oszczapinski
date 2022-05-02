@@ -10,6 +10,7 @@ namespace RestaurantBL
 {
     public class OperationsBL : IBL
     {
+        
         static IRepository repository = new SqlRepository();
         public void AddRestaurant(Restaurant restaurantToAdd)
         {
@@ -52,13 +53,24 @@ namespace RestaurantBL
 
         public List<Review> GetAllReviews()
         {
-            var reviews = repository.GetReviewInfo();
+            List<Review> reviews = repository.GetReviewInfo();
+            List<Review> average = repository.GetAverage();
+           
+            //var ReviewsAndAverage = reviews.Zip(average);
             foreach (var view in reviews)
             {
                 Console.WriteLine(view.ToString());
                 Console.WriteLine("*******************");
+               
+            
             }
             return reviews;
+           
+        }
+
+        public List<Review> GetAverage()
+        {
+            throw new NotImplementedException();
         }
 
         public List<User> GetUser()

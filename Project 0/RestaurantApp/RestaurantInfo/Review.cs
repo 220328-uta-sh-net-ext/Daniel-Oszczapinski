@@ -17,7 +17,7 @@ namespace RestaurantInfo
             this.Rating = rating;
         }
 
-        public Review(int rating, string note, string name, string username, int average)
+        public Review(Double rating, string note, string name, string username, Double average)
         {
             this.Rating = rating;
             this.Note = note;
@@ -27,9 +27,9 @@ namespace RestaurantInfo
         }
 
 
-        public int Average { get; set; }
-        private int _rating;
-        public int Rating
+        public Double Average { get; set; }
+        private Double _rating;
+        public Double Rating
         {
             get => _rating;
             //For the setter, we are checking that the rating is between 1 and 5

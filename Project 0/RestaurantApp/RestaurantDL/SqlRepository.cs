@@ -64,7 +64,6 @@ namespace RestaurantDL
             return user;
         }
 
-       
 
         public List<Restaurant> GetRestaurantInfo()
         {
@@ -90,9 +89,31 @@ namespace RestaurantDL
             return restaurants;
         }
 
+        public List<Review> GetAverage()
+        {
+            string commandString =  "SELECT AVG(Rating) as Average From Review GROUP BY Name";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand cmd = new SqlCommand(commandString, connection);
+            connection.Open();
+            using SqlDataReader reader = cmd.ExecuteReader();
+
+            var average = new List<Review>();
+
+            while (reader.Read())
+            {
+                average.Add(new Review
+                {
+                    Average = reader.GetDouble(0),
+                  
+
+                });
+            }
+            return average;
+        }
+
         public List<Review> GetReviewInfo()
         {
-            string commandString = "SELECT * ,(SELECT AVG(RATING) FROM Review GROUP BY Name) FROM Review";
+            string commandString = "SELECT* FROM(SELECT* FROM Review) AS t1 INNER JOIN(SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 ON t1.Name = t2.Name ORDER BY ReviewId ASC";
            
 
             using SqlConnection connection = new(connectionString);
@@ -109,8 +130,8 @@ namespace RestaurantDL
                     Name = reader.GetString(1),
                     UserName = reader.GetString(2),
                     Note = reader.GetString(3),
-                    Rating = reader.GetInt32(4),
-                    Average = reader.GetInt32(5)
+                    Rating = reader.GetDouble(4),
+                    Average = reader.GetDouble(6),
                 });
             }
             return reviews;

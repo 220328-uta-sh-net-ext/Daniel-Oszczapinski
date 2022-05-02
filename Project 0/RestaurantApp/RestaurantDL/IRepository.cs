@@ -40,6 +40,6 @@ namespace RestaurantDL
 
        User AddUser(User user);
        List<User> GetUsersInfo();
-       // List<Review> GetAverage();
+       List<Review> GetAverage();
     }
 }
