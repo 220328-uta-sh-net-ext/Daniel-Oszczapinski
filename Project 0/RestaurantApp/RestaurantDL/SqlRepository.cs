@@ -23,12 +23,14 @@ namespace RestaurantDL
         }
         public Restaurant AddRestaurant(Restaurant rest)
         {
-            string commandString = "INSERT INTO Restaurant (Name, City, State) VALUES (@name, @city, @state);";
+            string commandString = "INSERT INTO Restaurant (Name, City, State, Address, ZipCode) VALUES (@name, @city, @state, @address, @zipcode);";
             using SqlConnection connection = new(connectionString);
             using SqlCommand cmd = new (commandString, connection);
             cmd.Parameters.AddWithValue("@name", rest.Name);
             cmd.Parameters.AddWithValue("@city", rest.City);
             cmd.Parameters.AddWithValue("@state", rest.State);
+            cmd.Parameters.AddWithValue("@address", rest.Address);
+            cmd.Parameters.AddWithValue("@zipcode", rest.ZipCode);
             connection.Open();
             cmd.ExecuteNonQuery();  
 
@@ -96,7 +98,9 @@ namespace RestaurantDL
                 {
                     Name = reader.GetString(1),
                     City = reader.GetString(2),
-                    State= reader.GetString(3)
+                    Address = reader.GetString(3),
+                    ZipCode = reader.GetString(4),
+                    State = reader.GetString(5)
                 });
             }
             return restaurants;

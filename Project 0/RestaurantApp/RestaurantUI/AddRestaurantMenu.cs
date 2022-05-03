@@ -16,10 +16,11 @@ namespace RestaurantUI
         public void Display()
         {
                Console.WriteLine("Enter Restaurant Information");
-            
-            Console.WriteLine("<4> Name - " + NewRestaurant.Name);
-            Console.WriteLine("<3> City - " + NewRestaurant.City);
-            Console.WriteLine("<2> State - " + NewRestaurant.State);
+            Console.WriteLine("<6> Name - " + NewRestaurant.Name);
+            Console.WriteLine("<5> State - " + NewRestaurant.State);
+            Console.WriteLine("<4> City - " + NewRestaurant.City);
+            Console.WriteLine("<3> Address - " + NewRestaurant.Address);
+            Console.WriteLine("<2> Zipcode - " + NewRestaurant.ZipCode);
             Console.WriteLine("<1> Save");
             Console.WriteLine("<0> Go Back");
         }
@@ -37,16 +38,26 @@ namespace RestaurantUI
                     Console.WriteLine("----New Restaurant Added----");
                     return "MainMenu";
                 case "2":
-                    Log.Information("Adding State - " + NewRestaurant.State);
-                    Console.Write("Please enter a State: ");
-                    NewRestaurant.State = Console.ReadLine();
+                    Log.Information("Adding Zipcode - " + NewRestaurant.ZipCode);
+                    Console.Write("Please enter a Zipcode: ");
+                    NewRestaurant.ZipCode = Console.ReadLine();
                     return "Create Restaurant";
                 case "3":
-                    Log.Information("Addiing City - " + NewRestaurant.City);
-                    Console.Write("Please enter a City: ");
-                    NewRestaurant.City = Convert.ToString(Console.ReadLine());
+                    Log.Information("Adding Address - " + NewRestaurant.Address);
+                    Console.Write("Please enter a Address: ");
+                    NewRestaurant.Address = Console.ReadLine();
                     return "Create Restaurant";
                 case "4":
+                    Log.Information("Adding City - " + NewRestaurant.City);
+                    Console.Write("Please enter a City: ");
+                    NewRestaurant.City = Console.ReadLine();
+                    return "Create Restaurant";
+                case "5":
+                    Log.Information("Addiing State - " + NewRestaurant.State);
+                    Console.Write("Please enter a State: ");
+                    NewRestaurant.State = Convert.ToString(Console.ReadLine());
+                    return "Create Restaurant";
+                case "6":
                     Log.Information("Adding Restaurant Name - " + NewRestaurant.Name);
                     Console.Write("Please enter a Restaurant Name: ");
                     NewRestaurant.Name = Console.ReadLine();

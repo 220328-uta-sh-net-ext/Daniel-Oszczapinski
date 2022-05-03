@@ -107,19 +107,6 @@ namespace RestaurantBL
             return users;
             
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="searchString"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        /*public List<Review> SearchRestaurant(string searchTerm)
-        {
-            var restaurants = repository.GetReviewInfo();
-            var filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(searchTerm)).ToList();
-
-            return filteredRestaurants;
-
-        }*/
+       
     }
 }

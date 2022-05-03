@@ -17,16 +17,17 @@ namespace RestaurantInfo
             this.Rating = rating;
         }
 
-        public Review(Double rating, string note, string name, string username, Double average)
+        public Review(Double rating, string note,  string name, string username, Double average)
         {
             this.Rating = rating;
             this.Note = note;
             this.Name = name;
             this.UserName = username;
             this.Average = average;
+            
         }
 
-
+       
         public Double Average { get; set; }
         private Double _rating;
         public Double Rating
@@ -45,12 +46,14 @@ namespace RestaurantInfo
         public string Note { get; set; }
         public string Name { get; set; }
         public string UserName { get; set; }
+
         //override Review's ToString Method for me here
         //That outputs $"Rating: {review.Rating} \t Note: {review.Note}"
 
         public override string ToString()
         {
-            return $"Restaurant name: {this.Name}\nUser: {this.UserName}\nRating: {this.Rating}\nAverage Rating: {this.Average} \t Note: {this.Note}";
+            return $"Restaurant name: {this.Name}\tUser: {this.UserName}\nRating: {this.Rating}" +
+                $"\tAverage Rating: {this.Average} \t Note: {this.Note}";
         }
 
 

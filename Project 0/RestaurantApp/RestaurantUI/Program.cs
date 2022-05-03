@@ -44,7 +44,7 @@ while (repeat)
             Console.WriteLine("--------------Retreiving all Restaurant Information---------------");
             BLInner.GetAllRestaurants();
             break;
-        case "Creating Restaurant":
+        case "Create Restaurant":
             Log.Information("Creating Restaurant");
             //call RestaurantLogin method
             menu = new AddRestaurantMenu();

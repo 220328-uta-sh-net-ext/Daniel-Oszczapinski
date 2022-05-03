@@ -32,7 +32,7 @@ namespace RestaurantInfo
             this.State = row["State"].ToString() ?? "";
         }
 
-        
+       
 
         private string _name;
         public string Name
@@ -62,29 +62,16 @@ namespace RestaurantInfo
         }
 
 
-        // //our own custom getter and setter for the private backing field
-        // public string GetName() {
-        //     return this._name;
-        // }
-        // public void SetName(string name)
-        // {
-        //     //input validation
-        //     if(name == "")
-        //     {
-        //         Console.WriteLine("Name Cannot Be Empty");
-        //     }
-        //     this._name = name;
-        // }
-
-        // private string _city;
-
+        public string Address { get; set; }
+        public string ZipCode { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public List<Review> Reviews { get; set; }
 
         public override string ToString()
         {
-            return $"Name: {this.Name} \nCity: {this.City} \nState: {this.State}";
+            return $"Name: {this.Name}\nAddress: {this.Address}\t\tZipcode: {this.ZipCode}" +
+                $" \nCity: {this.City} \t\tState: {this.State}";
         }
 
         /// <summary>
@@ -103,20 +90,6 @@ namespace RestaurantInfo
 
 
 
-        /*public string Name { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-      
-
-        public Restaurant()
-        {
-            Name = "Restaurant Name";
-            Address = "Restaurant Address";
-            Phone = "9994448888";
-        }
-        public override string ToString()
-        {
-            return $"Restaurant Name: {Name}\nAddress: {Address}\nPhone Number: {Phone}\n";
-        }*/
+        
     }
 }

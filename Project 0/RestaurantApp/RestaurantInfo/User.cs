@@ -27,7 +27,7 @@ namespace RestaurantInfo
         }
         public override string ToString()
         {
-            return $"UserName: {this.Name}\nAddress: {this.Email}\nPhone Number: {this.Password}";
+            return $"UserName: {this.Name}\nEmail: {this.Email}\nPassword: {this.Password}";
         }
 
     }
