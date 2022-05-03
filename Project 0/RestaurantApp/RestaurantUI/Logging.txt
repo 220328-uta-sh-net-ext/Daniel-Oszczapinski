@@ -220,3 +220,114 @@
 2022-05-02 21:36:43.056 -05:00 [INF] Display All Restaurant Information
 2022-05-02 21:36:46.569 -05:00 [INF] Display All User Information
 2022-05-02 21:36:56.866 -05:00 [INF] Leaving Application
+2022-05-03 09:22:40.628 -05:00 [INF] Creating Restaurant
+2022-05-03 09:22:42.259 -05:00 [INF] Adding Restaurant Name - 
+2022-05-03 09:22:51.335 -05:00 [INF] Creating Restaurant
+2022-05-03 09:22:52.834 -05:00 [INF] Addiing State - 
+2022-05-03 09:22:58.521 -05:00 [INF] Creating Restaurant
+2022-05-03 09:23:00.344 -05:00 [INF] Adding City - 
+2022-05-03 09:23:10.358 -05:00 [INF] Creating Restaurant
+2022-05-03 09:23:12.364 -05:00 [INF] Adding Address - 
+2022-05-03 09:23:20.900 -05:00 [INF] Creating Restaurant
+2022-05-03 09:23:22.795 -05:00 [INF] Adding Zipcode - 
+2022-05-03 09:23:25.701 -05:00 [INF] Creating Restaurant
+2022-05-03 09:23:27.837 -05:00 [INF] Saving Information
+2022-05-03 09:23:28.581 -05:00 [INF] Going back to Main Menu
+2022-05-03 09:23:30.579 -05:00 [INF] Creating User
+2022-05-03 09:23:32.381 -05:00 [INF] Adding Name - 
+2022-05-03 09:23:36.520 -05:00 [INF] Creating User
+2022-05-03 09:23:38.350 -05:00 [INF] Adding Email - 
+2022-05-03 09:23:45.498 -05:00 [INF] Creating User
+2022-05-03 09:23:47.232 -05:00 [INF] Adding Password - 
+2022-05-03 09:23:54.726 -05:00 [INF] Creating User
+2022-05-03 09:23:56.559 -05:00 [INF] Save all Informaiton
+2022-05-03 09:23:56.605 -05:00 [INF] Going back to Main Menu
+2022-05-03 09:23:58.517 -05:00 [INF] Creating a Review
+2022-05-03 09:24:00.368 -05:00 [INF] Adding Restaurant Name - 
+2022-05-03 09:24:07.721 -05:00 [INF] Creating a Review
+2022-05-03 09:24:09.161 -05:00 [INF] Adding Username - 
+2022-05-03 09:24:12.306 -05:00 [INF] Creating a Review
+2022-05-03 09:24:13.472 -05:00 [INF] Adding Rating - 0
+2022-05-03 09:24:15.953 -05:00 [INF] Creating a Review
+2022-05-03 09:24:18.154 -05:00 [INF] Adding Note - 
+2022-05-03 09:24:27.290 -05:00 [INF] Creating a Review
+2022-05-03 09:24:29.238 -05:00 [INF] Saving Information
+2022-05-03 09:24:29.285 -05:00 [INF] Going back to Main Menu
+2022-05-03 09:24:32.262 -05:00 [INF] Display All Review Information
+2022-05-03 09:24:46.073 -05:00 [INF] Going back to Main Menu
+2022-05-03 09:24:51.549 -05:00 [INF] Display All Restaurant Information
+2022-05-03 09:24:56.276 -05:00 [INF] Display All User Information
+2022-05-03 09:25:04.319 -05:00 [INF] Display All Review Information
+2022-05-03 09:25:21.738 -05:00 [INF] Leaving Application
+2022-05-03 09:25:47.989 -05:00 [INF] Display All Review Information
+2022-05-03 09:25:53.949 -05:00 [INF] Leaving Application
+2022-05-03 10:48:02.917 -05:00 [INF] Display All Review Information
+2022-05-03 11:02:54.433 -05:00 [INF] Display All Review Information
+2022-05-03 11:03:11.121 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:03:13.129 -05:00 [INF] Creating Restaurant
+2022-05-03 11:03:16.884 -05:00 [INF] Adding Restaurant Name - 
+2022-05-03 11:03:20.818 -05:00 [INF] Creating Restaurant
+2022-05-03 11:03:23.001 -05:00 [INF] Addiing State - 
+2022-05-03 11:03:28.028 -05:00 [INF] Creating Restaurant
+2022-05-03 11:03:29.598 -05:00 [INF] Adding City - 
+2022-05-03 11:03:33.594 -05:00 [INF] Creating Restaurant
+2022-05-03 11:03:35.563 -05:00 [INF] Adding Address - 
+2022-05-03 11:03:37.398 -05:00 [INF] Creating Restaurant
+2022-05-03 11:03:39.498 -05:00 [INF] Adding Zipcode - 
+2022-05-03 11:03:41.418 -05:00 [INF] Creating Restaurant
+2022-05-03 11:03:42.958 -05:00 [INF] Saving Information
+2022-05-03 11:03:43.028 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:03:45.333 -05:00 [INF] Display All Review Information
+2022-05-03 11:03:49.622 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:03:53.471 -05:00 [INF] Display All Review Information
+2022-05-03 11:04:03.903 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:04:07.949 -05:00 [INF] Display All Review Information
+2022-05-03 11:04:19.643 -05:00 [INF] Leaving Application
+2022-05-03 11:56:05.895 -05:00 [INF] Creating Restaurant
+2022-05-03 11:56:09.522 -05:00 [INF] Adding Restaurant Name - 
+2022-05-03 11:56:12.980 -05:00 [INF] Creating Restaurant
+2022-05-03 11:56:14.776 -05:00 [INF] Addiing State - 
+2022-05-03 11:56:16.618 -05:00 [INF] Creating Restaurant
+2022-05-03 11:56:17.734 -05:00 [INF] Adding City - 
+2022-05-03 11:56:20.314 -05:00 [INF] Creating Restaurant
+2022-05-03 11:56:21.844 -05:00 [INF] Adding Address - 
+2022-05-03 11:56:28.029 -05:00 [INF] Creating Restaurant
+2022-05-03 11:56:30.047 -05:00 [INF] Adding Zipcode - 
+2022-05-03 11:56:32.426 -05:00 [INF] Creating Restaurant
+2022-05-03 11:56:36.648 -05:00 [INF] Saving Information
+2022-05-03 11:56:37.398 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:56:53.453 -05:00 [INF] Display All Review Information
+2022-05-03 11:57:11.200 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:57:13.511 -05:00 [INF] Display All Review Information
+2022-05-03 11:57:25.322 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:57:28.135 -05:00 [INF] Display All Restaurant Information
+2022-05-03 11:57:34.484 -05:00 [INF] Display All User Information
+2022-05-03 11:57:45.108 -05:00 [INF] Display All Review Information
+2022-05-03 11:58:01.062 -05:00 [INF] Leaving Application
+2022-05-03 11:59:13.114 -05:00 [INF] Creating User
+2022-05-03 11:59:15.194 -05:00 [INF] Adding Name - 
+2022-05-03 11:59:18.834 -05:00 [INF] Creating User
+2022-05-03 11:59:19.723 -05:00 [INF] Adding Email - 
+2022-05-03 11:59:24.448 -05:00 [INF] Creating User
+2022-05-03 11:59:26.339 -05:00 [INF] Adding Password - 
+2022-05-03 11:59:30.217 -05:00 [INF] Creating User
+2022-05-03 11:59:30.852 -05:00 [INF] Adding Name - Daniel
+2022-05-03 11:59:32.470 -05:00 [INF] Creating User
+2022-05-03 11:59:36.139 -05:00 [INF] Save all Informaiton
+2022-05-03 11:59:36.757 -05:00 [INF] Going back to Main Menu
+2022-05-03 11:59:39.111 -05:00 [INF] Display All User Information
+2022-05-03 11:59:53.046 -05:00 [INF] Creating a Review
+2022-05-03 11:59:55.491 -05:00 [INF] Adding Restaurant Name - 
+2022-05-03 12:00:02.119 -05:00 [INF] Creating a Review
+2022-05-03 12:00:03.709 -05:00 [INF] Adding Username - 
+2022-05-03 12:00:06.091 -05:00 [INF] Creating a Review
+2022-05-03 12:00:07.693 -05:00 [INF] Adding Rating - 0
+2022-05-03 12:00:11.478 -05:00 [INF] Creating a Review
+2022-05-03 12:00:15.065 -05:00 [INF] Adding Note - 
+2022-05-03 12:00:21.828 -05:00 [INF] Creating a Review
+2022-05-03 12:00:23.743 -05:00 [INF] Saving Information
+2022-05-03 12:00:23.808 -05:00 [INF] Going back to Main Menu
+2022-05-03 12:00:26.581 -05:00 [INF] Display All Review Information
+2022-05-03 12:00:41.636 -05:00 [INF] Leaving Application
+2022-05-03 12:01:40.303 -05:00 [INF] Display All Restaurant Information
+2022-05-03 12:01:49.759 -05:00 [INF] Display All Review Information
