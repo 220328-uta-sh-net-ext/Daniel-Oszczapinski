@@ -20,17 +20,7 @@ namespace RestaurantDL
         /// </summary>
         /// <returns></returns>
         List<Restaurant> GetRestaurantInfo();
-        /// <summary>
-        /// Adds rating to restuarant
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        //Restaurant AddRestaurantResult(Restaurant result);
-        /// <summary>
-        /// The method rating average results
-        /// </summary>
-        /// <returns></returns>
-        //List<Restaurant> GetRestaurantResult();
+        
 
         Review AddReview(Review reviewToAdd);
        

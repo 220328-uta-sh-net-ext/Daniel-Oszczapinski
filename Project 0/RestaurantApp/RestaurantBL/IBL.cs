@@ -12,13 +12,8 @@ namespace RestaurantBL
         //List<Review> SearchRestaurant(string searchTerm);
         List<Restaurant> GetAllRestaurants();
         List<Review> GetAllReviews();
-        List<Review> GetAverage();
+      
         List<User> GetUser();
-        void AddUser(Restaurant user);
-        void AddRestaurant(Restaurant restaurantToAdd);
-        void AddReview(Review review);
-        
-
-        void AverageRating(int Rating, int Sum);
+      
     }
 }

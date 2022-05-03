@@ -5,13 +5,17 @@ using RestaurantBL;
 bool repeat = true;
 IMenu menu = new MainMenu();
 OperationsBL BLInner = new OperationsBL();
-
+/// <summary>
+/// Log the Users activity 
+/// </summary>
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
     .WriteTo.File("C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantUI/Logging.txt").MinimumLevel.Debug().MinimumLevel.Information()// we want to save the ;ogs in this file
     .CreateLogger();
 
-
+/// <summary>
+/// Switch case that give the option for the user
+/// </summary>
 while (repeat)
 {
     menu.Display();

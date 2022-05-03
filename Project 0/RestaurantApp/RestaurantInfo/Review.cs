@@ -56,17 +56,5 @@ namespace RestaurantInfo
                 $"\tAverage Rating: {this.Average} \t Note: {this.Note}";
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

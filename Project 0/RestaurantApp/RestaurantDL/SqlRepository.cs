@@ -10,17 +10,24 @@ namespace RestaurantDL
 {
     public class SqlRepository : IRepository
     {
-        
+        /// <summary>
+        /// Creats a path for the sql database using a text file with the connection string.
+        /// </summary>
         private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantDL/connection-string.txt";
         private readonly string connectionString;
       
         /// <summary>
-        /// 
+        /// Uses Sql connection to read the datbase and place it into a object.
         /// </summary>
         public SqlRepository()
         {
             connectionString = File.ReadAllText(connectionStringFilePath);
         }
+        /// <summary>
+        /// Adds Restaurant Info into the database
+        /// </summary>
+        /// <param name="rest"></param>
+        /// <returns>rest</returns>
         public Restaurant AddRestaurant(Restaurant rest)
         {
             string commandString = "INSERT INTO Restaurant (Name, City, State, Address, ZipCode) VALUES (@name, @city, @state, @address, @zipcode);";
@@ -37,10 +44,10 @@ namespace RestaurantDL
             return rest;
         }
         /// <summary>
-        /// 
+        /// Adding review details to the database
         /// </summary>
         /// <param name="reviewToAdd"></param>
-        /// <returns></returns>
+        /// <returns>reviewToAdd</returns>
         public Review AddReview(Review reviewToAdd)
         {
             string commandString = "INSERT INTO Review (Name, UserName, Rating, Note) " +
@@ -58,10 +65,10 @@ namespace RestaurantDL
             return reviewToAdd;
         }
         /// <summary>
-        /// 
+        /// Adding user details into the database
         /// </summary>
         /// <param name="user"></param>
-        /// <returns></returns>
+        /// <returns>user</returns>
         public User AddUser(User user)
         {
             string commandString = "INSERT INTO NewUser (Name, Email, Password) VALUES (@name, @email, @password);";
@@ -77,9 +84,9 @@ namespace RestaurantDL
         }
 
         /// <summary>
-        /// 
+        /// Gets the Restaurant from the database to be called
         /// </summary>
-        /// <returns></returns>
+        /// <returns>an list of restaurant information</returns>
         public List<Restaurant> GetRestaurantInfo()
         {
             string commandString = $"SELECT * FROM Restaurant";
@@ -106,9 +113,9 @@ namespace RestaurantDL
             return restaurants;
         }
         /// <summary>
-        /// 
+        /// Use the Database to get the average from a table grouped by restaurant name
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The average of each restaurant </returns>
         public List<Review> GetAverage()
         {
             string commandString =  "SELECT AVG(Rating) as Average From Review GROUP BY Name";
@@ -131,7 +138,7 @@ namespace RestaurantDL
             return average;
         }
         /// <summary>
-        /// 
+        /// Gets the review information and the average from database 
         /// </summary>
         /// <returns></returns>
         public List<Review> GetReviewInfo()
@@ -160,7 +167,7 @@ namespace RestaurantDL
             return reviews;
         }
         /// <summary>
-        /// 
+        /// Gets the User Information from database
         /// </summary>
         /// <returns></returns>
         public List<User> GetUsersInfo()
@@ -186,18 +193,9 @@ namespace RestaurantDL
             }
             return users;
         }
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <param name="restaurant"></param>
-       /// <returns></returns>
-       /// <exception cref="NotImplementedException"></exception>
-        public bool IsDuplicate(Restaurant restaurant)
-        {
-            throw new NotImplementedException();
-        }
+     
         /// <summary>
-        /// 
+        /// Gets review information to use for the search option
         /// </summary>
         /// <param name="searchTerm"></param>
         /// <returns></returns>
@@ -206,27 +204,16 @@ namespace RestaurantDL
         {
             return GetReviewInfo();
         }
-        /*public List<Review> GetAverage()
-       {
 
-           string commandString = "SELECT Name, AVG(RATING) FROM Review GROUP BY Name";
-
-
-           using SqlConnection connection = new(connectionString);
-           using SqlCommand cmd = new SqlCommand(commandString, connection);
-           connection.Open();
-           using SqlDataReader reader = cmd.ExecuteReader();
-
-           var reviews = new List<Review>();
-
-           while (reader.Read())
-           {
-               reviews.Add(new Review
-               {
-                   Rating = reader.GetInt32(4)
-               });
-           }
-           return reviews;
-       }*/
+        /// <summary>
+        /// Finding if there is duplicates 
+        /// </summary>
+        /// <param name="restaurant"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool IsDuplicate(Restaurant restaurant)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 
 namespace RestaurantUI
 {
+    /// <summary>
+    /// Filtered menu 
+    /// </summary>
     internal class FilteredMenu : IMenu
     {
         private IRepository repository = new SqlRepository();
         public void Display()
         {
             Console.WriteLine("Please select an option to filter the restaurant database");
-            Console.WriteLine("Press <3> By ZipCode");
-            Console.WriteLine("Press <2> By Address");
             Console.WriteLine("Press <1> By Name");
+            Console.WriteLine("Press <2> By Address");
+            Console.WriteLine("Press <3> By ZipCode");
             Console.WriteLine("Press <0> Go Back");
             
             
         }
-
+       
         public string UserChoice()
         {
             

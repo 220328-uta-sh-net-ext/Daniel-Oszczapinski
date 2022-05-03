@@ -11,46 +11,15 @@ namespace RestaurantBL
     public class OperationsBL : IBL
     {
         /// <summary>
-        /// 
+        /// Calls the Sql repoistory and sets in into an object
         /// </summary>
         static IRepository repository = new SqlRepository();
-        public void AddRestaurant(Restaurant restaurantToAdd)
-        {
-            throw new NotImplementedException();
-        }
+    
+      
         /// <summary>
-        /// 
+        /// Gets list from the database and uses foreach to print out the info
         /// </summary>
-        /// <param name="reviewToAdd"></param>
-        /// <exception cref="NotImplementedException"></exception>
-        public void AddReview(Review reviewToAdd)
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="user"></param>
-        /// <exception cref="NotImplementedException"></exception>
-        public void AddUser(Restaurant user)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Calculate average rating, need to connect to database to get the array of ratingss
-        /// </summary>
-        /// <param name="Rating"></param>
-        /// <param name="Sum"></param>
-        /// <exception cref="NotImplementedException"></exception>
-        public void AverageRating(int Rating, int Sum)
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <returns>Prints out a String of the Restaurant Information</returns>
         public List<Restaurant> GetAllRestaurants()
         {
             
@@ -64,9 +33,9 @@ namespace RestaurantBL
             
         }
         /// <summary>
-        /// 
+        /// Gets list from the database and uses foreach to print out the info
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Prints out a String of the Review Information</returns>
         public List<Review> GetAllReviews()
         {
             List<Review> reviews = repository.GetReviewInfo();
@@ -83,19 +52,11 @@ namespace RestaurantBL
             return reviews;
            
         }
+
         /// <summary>
-        /// 
+        /// Gets list from the database and uses foreach to print out the info
         /// </summary>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public List<Review> GetAverage()
-        {
-            throw new NotImplementedException();
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <returns>Prints out a String of the User Information</returns>
         public List<User> GetUser()
         {
             var users = repository.GetUsersInfo();

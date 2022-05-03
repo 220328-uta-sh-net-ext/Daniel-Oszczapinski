@@ -14,35 +14,23 @@ namespace RestaurantUI
         {
             Console.WriteLine("Welcome to this Restuarant Application.");
             Console.WriteLine("Please choose an option.");
-            Console.WriteLine("Press <7> Display Review");
-            Console.WriteLine("Press <6> Display Review");
-            Console.WriteLine("Press <5> Display User");
-            Console.WriteLine("Press <4> Create Restaurant");
-            Console.WriteLine("Press <3> Display Restaurant");
+            Console.WriteLine("Press <1> Create Restaurant");
             Console.WriteLine("Press <2> Create User");
-            Console.WriteLine("Press <1> Create Review");
+            Console.WriteLine("Press <3> Create Review");
+            Console.WriteLine("Press <4> Filter Search");
+            Console.WriteLine("Press <5> Display Restaurant");
+            Console.WriteLine("Press <6> Display User");
+            Console.WriteLine("Press <7> Display Review");
             Console.WriteLine("Press <0> Exit");
+            
+            
+            
+            
         }
-
-        /*public string Login()
-        {
-            string userInput = Console.ReadLine();
-            //Login menu
-            switch (userInput)
-            {
-                case "0":
-                    return "Exit";
-                case "1":
-                    return "Login";
-                case "2":
-                    return "Create";
-                default:
-                    Console.WriteLine("Please input a valid response");
-                    Console.WriteLine("Please press <enter> to continue");
-                    Console.ReadLine();
-                    return "MainMenu";
-            }
-        }*/
+        /// <summary>
+        /// Goes to the correct menu
+        /// </summary>
+        /// <returns></returns>
         public string UserChoice()
         {
             string otherinpute = Console.ReadLine();
@@ -51,19 +39,19 @@ namespace RestaurantUI
                 case "0":
                     return "Exit";
                 case "1":
-                    return "Create Review";
+                    return "Create Restaurant";
                 case "2":
                     return "Create User";
                 case "3":
-                    return "Display Restaurant";
+                    return "Create Review";
                 case "4":
-                    return "Create Restaurant";
-                case "5":
-                    return "Display User";
-                case "6":
-                    return "Display Review";
-                case "7":
                     return "Filtered Search";
+                case "5":
+                    return "Display Restaurant";
+                case "6":
+                    return "Display User";
+                case "7":
+                    return "Display Review";
                 default:
                     Console.WriteLine("View does not exist");
                     Console.WriteLine("Please press <enter> to continue");
