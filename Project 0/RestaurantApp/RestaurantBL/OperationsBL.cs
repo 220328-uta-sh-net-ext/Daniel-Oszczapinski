@@ -1,5 +1,6 @@
 ﻿using RestaurantDL;
 using RestaurantInfo;
+using RestaurantInfo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,28 +11,39 @@ namespace RestaurantBL
 {
     public class OperationsBL : IBL
     {
+        //readonly IRepository repo;
+       // public OperationsBL(IRepository repo)
+       // {
+       //     this.repo = repo;
+       // }
         /// <summary>
         /// Calls the Sql repoistory and sets in into an object
         /// </summary>
         static IRepository repository = new SqlRepository();
-    
-      
+
+
         /// <summary>
         /// Gets list from the database and uses foreach to print out the info
         /// </summary>
         /// <returns>Prints out a String of the Restaurant Information</returns>
         public List<Restaurant> GetAllRestaurants()
         {
-            
-                var restaurants = repository.GetRestaurantInfo();
-                foreach (var rest in restaurants)
-                {
-                    Console.WriteLine(rest.ToString());
-                    Console.WriteLine("*******************");
-                }
-                return restaurants;
-            
+
+            var restaurants = repository.GetRestaurantInfo();
+            foreach (var rest in restaurants)
+            {
+                Console.WriteLine(rest.ToString());
+                Console.WriteLine("*******************");
+            }
+            return restaurants;
+           //throw new NotImplementedException();
         }
+        public List<Restaurant> SearchAll()
+        {
+            //return repo.GetRestaurantInfo();
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Gets list from the database and uses foreach to print out the info
         /// </summary>
@@ -50,7 +62,11 @@ namespace RestaurantBL
             
             }
             return reviews;
-           
+            //throw new NotImplementedException();
+
+
+
+
         }
 
         /// <summary>
@@ -60,14 +76,20 @@ namespace RestaurantBL
         public List<User> GetUser()
         {
             var users = repository.GetUsersInfo();
-            foreach(var user in users) 
-            { 
-                Console.WriteLine(user.ToString());
-                Console.WriteLine("*******************");
-            }
-            return users;
-            
+             foreach(var user in users) 
+             { 
+                 Console.WriteLine(user.ToString());
+                 Console.WriteLine("*******************");
+             }
+             return users;
+            //throw new NotImplementedException();
+
+
         }
-       
+        public List<Review> SearchRestaurants(string searchTerm)
+        {
+           // return repo.GetReviewInfo();
+           throw new NotSupportedException();
+        }
     }
 }

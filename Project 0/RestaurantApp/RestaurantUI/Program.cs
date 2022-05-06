@@ -1,9 +1,12 @@
 ﻿global using Serilog;
 using RestaurantUI;
 using RestaurantBL;
+using RestaurantDL;
 
 bool repeat = true;
 IMenu menu = new MainMenu();
+//readonly string connectionString;
+//IRepository repository = new SqlRepository(connectionString);
 OperationsBL BLInner = new OperationsBL();
 /// <summary>
 /// Log the Users activity 
@@ -17,7 +20,7 @@ Log.Logger = new LoggerConfiguration()
 /// Switch case that give the option for the user
 /// </summary>
 while (repeat)
-{
+{ 
     menu.Display();
     string choice = menu.UserChoice();
     switch (choice)
@@ -30,7 +33,7 @@ while (repeat)
         case "Display Review":
             Log.Information("Display All Review Information");
             Console.WriteLine("--------------Retreiving all Review Information---------------");
-            BLInner.GetAllReviews();
+           BLInner.GetAllReviews();
             break;
         case "Display User":
             Log.Information("Display All User Information");

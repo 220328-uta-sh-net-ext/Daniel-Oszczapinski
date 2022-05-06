@@ -12,7 +12,7 @@ namespace RestaurantUI
     /// </summary>
     internal class FilteredMenu : IMenu
     {
-        private IRepository repository = new SqlRepository();
+        //private IRepository repository = new SqlRepository();
         public void Display()
         {
             Console.WriteLine("Please select an option to filter the restaurant database");
@@ -36,8 +36,8 @@ namespace RestaurantUI
                 case "1":
                     Console.WriteLine("Please enter a name for the restaurant: ");
                     string name = Console.ReadLine();
-                    var restaurants = repository.GetRestaurantInfo();
-                    var filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(name)).ToList();
+                    //var restaurants = repository.GetRestaurantInfo();
+                   /* var filteredRestaurants = restaurants.Where(restaurant => restaurant.Name.Contains(name)).ToList();
                     foreach (var results in filteredRestaurants)
                     {
                         
@@ -46,41 +46,41 @@ namespace RestaurantUI
 
                             
                         
-                    }
+                    }*/
                     Console.WriteLine("Press <enter> to continue");
                     Console.ReadLine();
                     return "MainMenu";
                 case "2":
                     Console.WriteLine("Please enter an Address for the restaurant: ");
                     var findAddress = Console.ReadLine();
-                    var searchAddress = repository.GetRestaurantInfo();
-                    var filteredAddress = searchAddress.Where(restaurant => restaurant.Address.Contains(findAddress)).ToList();
-                    foreach (var results in filteredAddress)
-                    {
+                    //var searchAddress = repository.GetRestaurantInfo();
+                    //var filteredAddress = searchAddress.Where(restaurant => restaurant.Address.Contains(findAddress)).ToList();
+                   // foreach (var results in filteredAddress)
+                   // {
 
-                        Console.WriteLine("=================");
-                        Console.WriteLine(results.ToString());
+                    //    Console.WriteLine("=================");
+                    //    Console.WriteLine(results.ToString());
 
                         
 
-                    }
+                   // }
                     Console.WriteLine("Press <enter> to continue");
                     Console.ReadLine();
                     return "MainMenu";
                 case "3":
                     Console.WriteLine("Please enter an ZipCode for the restaurant: ");
                     var zipCode = Console.ReadLine();
-                    var searchZipCode = repository.GetRestaurantInfo();
-                    var filteredZipCode = searchZipCode.Where(restaurant => restaurant.ZipCode.Contains(zipCode)).ToList();
-                    foreach (var results in filteredZipCode)
-                    {
+                    //var searchZipCode = repository.GetRestaurantInfo();
+                    //var filteredZipCode = searchZipCode.Where(restaurant => restaurant.ZipCode.Contains(zipCode)).ToList();
+                    //foreach (var results in filteredZipCode)
+                   // {
 
-                        Console.WriteLine("=================");
-                        Console.WriteLine(results.ToString());
+                     //   Console.WriteLine("=================");
+                    //    Console.WriteLine(results.ToString());
 
                         
 
-                    }
+                   // }
                     Console.WriteLine("Press <enter> to continue");
                     Console.ReadLine();
                     return "MainMenu";

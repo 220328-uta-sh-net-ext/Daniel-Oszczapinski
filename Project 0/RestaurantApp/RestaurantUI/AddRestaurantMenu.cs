@@ -14,7 +14,7 @@ namespace RestaurantUI
     {
         private static Restaurant NewRestaurant = new Restaurant();
 
-        private IRepository _repository = new SqlRepository();
+        //private IRepository _repository = new SqlRepository();
         public void Display()
         {
                Console.WriteLine("Enter Restaurant Information");
@@ -61,7 +61,7 @@ namespace RestaurantUI
                     return "Create Restaurant";
                 case "6":
                     Log.Information("Saving Information");
-                    _repository.AddRestaurant(NewRestaurant);
+                   // _repository.AddRestaurant(NewRestaurant);
                     Console.WriteLine("----New Restaurant Added----");
                     return "MainMenu";
                 /// Add more cases for any other attributes of pokemon

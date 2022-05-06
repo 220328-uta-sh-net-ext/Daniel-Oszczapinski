@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace RestaurantBL
 {
-    public interface IBL
+    public interface IBL:IRestaurantSearch
     {
-        //List<Review> SearchRestaurant(string searchTerm);
+        List<Review> SearchRestaurants(string searchTerm);
         List<Restaurant> GetAllRestaurants();
         List<Review> GetAllReviews();
       
         List<User> GetUser();
       
+    }
+    public interface IRestaurantSearch
+    {
+        List<Restaurant> SearchAll();
     }
 }

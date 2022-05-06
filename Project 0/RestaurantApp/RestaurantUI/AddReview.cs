@@ -16,15 +16,15 @@ namespace RestaurantUI
     {
         private static Review NewReview = new Review();
        
-        private IRepository _repository = new SqlRepository();
+       // private IRepository _repository = new SqlRepository();
         public void Display()
         {
             Console.WriteLine("Enter Review Information");
-            Console.WriteLine("<1> Restaurant Name - " + NewReview.Name);
-            Console.WriteLine("<2> UserName - " + NewReview.UserName);
-            Console.WriteLine("<3> Rating - " + NewReview.Rating);
-            Console.WriteLine("<4> Note - " + NewReview.Note);
-            Console.WriteLine("<5> Save");
+            
+           
+            Console.WriteLine("<1> Rating - " + NewReview.Rating);
+            Console.WriteLine("<2> Note - " + NewReview.Note);
+            Console.WriteLine("<3> Save");
             Console.WriteLine("<0> Go Back");
         }
         public string UserChoice()
@@ -36,28 +36,18 @@ namespace RestaurantUI
                     Log.Information("Return to Main Menu");
                     return "MainMenu";
                 case "1":
-                    Log.Information("Adding Restaurant Name - " + NewReview.Name);
-                    Console.Write("Please enter a restaurant name: ");
-                    NewReview.Name = Convert.ToString(Console.ReadLine());
-                    return "Create Review";
-                case "2":
-                    Log.Information("Adding Username - " + NewReview.UserName);
-                    Console.Write("Please enter a username: ");
-                    NewReview.UserName = Convert.ToString(Console.ReadLine());
-                    return "Create Review";
-                case "3":
                     Log.Information("Adding Rating - " + NewReview.Rating);
                     Console.Write("Please enter a rating: ");
                     NewReview.Rating = Convert.ToInt32(Console.ReadLine());
                     return "Create Review";
-                case "4":
+                case "2":
                     Log.Information("Adding Note - " + NewReview.Note);
                     Console.Write("Please write a review: ");
                     NewReview.Note = Convert.ToString(Console.ReadLine());
                     return "Create Review";
-                case "5":
+                case "3":
                     Log.Information("Saving Information");
-                    _repository.AddReview(NewReview);
+                    //_repository.AddReview(NewReview);
                     Console.WriteLine("----New Review Added----");
                     return "MainMenu";
                 default:

@@ -13,9 +13,14 @@ namespace RestaurantDL
         /// <summary>
         /// Creats a path for the sql database using a text file with the connection string.
         /// </summary>
+       /* public SqlRepository(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }*/
+        //readonly string connectionString;
         private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantDL/connection-string.txt";
         private readonly string connectionString;
-      
+
         /// <summary>
         /// Uses Sql connection to read the datbase and place it into a object.
         /// </summary>
@@ -50,13 +55,11 @@ namespace RestaurantDL
         /// <returns>reviewToAdd</returns>
         public Review AddReview(Review reviewToAdd)
         {
-            string commandString = "INSERT INTO Review (Name, UserName, Rating, Note) " +
-            "VALUES (@name, @username, @rating, @note);";
+            string commandString = "INSERT INTO Review (Rating, Note) " +
+            "VALUES (@rating, @note);";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
-            command.Parameters.AddWithValue("@name", reviewToAdd.Name);
-            command.Parameters.AddWithValue("@username", reviewToAdd.UserName);
             command.Parameters.AddWithValue("@rating", reviewToAdd.Rating);
             command.Parameters.AddWithValue("@note", reviewToAdd.Note);
             connection.Open();
@@ -200,10 +203,7 @@ namespace RestaurantDL
         /// <param name="searchTerm"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public List<Review> SearchRestaurants(string searchTerm)
-        {
-            return GetReviewInfo();
-        }
+       
 
         /// <summary>
         /// Finding if there is duplicates 
