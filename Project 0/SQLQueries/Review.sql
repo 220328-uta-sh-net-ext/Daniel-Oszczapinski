@@ -42,9 +42,19 @@ SELECT * FROM (SELECT * FROM Review) AS t1
 INNER JOIN (SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 
 ON t1.Name = t2.Name ORDER BY ReviewId ASC
 
-INSERT INTO dbo.Review  VALUES ('Subway', 'Austin', 'This was the worst place i ever visited', '1' ) 
+INSERT INTO dbo.Review  VALUES ('This was the worst place i ever visited', '1', '1' ) 
 INSERT INTO dbo.Review  VALUES ('Jiimy Johns', 'Mark', 'Great food and enviorment', '5') 
 INSERT INTO dbo.Review  VALUES ('Panda Expess', 'Red', 'I enjoyed the location but got the wrong item', '4' ) 
 INSERT INTO dbo.Review  VALUES ('Pizza Hut', 'Lily', 'Food tasted old', '2' ) 
 
+-- The script below is the current used table:
 SELECT * FROM Review
+
+CREATE TABLE Review(
+ ReviewId INT IDENTITY,
+    Note NVARCHAR(100),
+    Rating FLOAT,
+    RestId INT,
+    CONSTRAINT PK_ReviewId PRIMARY KEY  (ReviewId),
+    CONSTRAINT FK_RestaurantId FOREIGN KEY (RestId) REFERENCES Restaurant(RestId)
+);
