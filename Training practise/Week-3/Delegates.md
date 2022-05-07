@@ -28,6 +28,12 @@ This delegate encapsulates a method that has no parameter or more parameters and
 
 ![](https://www.tutorialsteacher.com/Content/images/csharp/func-delegate.png)
 
+### Action Delegate, What are they?
+
+- An [Action] is a generic delegate and is similar to the Func Delegate but it does not ruturn a value.
+- The Action delegates can be used with methods that have a void return type.
+- 
+
 ### Code Example of Delegates
 
 This code does not apply delegates:
@@ -67,26 +73,6 @@ public void GetData(string Name)
 }  
 ```
 
-## Anonymous methods
-
-### Anonymous methods Definition
-
-### What are Anonymous Methods?
-
-### Why use Anonymous Methods?
-
-### Code Example of Anonymous methods
-
-## Lambda Expressions
-
-### Lambda Expressions Definition
-
-### What are Lambda Expressions?
-
-### Why use Lambda Expressions?
-
-### Code Example of Lambda Expressions
-
 ## References/Links
 
--Delegate Links: [Microsoft-Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), [TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates), [C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/), [Microsoft-Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0)
+-Delegate Links: [Microsoft-Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), [TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates), [C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/), [Microsoft-Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0), [Microsoft-Action](https://docs.microsoft.com/en-us/dotnet/api/system.action?view=net-6.0)

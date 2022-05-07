@@ -18,7 +18,7 @@ namespace RestaurantDL
             this.connectionString = connectionString;
         }*/
         //readonly string connectionString;
-        private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantDL/connection-string.txt";
+        private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 1/RestaurantApp/RestaurantDL/connection-string.txt";
         private readonly string connectionString;
 
         /// <summary>
