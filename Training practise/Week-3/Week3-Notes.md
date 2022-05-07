@@ -35,13 +35,13 @@
 - Sometimes a [POST], [PUT], [PATCH], or [DELETE] operation might require processing that takes a while to complete
 - You should expose an endpoint that returns the status of an asynchronous request, so the client can monitor the status by polling the status endpoint
 
-## Rest - Principles(Stateless, Cacheable, Uniform Interface, Client-Server, Layered System)
+## *Important* Rest - Principles(Stateless, Cacheable, Uniform Interface, Client-Server, Layered System)
 
 - [Uniform-Interface] - By applying the principle of generality to the components interface, we can simplify the overall system architecture and improve the visibility of interactions
-  - Identification of resources - The interface must uniquely identify each resource involved in the interaction between the client and the server.
-  - Manipulation of resources through representations – The resources should have uniform representations in the server response. API consumers should use these representations to modify the resources state in the server.
-  - Self-descriptive messages – Each resource representation should carry enough information to describe how to process the message. It should also provide information of the additional actions that the client can perform on the resource.
-  - Hypermedia as the engine of application state – The client should have only the initial URI of the application. The client application should dynamically drive all other resources and interactions with the use of hyperlinks.
+  - *Identification of resources* - The interface must uniquely identify each resource involved in the interaction between the client and the server.
+  - *Manipulation of resources through representations* – The resources should have uniform representations in the server response. API consumers should use these representations to modify the resources state in the server.
+  - *Self-descriptive messages* – Each resource representation should carry enough information to describe how to process the message. It should also provide information of the additional actions that the client can perform on the resource.
+  - *Hypermedia as the engine of application state* – The client should have only the initial URI of the application. The client application should dynamically drive all other resources and interactions with the use of hyperlinks.
 
 - [Client-Server] - The client-server design pattern enforces the separation of concerns, which helps the client and the server components evolve independently.
   
@@ -51,4 +51,57 @@
 
 - [Layered-System] - The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior.
 
-## Design Pattern - Factory Method
+## HTTP - Overview
+
+- Hyper Text Transfer Protocol(HTTP) - HTTPS(Secured)
+- Protocol where the computer followd in order to understand and work to display on a website
+
+## HTTP - Request LifeCycle
+
+ 1. Open a TCP connection: The TCP connection is used to send a request, or several, and receive an answer. The client may open a new connection, reuse an existing connection, or open several TCP connections to the servers.
+ 2. Send an HTTP message: HTTP messages (before HTTP/2) are human-readable. With HTTP/2, these simple messages are encapsulated in frames, making them impossible to read directly, but the principle remains the same.
+ 3. Read the response sent by the server
+ 4. Close or reuse the connection for further requests.
+
+## REST - HATEOAS(Hypertext as the Engine of Application State)
+
+- The system is effectively a finite state machine, and the response to each request contains the information necessary to move from one state to another; no other information should be necessary.
+
+## HTTP - Verbs, Methods
+
+- Common methods used [GET], [HEAD], [POST], [PUT],[DELETE],[CONNECT],[OPTIONS],[TRACE]
+  - These methods are used in the controller class 
+
+## ASP.NET - Controllers
+
+- 
+
+## HTTP - Status Codes
+
+## HTTP - Model Binding
+
+## ASP.NET - Definition
+
+## ASP.NET - Middleware
+
+## ASP.NET - Model Binding
+
+## ASP.NET - Filters
+
+## ASP.NET - Caching
+
+## ASP.NET - OpenAPI
+
+## REST - HttpClient
+
+## Security - Authentication
+
+## Security - IDaaS
+
+## C# - Delegates, LINQ
+
+## Security - OWASP Top10
+
+## Security - Authorization
+
+## ASP.NET - Integration Testing
