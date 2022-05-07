@@ -6,10 +6,10 @@
 
 ### What are Delegates?
 
-- A delegate is a type that represents references to methods with a particular parameter list and return type. You also able to define variables of delegates.
+- A delegate is a type that represents references to methods with a particular parameter list and return type. You are also able to define variables of delegates.
 - Delegates are type-safe, object oriented and secure because we are referencing methods which prevents incorrect coding from happening.
 
-Delegate decleration code:
+Delegate declaration  code:
 
 ```text
 public delegate int PerformCalculation(int x, int y);
@@ -17,15 +17,14 @@ public delegate int PerformCalculation(int x, int y);
 
 ### Why are Delegates used?
 
-- Allows programmers to pass methods as arguments to other methods. Delegates manke implementing events and call-back methods easier than other possible solutions.
-- Delegate provide flexibilty to your code becuase easily add the new
-code into existing classes or change the method call.
-- Delegates can also be more general since the comparison code is seperate from the library.
+- Allows programmers to pass methods as arguments to other methods. Delegates make implementing events and call-back methods easier than other possible solutions.
+- Delegates provide flexibility to your code because  easily add the new code into existing classes or change the method call.
+- Delegates can also be more general since the comparison code is separate  from the library.
 
 ### Func Delegate, What are they?
 
 - [Func] is a generic delegate that is part of the System namespace.
-This delegate encapsulates a method that has one parameter and returns a valure of the type specified.
+This delegate encapsulates a method that has no parameter or more parameters and returns a value of the type specified.
 
 ![](https://www.tutorialsteacher.com/Content/images/csharp/func-delegate.png)
 
@@ -90,4 +89,4 @@ public void GetData(string Name)
 
 ## References/Links
 
--Delegate Links: [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), [TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates), [C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/),
+-Delegate Links: [Microsoft-Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), [TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates), [C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/), [Microsoft-Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0)
