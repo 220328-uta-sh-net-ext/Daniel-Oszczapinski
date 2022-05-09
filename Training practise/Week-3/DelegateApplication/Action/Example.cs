@@ -15,6 +15,7 @@ namespace Action
 
         static void Main(string[] args)
         {
+            //Using Action delegate 
             Action<int> printActionDel = ConsolePrint;
             printActionDel(10);
         }

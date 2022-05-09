@@ -18,7 +18,7 @@ namespace Delegates
                 del("Hello World");
 
                 del = ClassB.MethodB;
-                del("Hello World");
+                del("Hello ");
 
                 del = (string msg) => Console.WriteLine("Called lambda expression: " + msg);
                 del("Hello World");

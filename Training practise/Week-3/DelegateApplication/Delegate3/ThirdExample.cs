@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Delegate3
 {
+    /// <summary>
+    ///Multicast delegate
+    /// </summary>
     internal class ThirdExample
     { 
         class Program
@@ -27,20 +30,21 @@ namespace Delegate3
                 Console.WriteLine("Quotient is:" + (x / y));
             }
         }
-        public delegate void MultiCastDelegate(int a, int b);
+        public delegate void MultiCastDelegate(int a, int b);//declaring a delegate
         class ClsDelegate
         {
             static void Main()
             {
                 Program obj1 = new Program();
                 MultiCastDelegate objD = new MultiCastDelegate(obj1.Multiply);
+                //to add reference of more functions to a delegate object, we use += operator.
                 objD += obj1.Add;
                 objD += obj1.Subtract;
                 objD += obj1.Divide;
                 objD(10, 10);
-                objD -= obj1.Add;
+                objD -= obj1.Subtract;
                 objD -= obj1.Divide;
-                objD(50, 10);
+                objD(50, 1);
                 Console.ReadLine();
             }
         }

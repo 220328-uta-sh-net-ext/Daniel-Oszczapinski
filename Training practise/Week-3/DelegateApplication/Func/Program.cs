@@ -9,6 +9,7 @@ class Program
 
     static void Main(string[] args)
     {
+        //Func delegate
         Func<int, int, int> add = Sum;
 
         int result = add(10, 10);

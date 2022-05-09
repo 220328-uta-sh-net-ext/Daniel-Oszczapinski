@@ -11,7 +11,7 @@ namespace Delegates
           static void Display(string S) {  
             Console.WriteLine("My Name is :" + S);  
         }  
-        delegate void X(string a);  
+        delegate void X(string a);  //declaring a delegate
         static void Main(string[] args) {  
             X objD = new X(Display);  
             objD("Rathrola Prem Kumar");  
