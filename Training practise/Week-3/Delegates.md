@@ -2,12 +2,11 @@
 
 ## Delegates
 
-![](https://www.tutorialsteacher.com/Content/images/csharp/delegate-mapping.png)
-
 ### What are Delegates?
 
 - A delegate is a type that represents references to methods with a particular parameter list and return type. You are also able to define variables of delegates.
 - Delegates are type-safe, object oriented and secure because we are referencing methods which prevents incorrect coding from happening.
+- Delegates allow you to assign a method to the delegate and the method will be called each time the delegate is called.
 
 Delegate declaration  code:
 
@@ -50,10 +49,11 @@ namespace DelegatesDemo {
 }    
 ```
 
-### Func Delegate, What are they?
+## Func Delegate, What are they?
 
 - [Func] is a generic delegate that is part of the System namespace.
 This delegate encapsulates a method that has no parameter or more parameters and returns a value of the type specified.
+- This allows you to minimize the amount of code required for methods
 
 ![](https://www.tutorialsteacher.com/Content/images/csharp/func-delegate.png)
 
@@ -80,10 +80,12 @@ class Program
 }
 ```
 
-### Action Delegate, What are they?
+## Action Delegate, What are they?
 
 - An [Action] is a generic delegate and is like the Func Delegate but it does not ruturn a value.
 - The Action delegates can be used with methods that have a void return type.
+- Able to remove the declared delegate.
+- Requires more code to implement Action than Func.
 
 ### Code Example of Action
 
@@ -110,7 +112,7 @@ static void Main(string[] args)
 
 ### Predicate delegate, What are they?
 
-- [Predicate] is a generic delegate and this method contains a set of criteria and checks if the parameter meet the conditions.
+- [Predicate] is a generic delegate and this method contains a set of criteria and checks if the parameter meets the conditions.
 - Predicate can only take one parameter and will return a Boolean value.
 
 Predicate code:
@@ -138,6 +140,44 @@ static void Main(string[] args)
     Console.WriteLine(result);
 }
 ```
+
+## Anonymous Method, What are they?
+
+- [Anonymous] methods are methods that do not have a name and invoked directly by delegate keyword.
+- When the delegate keyword is used you can remove the parameter list, this allows the anonymous method to convert a delegate type with any list of parameters.
+- This associates the method definition to a delegate, when you bind with a callback this anonymous method will be called. Which ensures that this delegate is called at a particular event.
+- You cannot use Lambda Expressions unlike other delegates.
+
+### Example of Anonymous Method
+
+```text
+public delegate void Print(int value);
+
+static void Main(string[] args)
+{
+    // Delegate keyword
+    Print print = delegate(int val) { 
+        Console.WriteLine("Inside Anonymous method. Value: {0}", val); 
+    };
+
+    print(100);
+}
+```
+
 ## References/Links
 
--Delegate Links: [Microsoft-Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), [C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/), [Microsoft-Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0), [Microsoft-Action](https://docs.microsoft.com/en-us/dotnet/api/system.action?view=net-6.0), [Microsoft-Predicate](https://docs.microsoft.com/en-us/dotnet/api/system.predicate-1?view=net-6.0),[TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates)
+-Delegate Links:
+
+[Microsoft-Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/),
+
+[C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/)
+
+[Microsoft-Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0)
+
+[Microsoft-Action](https://docs.microsoft.com/en-us/dotnet/api/system.action?view=net-6.0)
+
+[Microsoft-Predicate](https://docs.microsoft.com/en-us/dotnet/api/system.predicate-1?view=net-6.0)
+
+[Anonymous](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods)
+
+[TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates)
