@@ -8,6 +8,8 @@ namespace RestaurantInfo
 {
     public class User
     {
+        public int UserId { get; set; }
+        public int ReviewId{ get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
 

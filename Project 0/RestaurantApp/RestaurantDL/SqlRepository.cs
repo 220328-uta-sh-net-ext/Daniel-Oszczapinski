@@ -13,11 +13,7 @@ namespace RestaurantDL
         /// <summary>
         /// Creats a path for the sql database using a text file with the connection string.
         /// </summary>
-       /* public SqlRepository(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }*/
-        //readonly string connectionString;
+      
         private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantDL/connection-string.txt";
         private readonly string connectionString;
 
@@ -35,17 +31,31 @@ namespace RestaurantDL
         /// <returns>rest</returns>
         public Restaurant AddRestaurant(Restaurant rest)
         {
-            string commandString = "INSERT INTO Restaurant (Name, City, State, Address, ZipCode) VALUES (@name, @city, @state, @address, @zipcode);";
+            string result = "error";
+            string commandString = "INSERT INTO Restaurant (Name, City, Address, ZipCode, State) VALUES (@name, @city, @address, @zipcode, @state)";
             using SqlConnection connection = new(connectionString);
-            using SqlCommand cmd = new (commandString, connection);
-            cmd.Parameters.AddWithValue("@name", rest.Name);
-            cmd.Parameters.AddWithValue("@city", rest.City);
-            cmd.Parameters.AddWithValue("@state", rest.State);
-            cmd.Parameters.AddWithValue("@address", rest.Address);
-            cmd.Parameters.AddWithValue("@zipcode", rest.ZipCode);
-            connection.Open();
-            cmd.ExecuteNonQuery();  
+            
+            try
+            {
+                connection.Open();
+                using SqlCommand cmd = new (commandString, connection);
+                cmd.Parameters.AddWithValue("@name", rest.Name);
+                cmd.Parameters.AddWithValue("@city", rest.City);
+                cmd.Parameters.AddWithValue("@state", rest.State);
+                cmd.Parameters.AddWithValue("@address", rest.Address);
+                cmd.Parameters.AddWithValue("@zipcode", rest.ZipCode);
 
+                cmd.ExecuteNonQuery();
+                result = "restaurant added!";
+            }
+            catch (Exception ex)
+            {
+                result = "error"; 
+            }
+            finally
+            {
+                connection.Close();
+            }
             return rest;
         }
         /// <summary>
@@ -55,16 +65,18 @@ namespace RestaurantDL
         /// <returns>reviewToAdd</returns>
         public Review AddReview(Review reviewToAdd)
         {
-            string commandString = "INSERT INTO Review (Rating, Note) " +
-            "VALUES (@rating, @note);";
+            string commandString = "INSERT INTO Review (RestId, Rating, Note) " +
+            "VALUES (@id, @rating, @note);";
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
+            command.Parameters.AddWithValue("@id", reviewToAdd.RestId);
             command.Parameters.AddWithValue("@rating", reviewToAdd.Rating);
             command.Parameters.AddWithValue("@note", reviewToAdd.Note);
             connection.Open();
             command.ExecuteNonQuery();
 
+            
             return reviewToAdd;
         }
         /// <summary>
@@ -74,7 +86,7 @@ namespace RestaurantDL
         /// <returns>user</returns>
         public User AddUser(User user)
         {
-            string commandString = "INSERT INTO NewUser (Name, Email, Password) VALUES (@name, @email, @password);";
+            string commandString = "INSERT INTO NewUser (Name, Email, Password) VALUES (@name, @email, @password)";
             using SqlConnection connection = new(connectionString);
             using SqlCommand cmd = new(commandString, connection);
             cmd.Parameters.AddWithValue("@name", user.Name);
@@ -84,6 +96,7 @@ namespace RestaurantDL
             cmd.ExecuteNonQuery();
 
             return user;
+
         }
 
         /// <summary>
@@ -105,7 +118,8 @@ namespace RestaurantDL
             while (reader.Read()) 
             {
                 restaurants.Add(new Restaurant
-                {
+                {   
+                    RestId = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     City = reader.GetString(2),
                     Address = reader.GetString(3),
@@ -113,6 +127,8 @@ namespace RestaurantDL
                     State = reader.GetString(5)
                 });
             }
+
+            
             return restaurants;
         }
         /// <summary>
@@ -121,7 +137,7 @@ namespace RestaurantDL
         /// <returns>The average of each restaurant </returns>
         public List<Review> GetAverage()
         {
-            string commandString =  "SELECT AVG(Rating) as Average From Review GROUP BY Name";
+            string commandString = "Select AVG(r.Rating) as rating ,rt.RestId from Review as r Right JOIN Restaurant as rt on r.RestId = rt.RestId GROUP BY rt.RestId Order by Rating desc";
             using SqlConnection connection = new(connectionString);
             using SqlCommand cmd = new SqlCommand(commandString, connection);
             connection.Open();
@@ -133,11 +149,13 @@ namespace RestaurantDL
             {
                 average.Add(new Review
                 {
-                    Average = reader.GetDouble(0),
+                    Rating = reader.GetDouble(0),
+                    RestId = reader.GetInt32(1),
                   
 
                 });
             }
+
             return average;
         }
         /// <summary>
@@ -146,7 +164,7 @@ namespace RestaurantDL
         /// <returns></returns>
         public List<Review> GetReviewInfo()
         {
-            string commandString = "SELECT* FROM(SELECT* FROM Review) AS t1 INNER JOIN(SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 ON t1.Name = t2.Name ORDER BY ReviewId ASC";
+            string commandString = "SELECT r.* , rt.Name from Review as r JOIN Restaurant as rt on r.RestId = rt.RestId Order by r.ReviewId desc";
            
 
             using SqlConnection connection = new(connectionString);
@@ -160,13 +178,15 @@ namespace RestaurantDL
             {
                 reviews.Add(new Review
                 {
-                    Name = reader.GetString(1),
-                    UserName = reader.GetString(2),
-                    Note = reader.GetString(3),
-                    Rating = reader.GetDouble(4),
-                    Average = reader.GetDouble(6),
+                    ReviewId = reader.GetInt32(0),
+                    Note = reader.GetString(1),
+                    Rating = reader.GetDouble(2),
+                    RestId= reader.GetInt32(3),
+                    Name = reader.GetString(4),
+
                 });
             }
+
             return reviews;
         }
         /// <summary>
@@ -189,11 +209,15 @@ namespace RestaurantDL
             {
                 users.Add(new User
                 {
+                    UserId = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     Email = reader.GetString(2),
-                    Password = reader.GetString(3)
+                    Password = reader.GetString(3),
+                    ReviewId = reader.GetInt32(4)
                 });
             }
+
+           
             return users;
         }
      

@@ -27,6 +27,25 @@ namespace RestaurantInfo
             
         }
 
+        public int ReviewId { get; set; }
+        public int RestId
+        {
+            get => RestId;
+
+            set
+            {
+                if (!string.IsNullOrEmpty(value.ToString()))
+                {
+                    RestId = value;
+                }
+                else
+                {
+                    throw new Exception("The Id cannot be empty");
+                }
+            }
+        }
+        
+     
        
         public Double Average { get; set; }
         private Double _rating;

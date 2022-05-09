@@ -16,7 +16,7 @@ namespace RestaurantUI
     {
         private static Review NewReview = new Review();
        
-       // private IRepository _repository = new SqlRepository();
+       private IRepository _repository = new SqlRepository();
         public void Display()
         {
             Console.WriteLine("Enter Review Information");
@@ -47,7 +47,7 @@ namespace RestaurantUI
                     return "Create Review";
                 case "3":
                     Log.Information("Saving Information");
-                    //_repository.AddReview(NewReview);
+                    _repository.AddReview(NewReview);
                     Console.WriteLine("----New Review Added----");
                     return "MainMenu";
                 default:

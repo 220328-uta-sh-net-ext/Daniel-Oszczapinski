@@ -32,8 +32,8 @@ namespace RestaurantInfo
             this.State = row["State"].ToString() ?? "";
         }
 
-       
 
+        public int RestId { get; set; }
         private string _name;
         public string Name
         {
