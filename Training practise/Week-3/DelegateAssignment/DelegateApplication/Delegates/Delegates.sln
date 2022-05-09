@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates.csproj", "{2321DF3F-5986-4BD6-8109-CDABB7625EA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainDelegateStart", "MainDelegateStart.csproj", "{2321DF3F-5986-4BD6-8109-CDABB7625EA2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegate2", "..\Delegate2\Delegate2.csproj", "{6D1D1DC8-128C-48E9-8A66-F223D6EAF26F}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Action", "..\Action\Action.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Predicate", "..\Predicate\Predicate.csproj", "{57A16154-8AAB-439B-BE9B-B7D9CA4A27FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anonymous", "..\Anonymous\Anonymous.csproj", "{C8876B42-4C85-48EB-BB5C-BC695DA893D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anonymous", "..\Anonymous\Anonymous.csproj", "{C8876B42-4C85-48EB-BB5C-BC695DA893D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

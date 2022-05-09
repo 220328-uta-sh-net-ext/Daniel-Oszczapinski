@@ -17,7 +17,7 @@ namespace Predicate
         {
             Predicate<string> isUpper = IsUpperCase;
 
-            bool result = isUpper("HELLO WORLD!!");
+            bool result = isUpper("hello world!!");
 
             Console.WriteLine(result);
         }
