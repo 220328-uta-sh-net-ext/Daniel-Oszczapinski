@@ -23,23 +23,6 @@ public delegate int PerformCalculation(int x, int y);
 
 ### Code Example of Delegates
 
-This code does not apply delegates:
-
-```text
-protected void Page_Load(object sender, EventArgs e)  
-{  
-  
-    if (!IsPostBack)  
-    {  
-        GetData("Mahesh");  
-    }  
-}  
-public void GetData(string Name)  
-{  
-    lblName.Text = Name;  
-}  
-```
-
 This code applies delegates:
 Allowing us to call another method as parameters and allowing for better separation of concerns.
 
@@ -47,17 +30,24 @@ Allowing us to call another method as parameters and allowing for better separat
 public delegate void MyDelegare(string var);  
 protected void Page_Load(object sender, EventArgs e)  
   
-{  
-    if (!IsPostBack)  
-    {  
-        MyDelegare objMyDelegare = new MyDelegare(GetData);  
-        objMyDelegare("Mahesh");  
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Text;  
+using System.Threading.Tasks;  
+namespace DelegatesDemo {  
+    class Program {  
+        static void Display(string S) {  
+            Console.WriteLine("My Name is :" + S);  
+        }  
+        delegate void X(string a);  
+        static void Main(string[] args) {  
+            X objD = new X(Display);  
+            objD("Rathrola Prem Kumar");  
+            Console.Read();  
+        }  
     }  
-}  
-public void GetData(string Name)  
-{  
-    lblName.Text = Name;  
-}  
+}    
 ```
 
 ### Func Delegate, What are they?
@@ -96,6 +86,12 @@ class Program
 - The Action delegates can be used with methods that have a void return type.
 
 ### Code Example of Action
+
+You are able to remove the delegate and add an action delegate instead.
+
+```text
+public delegate void Print(int val);
+```
 
 Code that uses Action delegate and it does not require you to define the parameter:
 
@@ -144,4 +140,4 @@ static void Main(string[] args)
 ```
 ## References/Links
 
--Delegate Links: [Microsoft-Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), [TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates), [C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/), [Microsoft-Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0), [Microsoft-Action](https://docs.microsoft.com/en-us/dotnet/api/system.action?view=net-6.0), [Microsoft-Predicate](https://docs.microsoft.com/en-us/dotnet/api/system.predicate-1?view=net-6.0)
+-Delegate Links: [Microsoft-Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/), [C-Sharpcorner](https://www.c-sharpcorner.com/UploadFile/8911c4/simple-delegates-with-examples-in-C-Sharp/), [Microsoft-Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0), [Microsoft-Action](https://docs.microsoft.com/en-us/dotnet/api/system.action?view=net-6.0), [Microsoft-Predicate](https://docs.microsoft.com/en-us/dotnet/api/system.predicate-1?view=net-6.0),[TutorialsTeacher](https://www.tutorialsteacher.com/csharp/csharp-delegates)
