@@ -50,9 +50,6 @@
 
 4. What is SQL Injection?
 
-    - Using Parameters to take inputes from users
+   QL injection is an attack in which malicious code is inserted into strings that are later passed to an instance of SQL Server for parsing and execution. Any procedure that constructs SQL statements should be reviewed for injection vulnerabilities
 
 5. What ADO.Net Data providrs can be used with sql Servee
-
-6. Which method is used in order to grab records from a database using SqlDataReader?
-    - Read()

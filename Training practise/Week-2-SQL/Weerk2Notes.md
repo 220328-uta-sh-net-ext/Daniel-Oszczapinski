@@ -13,7 +13,7 @@
 - SELECT, INSERT, UPDATE, DELETE, and debateably TRUNCATE TABLE
     -- these commands handle rows in tables.
 
-## DDL - Columns(Data Type, Null, Not Null)
+## DDL - [Columns](Data Type, Null, Not Null)
 
 - A [data-type] is an attribute that specifies the type of data that the object can hold: integer data, character data, monetary data, date and time data, binary strings, and so on.
 
@@ -24,7 +24,7 @@
 
 - [NOT-NULL] prevents NULL, and leaves the column without a default value.
 
-## DDL - Constraints(PK, FK, Unique, Check, Default, Identity)
+## DDL - [Constraints](PK, FK, Unique, Check, Default, Identity)
 
 - [UNIQUE] constraints and [CHECK] constraints are two types of constraints that can be used to enforce data integrity in SQL Server tables.
 
@@ -54,7 +54,7 @@
 - [FOREIGN-KEY]
 - allow this column to reference another row, possibly in another table
 
-## DML - Keywords(SELECT, INSERT, UPDATE, DELETE)
+## DML - Keywords
 
 - [SELECT] - Retrieves rows from the database and enables the selection of one or many rows or columns from one or many tables in SQL Server.
 
@@ -64,7 +64,7 @@
 
 - [DELETE] - Removes one or more rows from a table or view in SQL Server
 
-## DML - Union Operations(UNION, UNION ALL, Intersect, Except)
+## DML - [Union-Operations]
 
 - Concatenates the results of two queries into a single result set. You control whether the result set includes duplicate rows:
   - [UNION-ALL] - Includes duplicates.
@@ -75,7 +75,7 @@
 
 - [INTERSECT] - returns distinct rows that are output by both the left and right input queries operator
 
-## DML - Aggregation(COUNT, SUM, MAX, MIN, AVG)
+## DML - [[Aggregation]
 
 - [COUNT] - This function returns the number of items found in a group. COUNT operates like the COUNT_BIG function. These functions differ only in the data types of their return values.
 
@@ -87,7 +87,10 @@
 
 - [AVG] -This function returns the average of the values in a group. It ignores null values.
 
-## DML - Join Operations(CROSS, INNER, FULL OUTER, LEFT OUTER, RIGHT OUTER)
+## Scaler Functions
+
+
+## DML - [Join-Operations]
 
 - A [JOIN] compares columns from two tables or, to create result rows composed of columns from two tables.
 
@@ -101,7 +104,7 @@
 
 - [RIGHT-OUTER] - It gives the output of the matching row between both the tables. If no records match from the right table, it also shows those records with NULL values
 
-## DML - Subquery(FROM CLAUSE, WHERE CLAUSE, CTE)
+## DML - [Subquery]
 
 - [FROM] clause is usually required on the SELECT statement. The exception is when no table columns are listed, and the only items listed are literals or variables or arithmetic expressions.
 
@@ -119,7 +122,7 @@
 
 - [TRUNCATE]- Removes all rows from a table or specified partitions of a table, without logging the individual row deletions. TRUNCATE TABLE is similar to the DELETE statement with no WHERE clause; however, TRUNCATE TABLE is faster and uses fewer system and transaction log resources.
 
-## DDL - Cascading, Indexes
+## DDL - [Cascading], Indexes
 
 - [CASCADE] - Corresponding rows are deleted from the referencing table if that row is deleted from the parent table.
 
@@ -149,7 +152,7 @@ Return a status value to a calling program to indicate success or failure (and t
 -- modify the DB, and you can't run them except with the EXECUTE statement.
 -- also, they don't have return values, but they do have "out parameters"
 
-## DDL - Triggers (For, Instead Of, After)
+## DDL - [Triggers] (For, Instead Of, After)
 
 - [triggers]
 - some code that will run instead of or after
@@ -170,7 +173,8 @@ Return a status value to a calling program to indicate success or failure (and t
 
 ## ADO.NET - Definition
 
-- [ADO.NET] - is the core data access technology for .NET languages. Use the Microsoft.Data.SqlClient namespace to access SQL Server, or providers from other suppliers to access their stores. Use System.Data.Odbc or System.Data.Oledb to access data from .NET languages using other data access technologies. Use System.Data.Dataset when you need an offline data cache in client applications. It also provides local persistence and XML capabilities that can be useful in web services.
+- [ADO.NET] - is the core data access technology for .NET languages. Use the Microsoft.Data.SqlClient namespace to access SQL Server.  It also provides local persistence and XML capabilities that can be useful in web services.
+ADO .NET uses SQL queries and stored procedures to read write update and delete data from a data source
 
 ## ADO.NET - Connected, Disconnected Architectures
 
