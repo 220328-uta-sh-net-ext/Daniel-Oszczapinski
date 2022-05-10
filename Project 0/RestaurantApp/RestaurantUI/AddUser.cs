@@ -14,7 +14,7 @@ namespace RestaurantUI
     internal class AddUser :IMenu
     {
         private static User NewUser = new User();
-
+           
         private IRepository _repository = new SqlRepository();
         public void Display()
         {
@@ -53,7 +53,7 @@ namespace RestaurantUI
                     Log.Information("Save all Informaiton");
                     _repository.AddUser(NewUser);
                     Console.WriteLine("----New User Added----");
-                    return "MainMenu";
+                    return "Login";
                 /// Add more cases for any other attributes of pokemon
                 default:
                     Console.WriteLine("Please input a valid response");

@@ -5,6 +5,8 @@ using RestaurantDL;
 
 bool repeat = true;
 IMenu menu = new MainMenu();
+Register register = new Register();
+
 //readonly string connectionString;
 //IRepository repository = new SqlRepository(connectionString);
 OperationsBL BLInner = new OperationsBL();
@@ -19,60 +21,68 @@ Log.Logger = new LoggerConfiguration()
 /// <summary>
 /// Switch case that give the option for the user
 /// </summary>
-while (repeat)
-{ 
-    menu.Display();
-    string choice = menu.UserChoice();
-    switch (choice)
+var result = register.getRegistered(repeat);
+if (result == "Login Success")
+{
+    while (repeat)
     {
-        case "Filtered Search":
-            Log.Information("Display All Review Information");
-            Console.WriteLine("--------------Retreiving Information By Filter---------------");
-            menu = new FilteredMenu();
-            break;
-        case "Display Review":
-            Log.Information("Display All Review Information");
-            Console.WriteLine("--------------Retreiving all Review Information---------------");
-           BLInner.GetAllReviews();
-            break;
-        case "Display User":
-            Log.Information("Display All User Information");
-            Console.WriteLine("--------------Retreiving all User Information---------------");
-            BLInner.GetUser();
-            break;
-        case "Create Review":
-            Log.Information("Creating a Review");
-            //call RestaurantLogin method
-            menu = new AddReview();
-            break;
-        case "Display Restaurant":
-            Log.Information("Display All Restaurant Information");
-            //call RestaurantLogin method
-            Console.WriteLine("--------------Retreiving all Restaurant Information---------------");
-            BLInner.GetAllRestaurants();
-            break;
-        case "Create Restaurant":
-            Log.Information("Creating Restaurant");
-            //call RestaurantLogin method
-            menu = new AddRestaurantMenu();
-            break;
-        case "Create User":
-            Log.Information("Creating User");
-            //call RestaurantLogin method
-            menu = new AddUser();
-            break;
-        case "MainMenu":
-            Log.Information("Going back to Main Menu");
-            menu = new MainMenu();
-            break;
-        case "Exit":
-            Log.Information("Leaving Application");
-            repeat = false;
-            break;
-        default:
-            Console.WriteLine("View does not exist");
-            Console.WriteLine("Please press <enter> to continue");
-            Console.ReadLine();
-            break;
+        menu.Display();
+        string choice = menu.UserChoice();
+        switch (choice)
+        {
+            case "Filtered Search":
+                Log.Information("Display All Review Information");
+                Console.WriteLine("--------------Retreiving Information By Filter---------------");
+                menu = new FilteredMenu();
+                break;
+            case "Display Review":
+                Log.Information("Display All Review Information");
+                Console.WriteLine("--------------Retreiving all Review Information---------------");
+                BLInner.GetAllReviews();
+                break;
+            case "Display User":
+                Log.Information("Display All User Information");
+                Console.WriteLine("--------------Retreiving all User Information---------------");
+                BLInner.GetUser();
+                break;
+            case "Create Review":
+                Log.Information("Creating a Review");
+                //call RestaurantLogin method
+                menu = new AddReview();
+                break;
+            case "Display Restaurant":
+                Log.Information("Display All Restaurant Information");
+                //call RestaurantLogin method
+                Console.WriteLine("--------------Retreiving all Restaurant Information---------------");
+                BLInner.GetAllRestaurants();
+                break;
+            case "Create Restaurant":
+                Log.Information("Creating Restaurant");
+                //call RestaurantLogin method
+                menu = new AddRestaurantMenu();
+                break;
+            case "Create User":
+                Log.Information("Creating User");
+                //call RestaurantLogin method
+                menu = new AddUser();
+                break;
+            case "MainMenu":
+                Log.Information("Going back to Main Menu");
+                menu = new MainMenu();
+                break;
+            case "Exit":
+                Log.Information("Leaving Application");
+                repeat = false;
+                break;
+            default:
+                Console.WriteLine("View does not exist");
+                Console.WriteLine("Please press <enter> to continue");
+                Console.ReadLine();
+                break;
+        }
     }
+}
+else
+{
+    Console.WriteLine("Login Failed");
 }

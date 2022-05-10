@@ -17,26 +17,27 @@ namespace RestaurantInfo
             this.Rating = rating;
         }
 
-        public Review(Double rating, string note,  string name, string username, Double average)
+        public Review(Double rating, string note,  string name, string username, Double average, int RestId)
         {
             this.Rating = rating;
             this.Note = note;
             this.Name = name;
             this.UserName = username;
             this.Average = average;
-            
+            this.RestId = RestId;
         }
 
         public int ReviewId { get; set; }
+        private int restId;
         public int RestId
         {
-            get => RestId;
+            get => restId;
 
             set
             {
                 if (!string.IsNullOrEmpty(value.ToString()))
                 {
-                    RestId = value;
+                    restId = value;
                 }
                 else
                 {
@@ -71,7 +72,7 @@ namespace RestaurantInfo
 
         public override string ToString()
         {
-            return $"Rating: {this.Rating}\tAverage Rating: {this.Average} \t Note: {this.Note}\n";
+            return $"Rating: {this.Rating}\tName:{this.Name} \t Note: {this.Note}\n";
         }
 
     }

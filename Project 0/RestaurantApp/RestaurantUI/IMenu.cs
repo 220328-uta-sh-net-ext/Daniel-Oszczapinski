@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantUI
 {
-    internal interface IMenu
+    public interface IMenu
     {
         /// <summary>
         /// Will display themenu and user choices in the terminal
@@ -22,4 +22,10 @@ namespace RestaurantUI
         //string Login();
 
     }
+    public interface IRegisterUser
+    {
+        public string getRegistered(bool repeat);
+    }
+
+
 }

@@ -8,8 +8,8 @@ CREATE TABLE newUser(
 )
 SELECT * FROM newUser
 
-INSERT INTO dbo.newUser  VALUES ('Fred Growing', 'Fred@yahoo,com', 'Trend', '1' ) 
-INSERT INTO dbo.newUser  VALUES ('Kim Sun', 'Kim@gmail.com', 'notToday123') 
+INSERT INTO dbo.newUser  VALUES ('Admin', 'Admin@gmail.com', 'Admin', '1' ) 
+INSERT INTO dbo.newUser  VALUES ('Daniel', 'Daniel@gmail.com', 'Daniel') 
 INSERT INTO dbo.newUser  VALUES ('Erick Wool', 'Erick@aol.com', 'MyPass12' ) 
 INSERT INTO dbo.newUser  VALUES ('Zac Forest', 'Zac@yahoo.com', 'WeAre9' ) 
 
@@ -24,3 +24,4 @@ CREATE TABLE newUser(
     CONSTRAINT FK_ReviewId FOREIGN KEY (ReviewId) REFERENCES Review(ReviewId)
 )
 SELECT * FROM newUser
+ALTER TABLE newUser DROP CONSTRAINT ReviewId

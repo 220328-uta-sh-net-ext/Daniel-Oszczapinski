@@ -213,7 +213,7 @@ namespace RestaurantDL
                     Name = reader.GetString(1),
                     Email = reader.GetString(2),
                     Password = reader.GetString(3),
-                    ReviewId = reader.GetInt32(4)
+                    
                 });
             }
 
