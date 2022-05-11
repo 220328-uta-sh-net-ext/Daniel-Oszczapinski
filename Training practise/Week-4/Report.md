@@ -53,7 +53,7 @@ In the words of Patrick Debois, the Godfather of DevOps, “it is a movement of 
 # Continuous Integration - Blake Anderson
 ### CI Flow Chart:
 
-<img src="CI_Flow_Chart.png" width="500">
+<img src="CI_Flow_Chart.png" width="600">
 
 ## Continuous Integration
 
@@ -88,14 +88,16 @@ Testing is the safety net.
 # Continuous Delivery-  Daniel Oszczapinski
 ### CD - Lifecycle:
 
-<img src="https://content.altexsoft.com/media/2017/08/CD-1024x699.png" width="600">
+<img src="https://www.researchgate.net/profile/Awais-Jumani/publication/339135798/figure/fig2/AS:856678622830592@1581259508160/Continuous-delivery-and-deployment.png" width="600">
 
 ## What is Continuous Delivery?
 
-- Continuous Delivery occurs and the end of the Continuous Integration cycle and can be combined into on together.
+- Continuous Delivery occurs and the end of the Continuous Integration cycle and can be combined into one together.
 - Continuous Delivery takes Continuous Integration one step further, after a build and automated unit tests are successful, then it can be deployed in an environment where there is more in-depth testing and move to any other additional stages/environments.
 - This also includes continuous feedback from users to implement necessary fixes to ensure the code is always in a deployable state.
-- *Important* - Continuous delivery is a partly manual process where developers can deploy any changes to customers. Continuous deployment emphasizes automating the entire the process
+- Continuous Delivery has a focus on the release and release strategy
+- There also need to be a release manager that checks the code before the depoloyment stage.
+- *Important* - Continuous delivery is a partly manual process for deployment. This gives the options on when to deploy the product.
 
 ## Why use Continuous Delivery
 
