@@ -1,10 +1,12 @@
 # DevOps, Continuous Integration, Continuous Delivery, and Continuous Deployment
 
-DevOp-LifeCycle:
+# DevOps - - Jamaal Fisher
+
+### DevOp-LifeCycle:
 
 <img src="https://pimages.toolbox.com/wp-content/uploads/2021/08/26123909/DevOps-Lifecycle.png" width="600">
 
-## Definition of DevOps - Jamaal Fisher
+## Definition of DevOps
 
 DevOps is a collaborative culture with a set of practices, ideas, tools, technologies, and processes that streamline the product development process.
 This huge cultural shift lays emphasis on effective communication, integration, and better collaboration among teams for delivering quality products.
@@ -18,6 +20,10 @@ In the words of Patrick Debois, the Godfather of DevOps, “it is a movement of 
 - Technology: While automation can be a good thing to ensure that the pace of operations can keep up with the DevOps continuous feedback cycle, it can have unintended consequences if the automation is not set up properly and monitored.
 - Speed and Security: Speed and security don’t necessarily get along with each other very well. Rapid development can lead to severe security shortfalls if there is not a separate plan of action to ensure that speed is not outpacing the security systems designed to protect the products.
 
+### Key Groups:
+
+<img src="https://cdn.mos.cms.futurecdn.net/8jcis7FAV29qaanUV7E7Wj-970-80.jpg.webp" width="600">
+
 ## Key Groups of DevOps Culture:
 
 - Development
@@ -28,6 +34,10 @@ Operations gives QA continuous feedback, while QA gives Operations automated tes
 
 - Quality Assurance (QA)
 QA gives Development continuous feedback, while Development gives QA automated build and deploy.
+
+### Key Phases
+
+<img src="https://i.imgur.com/u6RqFJp.png" width="600">
 
 ## Key Phases of DevOps Culture:
 
@@ -40,10 +50,13 @@ QA gives Development continuous feedback, while Development gives QA automated b
 - Monitor phase: the product is continuously monitored.  the feedback received is sent back to the planning phase.
 - Integration phase: the core of the DevOps life cycle.  if the code adjustments pass the test, it is sent back through the phases in a process called continuous integration (CI).
 
-CI/CD Pipeline:
-<img src="https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/ci-cd-flow-desktop.png?itok=2EX0MpQZ" width="800">
+# Continuous Integration - Blake Anderson
+### CI Flow Chart:
 
-## Continuous Integration - Blake Anderson
+<img src="CI_Flow_Chart.png" width="500">
+
+## Continuous Integration
+
 
 Highly misunderstood. People often think they are doing it when they are not.
 Essentially it is the process of continuously merging and testing small, incremental changes to the code base that all developers on a team are working on. 
@@ -72,12 +85,13 @@ Testing is the safety net.
 
  CI is the process of automating the building and testing of an application after each incremental and functional change to the code base.
  These changes only impact the code base if they are functional (meaning they pass the automated tests set in place).
-
-## What is Continuous Delivery? - Daniel Oszczapinski
-
-CD - Lifecycle:
+# Continuous Delivery-  Daniel Oszczapinski
+### CD - Lifecycle:
 
 <img src="https://content.altexsoft.com/media/2017/08/CD-1024x699.png" width="600">
+
+## What is Continuous Delivery?
+
 
 - Continuous Delivery occurs and the end of the Continuous Integration cycle.
 - Continuous Delivery takes Continuous Integration one step further, After a build and automated unit tests are successful, then it can be depolyed in an enviorment where there is more in-depth testing and move to any other additional stages/environments.
