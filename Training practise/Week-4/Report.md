@@ -131,6 +131,18 @@ Cons:
 - Legacy systems rarely support CI/CD
 - High degree of discipline and dedication to quality
 
+## Tools that use CI/CD, Major cloud providers:
+
+- GitHub - Version Control tool
+- Gitlab - is a suite of tools for managing different aspects of 
+- Docker - Container Management tools, that developers use to build, test and collaborate.
+
+CI / Deployment Automation tools:
+- Jenkins - One of the best known open source tools for CI/CD
+- TeamCity - JetBrains’s build management and continuous integration server
+- Bamboo - is a continuous integration server that automates the management of software application releases, thus creating a continuous delivery pipeline
+the software development lifecycle.
+
 # Continuous Deployment - James Alouch
 
 ## What is Continuous Deployment?
