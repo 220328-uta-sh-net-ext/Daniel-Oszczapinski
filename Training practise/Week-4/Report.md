@@ -27,13 +27,13 @@ In the words of Patrick Debois, the Godfather of DevOps, “it is a movement of 
 ## Key Groups of DevOps Culture:
 
 - Development
-Development gives Operations continuous feedback, while Operations gives Development automated provisioning.
+  - Development gives Operations continuous feedback, while Operations gives Development automated provisioning.
 
 - Operations
-Operations gives QA continuous feedback, while QA gives Operations automated testing.
+  - Operations gives QA continuous feedback, while QA gives Operations automated testing.
 
 - Quality Assurance (QA)
-QA gives Development continuous feedback, while Development gives QA automated build and deploy.
+  - QA gives Development continuous feedback, while Development gives QA automated build and deploy.
 
 ### Key Phases
 
