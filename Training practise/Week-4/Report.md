@@ -36,6 +36,36 @@ QA gives Development continuous feedback, while Development gives QA automated b
 CI/CD Pipeline:
 <img src="https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/ci-cd-flow-desktop.png?itok=2EX0MpQZ" width="800">
 
+## Continuous Integration - Blake Anderson
+
+Highly misunderstood. People often think they are doing it when they are not.
+Essentially it is the process of continuously merging and testing small, incremental changes to the code base that all developers on a team are working on. 
+
+## Before Continuous Integration
+
+ People worked individually for extended periods of time until a whole feature was done and their code diverged and caused merge conflicts.
+ This was problematic
+ Some call it “merge hell”
+
+## How to Fix Merge Hell?
+
+In short, continuous integration.
+ As soon as some small aspect of the code works, it is merged.
+ Everyone is working on the same code base in principle.
+ Everyone is merging so often that the code doesn’t diverge.
+
+## Testing
+
+Continuous integration can lead to things being continuously broken
+ That’s where testing comes in.
+Testing is the safety net.
+ Code only merges if tests pass, so you always have a testable build.
+
+## In Summary
+
+ CI is the process of automating the building and testing of an application after each incremental and functional change to the code base.
+ These changes only impact the code base if they are functional (meaning they pass the automated tests set in place).
+
 ## What is Continuous Delivery? - Daniel Oszczapinski
 
 CD - Lifecycle:
