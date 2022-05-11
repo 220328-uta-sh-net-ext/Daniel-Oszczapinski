@@ -11,6 +11,13 @@ This huge cultural shift lays emphasis on effective communication, integration, 
 Basically, DevOps is a methodology that helps organizations build software - and their production teams - in a way that enables continuous rapid deployment.
 In the words of Patrick Debois, the Godfather of DevOps, “it is a movement of people who think it’s time for a change in the IT Industry - time to stop wasting money, time to start delivering great software, and building systems that scale and last”.
 
+## Key Disadvantages of DevOps
+
+- Organizational: Focusing more on delivering working software than on documentation is preferred by both DevOps and its foundational Agile roots, but it may become more difficult for developers and operators to keep track of their advances as well.
+- Processes: It will take time for users to adjust to a change in velocity.  Procedurally, the organization will need to be more fault-tolerant at least in the early going. Mistakes must be made and observed to stimulate rapid learning and resolution. This will be uncomfortable to some.
+- Technology: While automation can be a good thing to ensure that the pace of operations can keep up with the DevOps continuous feedback cycle, it can have unintended consequences if the automation is not set up properly and monitored.
+- Speed and Security: Speed and security don’t necessarily get along with each other very well. Rapid development can lead to severe security shortfalls if there is not a separate plan of action to ensure that speed is not outpacing the security systems designed to protect the products.
+
 ## Key Groups of DevOps Culture:
 
 - Development
@@ -113,18 +120,21 @@ Cons:
 [Microsoft-CI/CD](https://docs.microsoft.com/en-us/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery)
 
 [Youtube-Devop](https://www.youtube.com/watch?v=Xrgk023l4lI)
+
 [Youtube-CI](https://www.youtube.com/watch?v=_zCyLT33moA)
 
 [Youtube-Ci-Second](https://www.youtube.com/watch?v=1er2cjUq1UI&t=73s)
 
 [Youtube-CD](https://www.youtube.com/watch?v=2TTU5BB-k9U)
 
-[IBM](https://www.ibm.com/cloud/learn/devops-a-complete-guide)
+[IBM-CompleteGuideDevops](https://www.ibm.com/cloud/learn/devops-a-complete-guide)
 
-[Agile](https://theagileadmin.com/what-is-devops/)
+[Agile-Devops](https://theagileadmin.com/what-is-devops/)
 
-[RedHat](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
+[RedHat-CI/CD](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
 
-[Itporportal](https://www.itproportal.com/features/stop-messing-up-with-cicd-vs-devops-and-learn-the-difference-finally/)
+[Itporportal-DevopsvsCI/CD](https://www.itproportal.com/features/stop-messing-up-with-cicd-vs-devops-and-learn-the-difference-finally/)
 
-[Altexsoft](https://www.altexsoft.com/blog/business/continuous-delivery-and-integration-rapid-updates-by-automating-quality-assurance/)
+[Altexsoft-CI/CD](https://www.altexsoft.com/blog/business/continuous-delivery-and-integration-rapid-updates-by-automating-quality-assurance/)
+
+[PillarGlobal-AdvantagesofDevOps](https://www.3pillarglobal.com/insights/disadvantages-of-using-devops/)
