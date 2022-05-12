@@ -72,6 +72,13 @@ In short, continuous integration.
  Everyone is working on the same code base in principle.
  Everyone is merging so often that the code doesn’t diverge.
 
+## Stages of CI:
+
+- Develop
+- Build
+- Test
+- Stage
+
 ## Testing
 
 Continuous integration can lead to things being continuously broken
@@ -80,6 +87,12 @@ Testing is the safety net.
  Code only merges if tests pass, so you always have a testable build.
 
 <img src="https://code-maze.com/wp-content/uploads/2016/02/ci-cycle-2.png" width="600">
+
+### Staging:
+
+- An “idle” or staging environment allows for validation before moving to the production or “live” environment.
+- Changes proceed to the idle environment and staged until the code is ready to deploy.
+At this point the idle environment becomes the new production environment and vice versa.
 
 ## In Summary
 
@@ -298,6 +311,8 @@ The ability to release code changes automatically into the production environmen
 [IBM-CompleteGuideDevops](https://www.ibm.com/cloud/learn/devops-a-complete-guide)
 
 [Agile-Devops](https://theagileadmin.com/what-is-devops/)
+
+[CI-Framework](https://www.scaledagileframework.com/continuous-integration/#:~:text=Continuous%20Integration%20%28CI%29%20is%20the%20process%20of%20taking,where%20they%20are%20ready%20for%20deployment%20and%20release)
 
 [RedHat-CI/CD](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
 
