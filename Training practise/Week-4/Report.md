@@ -79,6 +79,8 @@ Continuous integration can lead to things being continuously broken
 Testing is the safety net.
  Code only merges if tests pass, so you always have a testable build.
 
+<img src="https://code-maze.com/wp-content/uploads/2016/02/ci-cycle-2.png" width="600">
+
 ## In Summary
 
  CI is the process of automating the building and testing of an application after each incremental and functional change to the code base.
