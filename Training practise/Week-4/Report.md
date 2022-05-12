@@ -51,8 +51,6 @@ In the words of Patrick Debois, the Godfather of DevOps, “it is a movement of 
 - Integration phase: the core of the DevOps life cycle.  if the code adjustments pass the test, it is sent back through the phases in a process called continuous integration (CI).
 
 # Continuous Integration - Blake Anderson
-### CI Flow Chart:
-
 
 ## Continuous Integration
 
@@ -86,7 +84,6 @@ Testing is the safety net.
  CI is the process of automating the building and testing of an application after each incremental and functional change to the code base.
  These changes only impact the code base if they are functional (meaning they pass the automated tests set in place).
 # Continuous Delivery-  Daniel Oszczapinski
-### CD - Lifecycle:
 
 ## What is Continuous Delivery?
 
