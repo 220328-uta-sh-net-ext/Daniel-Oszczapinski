@@ -41,8 +41,9 @@ namespace RestaurantBL
                 {
                     Console.WriteLine("Entered Email: "+ User.Email);
                     Console.WriteLine("Entered Password "+ User.Password);
-                    if (User.Email == EmailId && User.Password == Pass)
+                    if (User.Email == EmailId || User.Password == Pass)
                     {
+                        Console.Clear();
                         Choice.ThirdChoice = User.Name;
                         return "Login Success";
                     }

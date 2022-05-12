@@ -26,3 +26,5 @@ CREATE TABLE Restaurant(
     CONSTRAINT PK_Restaurant PRIMARY KEY (RestId)
 )
 INSERT INTO Restaurant (Name, City, Address, ZipCode, State) VALUES ('Jim')
+DELETE FROM Restaurant WHERE Name = 'Daniel'
+SELECT * FROM Restaurant

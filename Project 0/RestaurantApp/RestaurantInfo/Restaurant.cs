@@ -67,11 +67,11 @@ namespace RestaurantInfo
         public string City { get; set; }
         public string State { get; set; }
         public List<Review> Reviews { get; set; }
-
+        public double Average { get; set; }
         public override string ToString()
         {
             return $"Name: {this.Name}\nAddress: {this.Address}\t\tZipcode: {this.ZipCode}" +
-                $" \nCity: {this.City} \t\tState: {this.State}";
+                $" \nCity: {this.City} \t\tState: {this.State}\nAverage: {this.Average}";
         }
 
         /// <summary>

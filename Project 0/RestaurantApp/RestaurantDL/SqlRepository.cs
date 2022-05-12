@@ -105,7 +105,7 @@ namespace RestaurantDL
         /// <returns>an list of restaurant information</returns>
         public List<Restaurant> GetRestaurantInfo()
         {
-            string commandString = $"SELECT * FROM Restaurant";
+            string commandString = $"SELECT  Name,State,City, Address, ZipCode, AVG(Rating) AS Average FROM Review LEFT JOIN Restaurant ON Review.RestId = Restaurant.RestId GROUP BY Name,State, City,Address,ZipCode";
 
            
             using SqlConnection connection = new(connectionString);
@@ -119,12 +119,13 @@ namespace RestaurantDL
             {
                 restaurants.Add(new Restaurant
                 {   
-                    RestId = reader.GetInt32(0),
-                    Name = reader.GetString(1),
+                    Name = reader.GetString(0),
+                    State = reader.GetString(1),
                     City = reader.GetString(2),
                     Address = reader.GetString(3),
                     ZipCode = reader.GetString(4),
-                    State = reader.GetString(5)
+                    Average = reader.GetDouble(5)
+
                 });
             }
 
@@ -135,22 +136,23 @@ namespace RestaurantDL
         /// Use the Database to get the average from a table grouped by restaurant name
         /// </summary>
         /// <returns>The average of each restaurant </returns>
-        public List<Review> GetAverage()
+        public List<AverageRating> GetAverage()
         {
-            string commandString = "Select AVG(r.Rating) as rating ,rt.RestId from Review as r Right JOIN Restaurant as rt on r.RestId = rt.RestId GROUP BY rt.RestId Order by Rating desc";
+            string commandString = "SELECT  Name,State,City, Address, ZipCode, AVG(Rating) AS Average FROM Review LEFT JOIN Restaurant ON Review.RestId = Restaurant.RestId GROUP BY Name,State, City,Address,ZipCode";
             using SqlConnection connection = new(connectionString);
             using SqlCommand cmd = new SqlCommand(commandString, connection);
             connection.Open();
             using SqlDataReader reader = cmd.ExecuteReader();
 
-            var average = new List<Review>();
+            var average = new List<AverageRating>();
 
             while (reader.Read())
             {
-                average.Add(new Review
+                average.Add(new AverageRating
                 {
-                    Rating = reader.GetDouble(0),
-                    RestId = reader.GetInt32(1),
+                    Name = reader.GetString(0),
+                    Average = reader.GetDouble(1)
+                   
                   
 
                 });
@@ -165,7 +167,7 @@ namespace RestaurantDL
         public List<Review> GetReviewInfo()
         {
             string commandString = "SELECT r.* , rt.Name from Review as r JOIN Restaurant as rt on r.RestId = rt.RestId Order by r.ReviewId desc";
-           
+            
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand cmd = new SqlCommand(commandString, connection);

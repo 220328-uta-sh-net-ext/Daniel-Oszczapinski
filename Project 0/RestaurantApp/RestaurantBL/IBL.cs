@@ -14,7 +14,7 @@ namespace RestaurantBL
         List<Review> GetAllReviews();
       
         List<User> GetUser();
-      
+       List<AverageRating> GetAverageRating();
     }
     public interface IRestaurantSearch
     {

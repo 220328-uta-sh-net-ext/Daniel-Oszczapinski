@@ -19,6 +19,7 @@ namespace RestaurantInfo
         public User() {
             this.Email = Email;
             this.Password = Password;
+           
         }
         
        

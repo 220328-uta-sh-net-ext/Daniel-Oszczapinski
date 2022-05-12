@@ -66,13 +66,13 @@ namespace RestaurantUI
                 {
                    case "0":
                         return "Exit";
-                    case "3":
+                    case "1":
                         return "Create Review";
-                    case "4":
+                    case "2":
                         return "Filtered Search";
-                    case "5":
+                    case "3":
                         return "Display Restaurant";
-                    case "7":
+                    case "4":
                         return "Display Review";
                     default:
                         Console.WriteLine("View does not exist");

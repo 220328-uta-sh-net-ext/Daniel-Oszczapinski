@@ -17,7 +17,7 @@ namespace RestaurantInfo
             this.Rating = rating;
         }
 
-        public Review(Double rating, string note,  string name, string username, Double average, int RestId)
+        public Review(double rating, string note,  string name, string username, double average, int RestId)
         {
             this.Rating = rating;
             this.Note = note;
@@ -48,9 +48,9 @@ namespace RestaurantInfo
         
      
        
-        public Double Average { get; set; }
-        private Double _rating;
-        public Double Rating
+        public double Average { get; set; }
+        private double _rating;
+        public double Rating
         {
             get => _rating;
             //For the setter, we are checking that the rating is between 1 and 5
@@ -72,7 +72,7 @@ namespace RestaurantInfo
 
         public override string ToString()
         {
-            return $"Rating: {this.Rating}\tName:{this.Name} \t Note: {this.Note}\n";
+            return $"Name:{this.Name}\tRating: {this.Rating}\t Note: {this.Note}\nAverage: {this.Average}";
         }
 
     }

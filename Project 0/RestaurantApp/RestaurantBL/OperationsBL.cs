@@ -52,9 +52,9 @@ namespace RestaurantBL
         public List<Review> GetAllReviews()
         {
             List<Review> reviews = repository.GetReviewInfo();
-            List<Review> average = repository.GetAverage();
-           
-            //var ReviewsAndAverage = reviews.Zip(average);
+            
+            
+           // var ReviewsAndAverage = reviews.Concat(average);
             foreach (var view in reviews)
             {
                 Console.WriteLine(view.ToString());
@@ -91,6 +91,16 @@ namespace RestaurantBL
         {
            // return repo.GetReviewInfo();
            throw new NotSupportedException();
+        }
+
+        public List<AverageRating> GetAverageRating()
+        {
+            List<AverageRating> average = repository.GetAverage();
+            foreach (var rating in average)
+            {
+                Console.WriteLine(rating.ToString());
+            }
+            return average;
         }
     }
 }

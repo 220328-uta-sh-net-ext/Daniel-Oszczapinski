@@ -615,3 +615,43 @@
 2022-05-10 11:59:14.214 -05:00 [INF] Adding Email - 
 2022-05-10 11:59:15.693 -05:00 [INF] Adding Password - 
 2022-05-10 11:59:18.219 -05:00 [INF] Save all Informaiton
+2022-05-11 19:46:16.212 -05:00 [INF] Display All Review Information
+2022-05-11 19:46:27.153 -05:00 [INF] Going back to Main Menu
+2022-05-11 19:46:30.366 -05:00 [INF] Creating a Review
+2022-05-11 19:46:34.911 -05:00 [INF] Return to Main Menu
+2022-05-11 19:46:34.911 -05:00 [INF] Going back to Main Menu
+2022-05-11 19:46:36.401 -05:00 [INF] Leaving Application
+2022-05-11 19:54:55.400 -05:00 [INF] Display All Review Information
+2022-05-11 20:09:29.878 -05:00 [INF] Display All User Information
+2022-05-11 20:11:03.076 -05:00 [INF] Display All Restaurant Information
+2022-05-11 20:11:19.640 -05:00 [INF] Leaving Application
+2022-05-11 20:13:14.243 -05:00 [INF] Display All Review Information
+2022-05-11 20:13:26.168 -05:00 [INF] Display All Restaurant Information
+2022-05-11 20:13:28.941 -05:00 [INF] Display All User Information
+2022-05-11 20:15:54.694 -05:00 [INF] Display All Review Information
+2022-05-11 20:15:57.054 -05:00 [INF] Display All Restaurant Information
+2022-05-11 20:16:00.462 -05:00 [INF] Display All Review Information
+2022-05-11 20:16:10.375 -05:00 [INF] Going back to Main Menu
+2022-05-11 20:16:13.449 -05:00 [INF] Display All Review Information
+2022-05-11 20:18:24.554 -05:00 [INF] Display All Review Information
+2022-05-11 20:18:33.575 -05:00 [INF] Going back to Main Menu
+2022-05-11 20:18:37.286 -05:00 [INF] Leaving Application
+2022-05-11 20:25:44.501 -05:00 [INF] Display All Review Information
+2022-05-11 20:25:54.462 -05:00 [INF] Going back to Main Menu
+2022-05-11 20:25:57.906 -05:00 [INF] Leaving Application
+2022-05-11 20:26:08.720 -05:00 [INF] Display All Review Information
+2022-05-11 20:44:08.033 -05:00 [INF] Display All Review Information
+2022-05-11 20:46:40.327 -05:00 [INF] Display All Review Information
+2022-05-11 20:47:43.271 -05:00 [INF] Display All Review Information
+2022-05-11 20:48:09.287 -05:00 [INF] Display All Review Information
+2022-05-11 20:48:55.342 -05:00 [INF] Display All Review Information
+2022-05-11 20:49:33.910 -05:00 [INF] Display All Review Information
+2022-05-11 20:50:13.025 -05:00 [INF] Display All Review Information
+2022-05-11 20:53:48.990 -05:00 [INF] Display All Review Information
+2022-05-11 20:55:33.385 -05:00 [INF] Display All Review Information
+2022-05-11 21:32:26.524 -05:00 [INF] Display All Review Information
+2022-05-11 21:36:41.875 -05:00 [INF] Display All Review Information
+2022-05-11 21:45:11.581 -05:00 [INF] Display All Restaurant Information
+2022-05-11 21:46:43.352 -05:00 [INF] Display All Restaurant Information
+2022-05-11 21:48:44.151 -05:00 [INF] Display All Restaurant Information
+2022-05-11 21:48:50.039 -05:00 [INF] Leaving Application
