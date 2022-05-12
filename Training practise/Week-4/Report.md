@@ -53,13 +53,13 @@ In the words of Patrick Debois, the Godfather of DevOps, “it is a movement of 
 # Continuous Integration - Blake Anderson
 ### CI Flow Chart:
 
-<img src="CI_Flow_Chart.png" width="600">
 
 ## Continuous Integration
 
-
 Highly misunderstood. People often think they are doing it when they are not.
 Essentially it is the process of continuously merging and testing small, incremental changes to the code base that all developers on a team are working on. 
+
+<img src="https://wpblog.semaphoreci.com/wp-content/uploads/2020/02/preview-lightbox-Group-4439.jpg" width="600">
 
 ## Before Continuous Integration
 
@@ -88,16 +88,16 @@ Testing is the safety net.
 # Continuous Delivery-  Daniel Oszczapinski
 ### CD - Lifecycle:
 
-<img src="https://www.researchgate.net/profile/Awais-Jumani/publication/339135798/figure/fig2/AS:856678622830592@1581259508160/Continuous-delivery-and-deployment.png" width="600">
-
 ## What is Continuous Delivery?
 
-- Continuous Delivery occurs and the end of the Continuous Integration cycle and can be combined into one together.
+- Continuous Delivery occurs and the end of the Continuous Integration cycle and can be or is usually combined into one together.
 - Continuous Delivery takes Continuous Integration one step further, after a build and automated unit tests are successful, then it can be deployed in an environment where there is more in-depth testing and move to any other additional stages/environments.
 - This also includes continuous feedback from users to implement necessary fixes to ensure the code is always in a deployable state.
 - Continuous Delivery has a focus on the release and release strategy
 - There also need to be a release manager that checks the code before the deployment stage.
 - *Important* - Continuous delivery is a partly manual process for deployment. This gives the options on when to deploy the product.
+
+<img src="https://www.researchgate.net/profile/Awais-Jumani/publication/339135798/figure/fig2/AS:856678622830592@1581259508160/Continuous-delivery-and-deployment.png" width="600">
 
 ## Why use Continuous Delivery
 
