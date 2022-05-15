@@ -64,12 +64,6 @@ namespace RestaurantBL
 
 
         }
-        public List<Review> SearchRestaurants(string searchTerm)
-        {
-           
-           throw new NotSupportedException();
-        }
-
         public Restaurant AddRestaurant(Restaurant restaurant)
         {
             return repo.AddRestaurant(restaurant);
@@ -87,7 +81,7 @@ namespace RestaurantBL
 
         public List<Restaurant> SearcheRstaurants(string name)
         {
-            List<Restaurant> restaurants = repo.GetRestaurantInfo();
+            List<Restaurant>? restaurants = repo.GetRestaurantInfo();
             var filteredRestaurant = restaurants.Where(x => x.Name.Contains(name)).ToList();
             return filteredRestaurant;
         }
@@ -95,6 +89,13 @@ namespace RestaurantBL
         public List<AverageRating> GetAverageRating()
         {
             return repo.GetAverage();
+        }
+
+        public List<User> SearchUser(string name)
+        {
+            List<User>? users = repo.GetUsersInfo();
+            var filteredUser = users.Where(x => x.Name.Contains(name)).ToList();
+            return filteredUser;
         }
     }
 }

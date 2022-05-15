@@ -9,7 +9,8 @@ namespace RestaurantBL
 {
     public interface IBL:IRestaurantSearch
     {
-        List<Review> SearchRestaurants(string searchTerm);
+        
+        List<User> SearchUser(string name);
         List<Restaurant> GetAllRestaurants();
         List<Review> GetAllReviews();
         List<AverageRating> GetAverageRating();
