@@ -7,7 +7,7 @@ bool repeat = true;
 IMenu menu = new MainMenu();
 //readonly string connectionString;
 //IRepository repository = new SqlRepository(connectionString);
-OperationsBL BLInner = new OperationsBL();
+//OperationsBL BLInner = new OperationsBL();
 /// <summary>
 /// Log the Users activity 
 /// </summary>
@@ -33,12 +33,12 @@ while (repeat)
         case "Display Review":
             Log.Information("Display All Review Information");
             Console.WriteLine("--------------Retreiving all Review Information---------------");
-           BLInner.GetAllReviews();
+           //BLInner.GetAllReviews();
             break;
         case "Display User":
             Log.Information("Display All User Information");
             Console.WriteLine("--------------Retreiving all User Information---------------");
-            BLInner.GetUser();
+            //BLInner.GetUser();
             break;
         case "Create Review":
             Log.Information("Creating a Review");
@@ -49,7 +49,7 @@ while (repeat)
             Log.Information("Display All Restaurant Information");
             //call RestaurantLogin method
             Console.WriteLine("--------------Retreiving all Restaurant Information---------------");
-            BLInner.GetAllRestaurants();
+          //  BLInner.GetAllRestaurants();
             break;
         case "Create Restaurant":
             Log.Information("Creating Restaurant");

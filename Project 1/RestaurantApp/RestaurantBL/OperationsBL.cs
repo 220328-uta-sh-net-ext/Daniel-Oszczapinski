@@ -11,15 +11,15 @@ namespace RestaurantBL
 {
     public class OperationsBL : IBL
     {
-        //readonly IRepository repo;
-       // public OperationsBL(IRepository repo)
-       // {
-       //     this.repo = repo;
-       // }
+       readonly IRepository repo;
+        public OperationsBL(IRepository repo)
+        {
+            this.repo = repo;
+        }
         /// <summary>
         /// Calls the Sql repoistory and sets in into an object
         /// </summary>
-        static IRepository repository = new SqlRepository();
+       // static IRepository repository = new SqlRepository();
 
 
         /// <summary>
@@ -29,18 +29,12 @@ namespace RestaurantBL
         public List<Restaurant> GetAllRestaurants()
         {
 
-            var restaurants = repository.GetRestaurantInfo();
-            foreach (var rest in restaurants)
-            {
-                Console.WriteLine(rest.ToString());
-                Console.WriteLine("*******************");
-            }
-            return restaurants;
-           //throw new NotImplementedException();
+            return repo.GetRestaurantInfo();
+            
         }
         public List<Restaurant> SearchAll()
         {
-            //return repo.GetRestaurantInfo();
+            
             throw new NotImplementedException();
         }
 
@@ -50,19 +44,9 @@ namespace RestaurantBL
         /// <returns>Prints out a String of the Review Information</returns>
         public List<Review> GetAllReviews()
         {
-            List<Review> reviews = repository.GetReviewInfo();
-            List<Review> average = repository.GetAverage();
-           
-            //var ReviewsAndAverage = reviews.Zip(average);
-            foreach (var view in reviews)
-            {
-                Console.WriteLine(view.ToString());
-                Console.WriteLine("*******************");
-               
+        
             
-            }
-            return reviews;
-            //throw new NotImplementedException();
+            return repo.GetReviewInfo();
 
 
 
@@ -75,21 +59,42 @@ namespace RestaurantBL
         /// <returns>Prints out a String of the User Information</returns>
         public List<User> GetUser()
         {
-            var users = repository.GetUsersInfo();
-             foreach(var user in users) 
-             { 
-                 Console.WriteLine(user.ToString());
-                 Console.WriteLine("*******************");
-             }
-             return users;
-            //throw new NotImplementedException();
+
+            return repo.GetUsersInfo();
 
 
         }
         public List<Review> SearchRestaurants(string searchTerm)
         {
-           // return repo.GetReviewInfo();
+           
            throw new NotSupportedException();
+        }
+
+        public Restaurant AddRestaurant(Restaurant restaurant)
+        {
+            return repo.AddRestaurant(restaurant);
+        }
+
+        public Review AddReview(Review review)
+        {
+            return repo.AddReview(review);
+        }
+
+        public User AddUser(User user)
+        {
+            return repo.AddUser(user);
+        }
+
+        public List<Restaurant> SearcheRstaurants(string name)
+        {
+            List<Restaurant> restaurants = repo.GetRestaurantInfo();
+            var filteredRestaurant = restaurants.Where(x => x.Name.Contains(name)).ToList();
+            return filteredRestaurant;
+        }
+
+        public List<AverageRating> GetAverageRating()
+        {
+            return repo.GetAverage();
         }
     }
 }

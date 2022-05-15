@@ -12,9 +12,12 @@ namespace RestaurantBL
         List<Review> SearchRestaurants(string searchTerm);
         List<Restaurant> GetAllRestaurants();
         List<Review> GetAllReviews();
-      
+        List<AverageRating> GetAverageRating();
         List<User> GetUser();
-      
+        Restaurant AddRestaurant(Restaurant restaurant);
+        Review AddReview(Review review);
+        User AddUser(User user);
+        List<Restaurant> SearcheRstaurants(string name);
     }
     public interface IRestaurantSearch
     {

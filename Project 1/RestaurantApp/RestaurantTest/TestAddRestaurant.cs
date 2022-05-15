@@ -28,9 +28,9 @@ namespace RestaurantTest
         {
             var Rev = new Review();
             Rev.Name = "Restuarant Name";
-            Rev.UserName = "UserName";
+           
             Rev.Rating = 1;
-            Rev.Average = 2.3;
+           
             Rev.Note = "THis Note";
             Assert.Equal(Rev.ToString(), $"Restaurant name: Restuarant Name\tUser: UserName\nRating: 1\tAverage Rating: 2.3 \t Note: THis Note\n");
 

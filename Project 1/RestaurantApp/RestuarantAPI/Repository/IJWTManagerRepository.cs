@@ -3,7 +3,7 @@ namespace RestuarantAPI.Repository
 {
     public interface IJWTManagerRepository
     {
-        public Tokens Authenticate(User user)
+        public Tokens Authenticate(User user);
 
     }
 }

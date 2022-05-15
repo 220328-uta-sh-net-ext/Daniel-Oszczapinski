@@ -12,11 +12,11 @@ namespace RestaurantInfo
     {
         public Restaurant()
         {
-            this.Reviews = new List<Review>();
+         
         }
         public Restaurant(string name)
         {
-            this.Reviews = new List<Review>();
+           
             this._name = name;
         }
 
@@ -32,8 +32,8 @@ namespace RestaurantInfo
             this.State = row["State"].ToString() ?? "";
         }
 
-       
 
+       // public int RestId { get; set; }
         private string _name;
         public string Name
         {
@@ -66,8 +66,7 @@ namespace RestaurantInfo
         public string ZipCode { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        public List<Review> Reviews { get; set; }
-
+        //public double Average { get; set; }
         public override string ToString()
         {
             return $"Name: {this.Name}\nAddress: {this.Address}\t\tZipcode: {this.ZipCode}" +
