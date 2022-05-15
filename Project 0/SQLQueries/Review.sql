@@ -35,17 +35,17 @@ FROM Review
 GROUP BY Name
 ORDER BY Nume
 
-SELECT Name, UserName, Note, Rating, AVG(Rating) AS Average FROM Review GROUP BY Name, UserName, Note, Rating
+SELECT  Note, Rating, AVG(Rating) AS Average FROM Review GROUP BY Note, Rating
 
 -- This is the query that Groups all rows and returns Average
 SELECT * FROM (SELECT * FROM Review) AS t1 
 INNER JOIN (SELECT Name, AVG(Rating) as Average From Review GROUP BY Name) AS t2 
 ON t1.Name = t2.Name ORDER BY ReviewId ASC
 
-INSERT INTO dbo.Review  VALUES ('This was the worst place i ever visited', '2', '1' ) 
+INSERT INTO dbo.Review  VALUES ('Ok', '3', '1' ) 
 INSERT INTO dbo.Review  VALUES ('Nice place','4','2') 
 INSERT INTO dbo.Review  VALUES ('Panda Expess', 'Red', 'I enjoyed the location but got the wrong item', '4' ) 
-INSERT INTO dbo.Review  VALUES ('Pizza Hut', 'Lily', 'Food tasted old', '2' ) 
+INSERT INTO dbo.Review  VALUES ('It was an alright experience', '3', '2' ) 
 
 -- The script below is the current used table:
 SELECT * FROM Review
@@ -59,5 +59,7 @@ CREATE TABLE Review(
     CONSTRAINT FK_RestaurantId FOREIGN KEY (RestId) REFERENCES Restaurant(RestId)
 );
 
-Select AVG(r.Rating) as rating ,rt.RestId from Review as r Right JOIN Restaurant as rt on r.RestId = rt.RestId GROUP BY rt.RestId Order by Rating desc
+Select AVG(r.Rating) as Average ,rt.RestId from Review as r Right JOIN Restaurant as rt on r.RestId = rt.RestId GROUP BY rt.RestId Order by average desc
 SELECT r.* , rt.Name from Review as r JOIN Restaurant as rt on r.RestId = rt.RestId Order by r.ReviewId desc
+
+SELECT  Name,State,City, Address, ZipCode, AVG(Rating) AS Average FROM Review LEFT JOIN Restaurant ON Review.RestId = Restaurant.RestId GROUP BY Name,State, City,Address,ZipCode

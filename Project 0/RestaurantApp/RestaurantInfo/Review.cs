@@ -72,7 +72,7 @@ namespace RestaurantInfo
 
         public override string ToString()
         {
-            return $"Name:{this.Name}\tRating: {this.Rating}\t Note: {this.Note}\nAverage: {this.Average}";
+            return $"Name:{this.Name}\tRating: {this.Rating}\t Note: {this.Note}";
         }
 
     }
