@@ -102,7 +102,7 @@ At this point the idle environment becomes the new production environment and vi
 
 ## What is Continuous Delivery?
 
-- Continuous Delivery occurs and the end of the Continuous Integration cycle and can be or is usually combined into one together.
+- Continuous Delivery occurs at the end of the Continuous Integration cycle and can be or is usually combined into one together.
 - Continuous Delivery takes Continuous Integration one step further, after a build and automated unit tests are successful, then it can be deployed in an environment where there is more in-depth testing and move to any other additional stages/environments.
 - This also includes continuous feedback from users to implement necessary fixes to ensure the code is always in a deployable state.
 - Continuous Delivery has a focus on the release and release strategy
