@@ -129,7 +129,7 @@ namespace RestaurantDL
                     State = (string)row["State"],
                     City = (string)row["City"],
                     Address = (string)row["Address"],
-                    ZipCode = (string)row["ZipCode"],
+                    ZipCode = (string)row["ZipCode"]
 
                 }); ;
             }
@@ -142,23 +142,40 @@ namespace RestaurantDL
         public List<AverageRating> GetAverage()
         {
             string commandString = "SELECT  Name,State,City, Address, ZipCode, AVG(Rating) AS Average FROM Review LEFT JOIN Restaurant ON Review.RestId = Restaurant.RestId GROUP BY Name,State, City,Address,ZipCode";
-            using SqlConnection connection = new(connectionString);
-            using SqlCommand cmd = new SqlCommand(commandString, connection);
-            connection.Open();
-            using SqlDataReader reader = cmd.ExecuteReader();
 
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                throw;//rethrow the exception
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
             var average = new List<AverageRating>();
 
-            while (reader.Read())
+            foreach (DataRow row in dataSet.Tables[0].Rows)
             {
                 average.Add(new AverageRating
                 {
-                    Name = reader.GetString(0),
-                    State= reader.GetString(1),
-                    City= reader.GetString(2),
-                    Address= reader.GetString(3),
-                    ZipCode= reader.GetString(4),
-                    Average = reader.GetDouble(5)
+                    Name = (string)row["Name"],
+                    State= (string)row["State"],
+                    City= (string)row["City"],
+                    Address= (string)row["Address"],
+                    ZipCode= (string)row["ZipCode"],
+                    Average = (double)row["Average"]
 
                 });
             }
@@ -174,20 +191,37 @@ namespace RestaurantDL
 
 
             using SqlConnection connection = new(connectionString);
-            using SqlCommand cmd = new SqlCommand(commandString, connection);
-            connection.Open();
-            using SqlDataReader reader = cmd.ExecuteReader();
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                throw;//rethrow the exception
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
 
             var reviews = new List<Review>();
 
-            while (reader.Read())
+            foreach (DataRow row in dataSet.Tables[0].Rows)
             {
                 reviews.Add(new Review
                 {
-                    ReviewId = reader.GetInt32(0),
-                   RestId = reader.GetInt32(3),
-                    Note = reader.GetString(1),
-                    Rating = reader.GetDouble(2),
+                    ReviewId = (int)row["ReviewId"],
+                   RestId = (int)row["RestId"],
+                    Note = (string)row["Note"],
+                    Rating = (double)row["Rating"]
                     
                     
                 });
@@ -203,21 +237,39 @@ namespace RestaurantDL
             string commandString = "SELECT * FROM newUser";
 
 
+
             using SqlConnection connection = new(connectionString);
-            using SqlCommand cmd = new SqlCommand(commandString, connection);
-            connection.Open();
-            using SqlDataReader reader = cmd.ExecuteReader();
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                throw;//rethrow the exception
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
 
             var users = new List<User>();
 
-            while (reader.Read())
+            foreach (DataRow row in dataSet.Tables[0].Rows)
             {
                 users.Add(new User
                 {
-                    UserId = reader.GetInt32(0),
-                    Name = reader.GetString(1),
-                    Email = reader.GetString(2),
-                    Password = reader.GetString(3),
+                    UserId = (int)row["UserId"],
+                    Name = (string)row["Name"],
+                    Email = (string)row["Email"],
+                    Password = (string)row["Password"]
                 });
             }
             return users;
@@ -244,21 +296,39 @@ namespace RestaurantDL
 
         public async Task<List<Restaurant>> GetRestaurantsAsync()
         {
-            string commandString = $"SELECT * FROM Restaurant";
+            string commandString = "SELECT * FROM Restaurants;";
             using SqlConnection connection = new(connectionString);
-            using SqlCommand command = new SqlCommand(commandString, connection);
-            await connection.OpenAsync();
-            using SqlDataReader reader = await command.ExecuteReaderAsync();
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                throw;//rethrow the exception
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
             var restaurants = new List<Restaurant>();
-            while (await reader.ReadAsync())
+            foreach (DataRow row in dataSet.Tables[0].Rows)
             {
                 restaurants.Add(new Restaurant
                 {
-                    Name = reader.GetString(0),
-                    State = reader.GetString(1),
-                    City = reader.GetString(2),
-                    Address = reader.GetString(3),
-                    ZipCode = reader.GetString(4),
+                    RestId = (int)row["RestId"],
+                    Name = (string)row["Name"],
+                    State = (string)row["State"],
+                    City = (string)row["City"],
+                    Address = (string)row["Address"],
+                    ZipCode = (string)row["ZipCode"]
 
                 });
             }

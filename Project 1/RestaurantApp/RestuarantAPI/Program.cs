@@ -41,12 +41,11 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Ristorante", Version = "v1", Description = "App to review restaurants" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "RestaurantApi", Version = "v1", Description = "App to review restaurants" });
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer token')",
@@ -79,7 +78,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json" ,"11");
+        options.SwaggerEndpoint("/swagger/v1/swagger.json" ,"v1");
 
     });
 }
