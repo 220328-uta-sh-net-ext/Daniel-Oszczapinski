@@ -45,7 +45,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "RestaurantApi", Version = "v1", Description = "App to review restaurants" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "RestaurantApi", Version = "v1", Description = "App to check review restaurants" });
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer token')",

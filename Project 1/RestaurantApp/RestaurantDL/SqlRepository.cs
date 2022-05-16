@@ -14,13 +14,14 @@ namespace RestaurantDL
         /// <summary>
         /// Creats a path for the sql database using a text file with the connection string.
         /// </summary>
+        readonly string connectionString;
         public SqlRepository(string connectionString)
         {
             this.connectionString = connectionString;
         }
         //readonly string connectionString;
        // private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 1/RestaurantApp/RestaurantDL/connection-string.txt";
-       readonly string connectionString;
+       
        
         /// <summary>
         /// Uses Sql connection to read the datbase and place it into a object.
@@ -299,36 +300,21 @@ namespace RestaurantDL
             string commandString = "SELECT * FROM Restaurants;";
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
-            IDataAdapter adapter = new SqlDataAdapter(command);
-            DataSet dataSet = new();
-            try
-            {
-                connection.Open();
-                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
-            }
-            catch (SqlException ex)
-            {
-                throw;//rethrow the exception
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            finally
-            {
-                connection.Close();
-            }
+             await connection.OpenAsync();
+            
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+           
             var restaurants = new List<Restaurant>();
-            foreach (DataRow row in dataSet.Tables[0].Rows)
+            while (await reader.ReadAsync())
             {
                 restaurants.Add(new Restaurant
                 {
-                    RestId = (int)row["RestId"],
-                    Name = (string)row["Name"],
-                    State = (string)row["State"],
-                    City = (string)row["City"],
-                    Address = (string)row["Address"],
-                    ZipCode = (string)row["ZipCode"]
+                    RestId = reader.GetInt32(0),
+                    Name = reader.GetString(1),
+                    State = reader.GetString(2),
+                    City = reader.GetString(3),
+                    Address = reader.GetString(4),
+                    ZipCode = reader.GetString(5),
 
                 });
             }

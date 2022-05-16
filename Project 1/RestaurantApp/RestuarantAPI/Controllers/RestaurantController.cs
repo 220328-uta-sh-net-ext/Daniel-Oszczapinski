@@ -65,66 +65,66 @@ namespace RestuarantAPI.Controllers
         /// <param name="restaurant"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [Authorize]
-        [HttpPut]
+        //[Authorize]
+        //[HttpPut]
         
-        public ActionResult Put([FromBody]Restaurant restaurant, [FromQuery]string name)
-        {
-            if (name == null)
-                return BadRequest("Need name to modify");
-            try
-            {
+        //public ActionResult Put([FromBody]Restaurant restaurant, [FromQuery]string name)
+        //{
+        //    if (name == null)
+        //        return BadRequest("Need name to modify");
+        //    try
+        //    {
 
-                var restaurants = _operationsBL.GetAllRestaurants();
-                var rest = restaurants.Find(x => x.Name.Contains(name));
-                if (rest == null)
-                    return NotFound("Restaurant Not Found!");
-                rest.Name = restaurant.Name;
-                rest.State = restaurant.State;
-                rest.Address = restaurant.Address;
-                rest.City = restaurant.City;
-                rest.ZipCode = restaurant.ZipCode;
+        //        var restaurants = _operationsBL.GetAllRestaurants();
+        //        var rest = restaurants.Find(x => x.Name.Contains(name));
+        //        if (rest == null)
+        //            return NotFound("Restaurant Not Found!");
+        //        rest.Name = restaurant.Name;
+        //        rest.State = restaurant.State;
+        //        rest.Address = restaurant.Address;
+        //        rest.City = restaurant.City;
+        //        rest.ZipCode = restaurant.ZipCode;
             
                     
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
           
-            return Created("Get", restaurant);
+        //    return Created("Get", restaurant);
 
-        }
+        //}
         /// <summary>
         /// Should delete restaurant by name
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [Authorize]
-        [HttpDelete]
+        //[Authorize]
+        //[HttpDelete]
         
-        public ActionResult Delete(string name)
-        {
-            if (name == null)
-                return BadRequest("Must have name to modify");
+        //public ActionResult Delete(string name)
+        //{
+        //    if (name == null)
+        //        return BadRequest("Must have name to modify");
 
-            try
-            {
-                var restaurants = _operationsBL.GetAllRestaurants();
-                var rest = restaurants.Find(x => x.Name.Contains(name));
-                if (rest == null)
-                    return NotFound("Restaurant Name not Found!");
-                restaurants.Remove(rest);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+        //    try
+        //    {
+        //        var restaurants = _operationsBL.GetAllRestaurants();
+        //        var rest = restaurants.Find(x => x.Name.Contains(name));
+        //        if (rest == null)
+        //            return NotFound("Restaurant Name not Found!");
+        //        restaurants.Remove(rest);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
                
             
              
-            return Ok($"The Restaurants {name} is Deleted");
-        }
+        //    return Ok($"The Restaurants {name} is Deleted");
+        //}
        
     }
 }

@@ -58,47 +58,47 @@ namespace RestuarantAPI.Controllers
         /// <param name="user"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        [HttpPut]
-        public ActionResult Put([FromQuery] User user, [FromBody] string name)
-        {
-            if (name == null)
-                return BadRequest("Need name to modify");
-            try
-            {
+        //[HttpPut]
+        //public ActionResult Put([FromQuery] User user, [FromBody] string name)
+        //{
+        //    if (name == null)
+        //        return BadRequest("Need name to modify");
+        //    try
+        //    {
 
-                var users = _operationsBL.GetUser();
-                var us = users.Find(x => x.Name.Contains(name));
-                if (us == null)
-                    return NotFound("Restaurant Not Found!");
-                us.Name = user.Name;
-                us.Email = user.Email;
-                us.Password = user.Password;
+        //        var users = _operationsBL.GetUser();
+        //        var us = users.Find(x => x.Name.Contains(name));
+        //        if (us == null)
+        //            return NotFound("Restaurant Not Found!");
+        //        us.Name = user.Name;
+        //        us.Email = user.Email;
+        //        us.Password = user.Password;
 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
 
-            return Created("Get", user);
+        //    return Created("Get", user);
            
-        }
+        //}
         /// <summary>
         /// Delete user by name
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        [HttpDelete]
-        public ActionResult Delete(string name)
-        {
-            if (name == null)
-                return BadRequest("Must have name to modify");
-            var users = (_operationsBL.GetUser());
-            var us = users.Find(x => x.Name.Contains(name));
-            if (us == null)
-                return NotFound("User Name not Found!");
-            users.Remove(us);
-            return Ok($"The User {name} is Deleted");
-        }
+        //[HttpDelete]
+        //public ActionResult Delete(string name)
+        //{
+        //    if (name == null)
+        //        return BadRequest("Must have name to modify");
+        //    var users = (_operationsBL.GetUser());
+        //    var us = users.Find(x => x.Name.Contains(name));
+        //    if (us == null)
+        //        return NotFound("User Name not Found!");
+        //    users.Remove(us);
+        //    return Ok($"The User {name} is Deleted");
+        //}
     }
 }
