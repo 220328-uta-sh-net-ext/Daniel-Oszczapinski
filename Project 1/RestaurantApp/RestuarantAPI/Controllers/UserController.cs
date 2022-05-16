@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantBL;
 using RestaurantInfo;
@@ -15,21 +16,34 @@ namespace RestuarantAPI.Controllers
         {
             this._operationsBL = _operationsBL;
         }
-
+        /// <summary>
+        /// Get all users in database
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
         [HttpGet]
        public ActionResult<List<User>> GetUser()
        {
            var users = _operationsBL.GetUser();
            return Ok(users);
+
        }
+        [Authorize]
         [HttpGet("name")]
+        
         public ActionResult<User> Get(string name)
         {
             var users = _operationsBL.SearchUser(name);
             if (users.Count <= 0)
                 return NotFound($"Restaurant {name} is not in the database.");
             return Ok(users);
+           
         }
+        /// <summary>
+        /// Add user to database
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Post([FromBody] User user)
         {
@@ -38,6 +52,12 @@ namespace RestuarantAPI.Controllers
             _operationsBL.AddUser(user);
             return CreatedAtAction("Get", user);
         }
+        /// <summary>
+        /// Edit user by name
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpPut]
         public ActionResult Put([FromQuery] User user, [FromBody] string name)
         {
@@ -61,8 +81,13 @@ namespace RestuarantAPI.Controllers
             }
 
             return Created("Get", user);
-
+           
         }
+        /// <summary>
+        /// Delete user by name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpDelete]
         public ActionResult Delete(string name)
         {

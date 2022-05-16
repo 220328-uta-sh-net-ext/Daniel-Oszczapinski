@@ -15,6 +15,10 @@ namespace RestuarantAPI.Controllers
         {
             this._operationsBL = _operationsBL;
         }
+        /// <summary>
+        /// Gets averaged of each restaurant that has a current rating.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<List<AverageRating>> Get()
         {

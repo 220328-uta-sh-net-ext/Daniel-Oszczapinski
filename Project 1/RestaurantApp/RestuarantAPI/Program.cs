@@ -1,3 +1,4 @@
+global using Serilog;
 using RestaurantBL;
 using RestaurantDL;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -5,8 +6,11 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using RestuarantAPI.Repository;
 
-string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 1/RestaurantApp/RestaurantDL/connection-string.txt";
-string connectionString = File.ReadAllText(connectionStringFilePath);
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.File("C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 0/RestaurantApp/RestaurantUI/Logging.txt").MinimumLevel.Debug().MinimumLevel.Information()// we want to save the ;ogs in this file
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,17 +38,19 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
+builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddSingleton<IJWTManagerRepository, JWTManagerRepository>();
 builder.Services.AddScoped<IBL, OperationsBL>();
-builder.Services.AddScoped<IRepository>(repo => new SqlRepository(connectionString));//THis might not work, see pokemonapp for reference.
-var app = builder.Build();
+builder.Services.AddScoped<IRepository>(repo => new SqlRepository(Config.GetConnectionString("RestaurantDb")));//THis might not work, see pokemonapp for reference.
 
+var app = builder.Build();
+app.Logger.LogInformation("App Started");
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

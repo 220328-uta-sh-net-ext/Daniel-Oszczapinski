@@ -21,15 +21,15 @@ namespace RestaurantInfo
         {
             this.Rating = rating;
             this.Note = note;
-            this.Name = name;
+            
            
         }
 
-
+        public int RestId { get; set; }
 
         
      
-       
+       public int ReviewId { get; set; }
         private double _rating;
         public double Rating
         {
@@ -45,13 +45,13 @@ namespace RestaurantInfo
             }
         }
         public string Note { get; set; }
-        public string Name { get; set; }
+
         //override Review's ToString Method for me here
         //That outputs $"Rating: {review.Rating} \t Note: {review.Note}"
-
+    
         public override string ToString()
         {
-            return $"Name:{this.Name}\tRating: {this.Rating}\t Note: {this.Note}";
+            return $"Name:\tRating: {this.Rating}\t Note: {this.Note}";
         }
 
     }

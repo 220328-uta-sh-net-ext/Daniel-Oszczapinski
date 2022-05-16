@@ -27,7 +27,7 @@ namespace RestaurantTest
         public void ReviewTest()
         {
             var Rev = new Review();
-            Rev.Name = "Restuarant Name";
+            Rev.RestId = 1;
            
             Rev.Rating = 1;
            

@@ -19,13 +19,21 @@ namespace RestuarantAPI.Controllers
         {
             this._operationsBL = _operationsBL;
         }
-       
+        /// <summary>
+        /// Gets all the reviews from database
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<List<Review>> GetReview()
         {
             var reviews = _operationsBL.GetAllReviews();
             return Ok(reviews);
         }
+        /// <summary>
+        /// Adds review to database
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Post([FromBody] Review review)
         {
@@ -34,21 +42,27 @@ namespace RestuarantAPI.Controllers
             _operationsBL.AddReview(review);
             return CreatedAtAction("Get", review);
         }
+        /// <summary>
+        /// Should edit review by id
+        /// </summary>
+        /// <param name="review"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut]
-        public ActionResult Put([FromQuery] Review review, [FromBody] string rating)
+        public ActionResult Put([FromQuery] Review review, [FromBody] string id)
         {
-            if (rating == null)
+            if (id == null)
                 return BadRequest("Need name to modify");
             try
             {
 
                 var reviews = _operationsBL.GetAllReviews();
-                var rev = reviews.Find(x => x.Rating.Equals(rating));
+                var rev = reviews.Find(x => x.ReviewId.Equals(id));
                 if (rev == null)
-                    return NotFound("Review Not Found!");
+                    return NotFound($"Id {id} Not Found!");
                 rev.Note = review.Note;
                 rev.Rating = review.Rating;
-                rev.Name = review.Name;
+                rev.RestId = review.RestId;
 
             }
             catch (Exception ex)
@@ -59,17 +73,22 @@ namespace RestuarantAPI.Controllers
             return Created("Get", review);
 
         }
+        /// <summary>
+        /// Should delete by id
+        /// </summary>
+        /// <param name="reviewid"></param>
+        /// <returns></returns>
         [HttpDelete]
-        public ActionResult Delete(double rating)
+        public ActionResult Delete(double reviewid)
         {
-            if (rating == null)
+            if (reviewid == null)
                 return BadRequest("Must have rating to modify");
             var reviews = (_operationsBL.GetAllReviews());
-            var rev = reviews.Find(x => x.Rating.Equals(rating));
+            var rev = reviews.Find(x => x.ReviewId.Equals(reviewid));
             if (rev == null)
                 return NotFound("Rating not Found!");
             reviews.Remove(rev);
-            return Ok($"The Rating {rating} is Deleted");
+            return Ok($"The Rating {reviewid} is Deleted");
         }
     }
 

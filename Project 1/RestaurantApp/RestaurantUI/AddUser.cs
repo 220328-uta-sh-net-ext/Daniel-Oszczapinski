@@ -20,7 +20,7 @@ namespace RestaurantUI
         {
             Console.WriteLine("Enter User Information");
 
-            Console.WriteLine("<1> Name - " + NewUser.Name);
+            //Console.WriteLine("<1> Name - " + NewUser.Name);
             Console.WriteLine("<2> Email - " + NewUser.Email);
             Console.WriteLine("<3> Password - " + NewUser.Password);
             Console.WriteLine("<4> Save");
@@ -35,9 +35,9 @@ namespace RestaurantUI
                     Log.Information("Return to Main Menu");
                     return "MainMenu";
                 case "1":
-                    Log.Information("Adding Name - " + NewUser.Name);
+                  //  Log.Information("Adding Name - " + NewUser.Name);
                     Console.Write("Please enter a name: ");
-                    NewUser.Name = Console.ReadLine();
+                   // NewUser.Name = Console.ReadLine();
                     return "Create User";
                 case "2":
                     Log.Information("Adding Email - " + NewUser.Email);

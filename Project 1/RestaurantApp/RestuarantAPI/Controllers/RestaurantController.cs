@@ -4,6 +4,8 @@ using RestaurantInfo;
 using RestaurantBL;
 using Microsoft.Extensions.Caching.Memory;
 using RestuarantAPI.Repository;
+using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestuarantAPI.Controllers
 {
@@ -13,17 +15,27 @@ namespace RestuarantAPI.Controllers
     {
        
         private IBL _operationsBL;
-        
-        public RestaurantController(IBL _operationsBL)
+        private IMemoryCache memoryCache;
+        public RestaurantController(IBL _operationsBL, IMemoryCache memoryCache)
         {
             this._operationsBL = _operationsBL;
+            this.memoryCache = memoryCache;
         }
+        /// <summary>
+        /// Get Method, Gets all restuarants in the database
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<List<Restaurant>> Get()
         {
             var restaurants= _operationsBL.GetAllRestaurants();
             return Ok(restaurants);
         }
+        /// <summary>
+        /// Search Restaurant by Name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpGet("name")]
         public ActionResult<Restaurant> Get(string name)
         {
@@ -32,7 +44,14 @@ namespace RestuarantAPI.Controllers
                 return NotFound($"Restaurant {name} is not in the database.");
             return Ok(rest);
         }
+        /// <summary>
+        /// Adds a Restaurant to the database
+        /// </summary>
+        /// <param name="restaurant"></param>
+        /// <returns></returns>
+        [Authorize]
         [HttpPost]
+        
         public ActionResult Post([FromBody] Restaurant restaurant)
         {
             if (restaurant == null)
@@ -40,8 +59,16 @@ namespace RestuarantAPI.Controllers
             _operationsBL.AddRestaurant(restaurant);
             return CreatedAtAction("Get", restaurant);
         }
+        /// <summary>
+        /// Should edit restaurant by name.
+        /// </summary>
+        /// <param name="restaurant"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [Authorize]
         [HttpPut]
-        public ActionResult Put([FromQuery]Restaurant restaurant, [FromBody]string name)
+        
+        public ActionResult Put([FromBody]Restaurant restaurant, [FromQuery]string name)
         {
             if (name == null)
                 return BadRequest("Need name to modify");
@@ -68,16 +95,34 @@ namespace RestuarantAPI.Controllers
             return Created("Get", restaurant);
 
         }
+        /// <summary>
+        /// Should delete restaurant by name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [Authorize]
         [HttpDelete]
+        
         public ActionResult Delete(string name)
         {
             if (name == null)
                 return BadRequest("Must have name to modify");
-            var restaurants = (_operationsBL.GetAllRestaurants());
-            var rest = restaurants.Find(x => x.Name.Contains(name));
-            if (rest == null)
-                return NotFound("Restaurant Name not Found!");
-            restaurants.Remove(rest);
+
+            try
+            {
+                var restaurants = _operationsBL.GetAllRestaurants();
+                var rest = restaurants.Find(x => x.Name.Contains(name));
+                if (rest == null)
+                    return NotFound("Restaurant Name not Found!");
+                restaurants.Remove(rest);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+               
+            
+             
             return Ok($"The Restaurants {name} is Deleted");
         }
        

@@ -60,9 +60,10 @@ namespace RestaurantDL
 
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
-          
+            command.Parameters.AddWithValue("@id", reviewToAdd.RestId);
             command.Parameters.AddWithValue("@rating", reviewToAdd.Rating);
             command.Parameters.AddWithValue("@note", reviewToAdd.Note);
+            
             connection.Open();
             command.ExecuteNonQuery();
 
@@ -107,13 +108,14 @@ namespace RestaurantDL
             {
                 restaurants.Add(new Restaurant
                 {
+                    RestId = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     State = reader.GetString(5),
                     City = reader.GetString(2),
                     Address = reader.GetString(3),
                     ZipCode = reader.GetString(4),
-                    
-                });
+
+                }); ;
             }
             return restaurants;
         }
@@ -166,11 +168,12 @@ namespace RestaurantDL
             {
                 reviews.Add(new Review
                 {
-                   
+                    ReviewId = reader.GetInt32(0),
+                   RestId = reader.GetInt32(3),
                     Note = reader.GetString(1),
                     Rating = reader.GetDouble(2),
                     
-                    Name = reader.GetString(4),
+                    
                 });
             }
             return reviews;
