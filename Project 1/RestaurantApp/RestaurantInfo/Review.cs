@@ -12,11 +12,7 @@ namespace RestaurantInfo
         public Review() { }
 
         //Example of constructor overloading
-        public Review(int rating)
-        {
-            this.Rating = rating;
-        }
-
+ 
         public Review(double rating, string note,  string name, string username, double average, int RestId)
         {
             this.Rating = rating;

@@ -14,11 +14,7 @@ namespace RestaurantInfo
         {
          
         }
-        public Restaurant(string name)
-        {
-           
-            this._name = name;
-        }
+      
 
         /// <summary>
         /// Converting Restaurant table's data row into Restaurant Object

@@ -2,6 +2,7 @@
 using RestaurantInfo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace RestaurantDL
         //readonly string connectionString;
        // private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 1/RestaurantApp/RestaurantDL/connection-string.txt";
        readonly string connectionString;
-
+       
         /// <summary>
         /// Uses Sql connection to read the datbase and place it into a object.
         /// </summary>
@@ -98,22 +99,37 @@ namespace RestaurantDL
 
 
             using SqlConnection connection = new(connectionString);
-            using SqlCommand cmd = new SqlCommand(commandString, connection);
-            connection.Open();
-            using SqlDataReader reader = cmd.ExecuteReader();
-
+            using SqlCommand command = new(commandString, connection);
+            IDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataSet = new();
+            try
+            {
+                connection.Open();
+                adapter.Fill(dataSet); // this sends the query. DataAdapter uses a DataReader to read.}
+            }
+            catch (SqlException ex)
+            {
+                throw;//rethrow the exception
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
             var restaurants = new List<Restaurant>();
-
-            while (reader.Read()) 
+            foreach (DataRow row in dataSet.Tables[0].Rows) 
             {
                 restaurants.Add(new Restaurant
                 {
-                    RestId = reader.GetInt32(0),
-                    Name = reader.GetString(1),
-                    State = reader.GetString(5),
-                    City = reader.GetString(2),
-                    Address = reader.GetString(3),
-                    ZipCode = reader.GetString(4),
+                    RestId = (int)row["RestId"],
+                    Name = (string)row["Name"],
+                    State = (string)row["State"],
+                    City = (string)row["City"],
+                    Address = (string)row["Address"],
+                    ZipCode = (string)row["ZipCode"],
 
                 }); ;
             }
@@ -224,6 +240,29 @@ namespace RestaurantDL
         public bool IsDuplicate(Restaurant restaurant)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<Restaurant>> GetRestaurantsAsync()
+        {
+            string commandString = $"SELECT * FROM Restaurant";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new SqlCommand(commandString, connection);
+            await connection.OpenAsync();
+            using SqlDataReader reader = await command.ExecuteReaderAsync();
+            var restaurants = new List<Restaurant>();
+            while (await reader.ReadAsync())
+            {
+                restaurants.Add(new Restaurant
+                {
+                    Name = reader.GetString(0),
+                    State = reader.GetString(1),
+                    City = reader.GetString(2),
+                    Address = reader.GetString(3),
+                    ZipCode = reader.GetString(4),
+
+                });
+            }
+            return restaurants;
         }
     }
 }

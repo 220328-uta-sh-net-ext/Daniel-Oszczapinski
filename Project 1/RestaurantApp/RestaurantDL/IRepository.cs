@@ -31,5 +31,6 @@ namespace RestaurantDL
        User AddUser(User user);
        List<User> GetUsersInfo();
        List<AverageRating> GetAverage();
+        Task<List<Restaurant>> GetRestaurantsAsync();
     }
 }

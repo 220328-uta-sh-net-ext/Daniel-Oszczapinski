@@ -28,7 +28,7 @@ namespace RestaurantBL
         /// <returns>Prints out a String of the Restaurant Information</returns>
         public List<Restaurant> GetAllRestaurants()
         {
-
+           
             return repo.GetRestaurantInfo();
             
         }

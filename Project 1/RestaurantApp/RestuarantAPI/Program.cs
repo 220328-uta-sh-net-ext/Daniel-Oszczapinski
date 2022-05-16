@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using RestuarantAPI.Repository;
-
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -43,22 +44,48 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Ristorante", Version = "v1", Description = "App to review restaurants" });
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer token')",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+       {
+            new OpenApiSecurityScheme
+                { Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" } },
+            Array.Empty<string>()
+       }
+    });
+   
+});
 
-builder.Services.AddSingleton<IJWTManagerRepository, JWTManagerRepository>();
-builder.Services.AddScoped<IBL, OperationsBL>();
 builder.Services.AddScoped<IRepository>(repo => new SqlRepository(Config.GetConnectionString("RestaurantDb")));//THis might not work, see pokemonapp for reference.
+builder.Services.AddScoped<IBL, OperationsBL>();
+builder.Services.AddSingleton<IJWTManagerRepository, JWTManagerRepository>();
+
 
 var app = builder.Build();
-app.Logger.LogInformation("App Started");
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json" ,"11");
+
+    });
 }
 
 app.UseHttpsRedirection();
+app.Logger.LogInformation("App Started");
 app.UseAuthentication();
 app.UseAuthorization();
 
