@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using RestaurantBL;
 using RestaurantInfo;
 
@@ -58,31 +59,31 @@ namespace RestuarantAPI.Controllers
         /// <param name="user"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        //[HttpPut]
-        //public ActionResult Put([FromQuery] User user, [FromBody] string name)
-        //{
-        //    if (name == null)
-        //        return BadRequest("Need name to modify");
-        //    try
-        //    {
+        [HttpPut]
+        public ActionResult Put([FromQuery, BindRequired] string name, [BindRequired] string password, [BindRequired] string email, [BindRequired] int userid )
+        {
+            User newUser = new()
+            {
+               Name = name,
+               Password = password,
+               Email = email,
+               UserId = userid
 
-        //        var users = _operationsBL.GetUser();
-        //        var us = users.Find(x => x.Name.Contains(name));
-        //        if (us == null)
-        //            return NotFound("Restaurant Not Found!");
-        //        us.Name = user.Name;
-        //        us.Email = user.Email;
-        //        us.Password = user.Password;
+            };
+            if (newUser.Name == null)
+                newUser.Name = " ";
+            try
+            {
+                _operationsBL.ChangeUser(newUser);
+                return Created("GetAllRestaurants", newUser);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
-        //    return Created("Get", user);
-
-        //}
+        }
         /// <summary>
         /// Delete user by name
         /// </summary>

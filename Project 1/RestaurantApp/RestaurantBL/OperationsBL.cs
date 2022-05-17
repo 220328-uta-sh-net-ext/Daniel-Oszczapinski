@@ -142,12 +142,24 @@ namespace RestaurantBL
 
         public Review ChangeReview(Review newReview)
         {
-            throw new NotImplementedException();
+            var reviews = repo.GetReviewInfo();
+            foreach (var item in reviews)
+                if (item.ReviewId.Equals(newReview.ReviewId))
+                    return repo.ChangeReview(newReview);
+                else
+                    continue;
+            throw new ArgumentException("Restaurant name not given");
         }
 
-        public User ChangeUser(User newUser, string userId)
+        public User ChangeUser(User newUser)
         {
-            throw new NotImplementedException();
+            var users = repo.GetUsersInfo();
+            foreach (var item in users)
+                if (item.UserId.Equals(newUser.UserId))
+                    return repo.ChangeUser(newUser);
+                else
+                    continue;
+            throw new ArgumentException("Restaurant name not given");
         }
     }
 }

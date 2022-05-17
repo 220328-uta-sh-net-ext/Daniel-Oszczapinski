@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Caching.Memory;
 using RestaurantBL;
 using RestaurantInfo;
@@ -48,31 +49,30 @@ namespace RestuarantAPI.Controllers
         /// <param name="review"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[HttpPut]
-        //public ActionResult Put([FromQuery] Review review, [FromBody] string id)
-        //{
-        //    if (id == null)
-        //        return BadRequest("Need name to modify");
-        //    try
-        //    {
+        [HttpPut]
+        public ActionResult Put([FromQuery, BindRequired] int reviewid, [BindRequired] string note, [BindRequired] int rating, int restid)
+        {
+            Review newReview = new()
+            {
+                RestId = restid,
+                Note = note,
+                Rating = rating,
+                ReviewId = reviewid
+            };
+            if (newReview.Note == null)
+                newReview.Note = " ";
+            try
+            {
+                _operationsBL.ChangeReview(newReview);
+                return Created("GetAllReviews", newReview);
 
-        //        var reviews = _operationsBL.GetAllReviews();
-        //        var rev = reviews.Find(x => x.ReviewId.Equals(id));
-        //        if (rev == null)
-        //            return NotFound($"Id {id} Not Found!");
-        //        rev.Note = review.Note;
-        //        rev.Rating = review.Rating;
-        //        rev.RestId = review.RestId;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-
-        //    return Created("Get", review);
-
-        //}
+        }
         /// <summary>
         /// Should delete by id
         /// </summary>

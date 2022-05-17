@@ -32,6 +32,6 @@ namespace RestaurantDL
         bool RemoveReview(Review review);
         Restaurant ChangeRestaurant(Restaurant newRestaurant);
         Review ChangeReview(Review newReview);
-        User ChangeUser(User newUser, string userId);
+        User ChangeUser(User newUser);
     }
 }

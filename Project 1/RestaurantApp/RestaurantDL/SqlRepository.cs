@@ -406,10 +406,28 @@ namespace RestaurantDL
 
         public Review ChangeReview(Review newReview)
         {
-            throw new NotImplementedException();
+            string commandString = "UPDATE Review SET Note = @newNote, Rating = @newRating, RestId = @newRestId " +
+             "WHERE ReviewId = @reviewId;";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            Log.Information($"SQL command \"{commandString}\" was used");
+            try
+            {
+                command.Parameters.AddWithValue("@reviewId", newReview.ReviewId);
+                command.Parameters.AddWithValue("@newNote", newReview.Note);
+                command.Parameters.AddWithValue("@newRating", newReview.Rating);
+                command.Parameters.AddWithValue("@newRestId", newReview.RestId);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return newReview;
         }
 
-        public User ChangeUser(User newUser, string userId)
+        public User ChangeUser(User newUser)
         {
             string commandString = "UPDATE Users SET Name = @newName, Password = @newPassword, Email = @newEmail " +
               "WHERE UserId = @userid;";
@@ -418,7 +436,7 @@ namespace RestaurantDL
             Log.Information($"SQL command \"{commandString}\" was used");
             try
             {
-                command.Parameters.AddWithValue("@userid", userId);
+                command.Parameters.AddWithValue("@userid", newUser.UserId);
                 command.Parameters.AddWithValue("@newName", newUser.Name);
                 command.Parameters.AddWithValue("@newPassword", newUser.Password);
                 command.Parameters.AddWithValue("@newPassword", newUser.Email);

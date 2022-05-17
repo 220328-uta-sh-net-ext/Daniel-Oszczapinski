@@ -24,7 +24,7 @@ namespace RestaurantBL
         bool RemoveReview(int reviewId, int restId);
         Restaurant ChangeRestaurant(Restaurant newRestaurant);
         Review ChangeReview(Review newReview);
-        User ChangeUser(User newUser, string userId);
+        User ChangeUser(User newUser);
     }
     public interface IRestaurantSearch
     {

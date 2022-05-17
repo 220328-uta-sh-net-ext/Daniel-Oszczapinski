@@ -677,3 +677,5 @@
 2022-05-16 20:57:25.807 -05:00 [INF] SQL command "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCodeWHERE RestId = @restId;" was used
 2022-05-16 20:58:14.298 -05:00 [INF] SQL command "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCodeWHERE RestId = @restId;" was used
 2022-05-16 20:59:16.253 -05:00 [INF] SQL command "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCode WHERE RestId = @restId;" was used
+2022-05-16 21:37:16.224 -05:00 [INF] SQL command "UPDATE Users SET Note = @newNote, Rating = @newRating, RestId = @newRestId WHERE ReviewId = @reviewId;" was used
+2022-05-16 21:39:52.864 -05:00 [INF] SQL command "UPDATE Review SET Note = @newNote, Rating = @newRating, RestId = @newRestId WHERE ReviewId = @reviewId;" was used
