@@ -78,18 +78,23 @@ namespace RestuarantAPI.Controllers
         /// </summary>
         /// <param name="reviewid"></param>
         /// <returns></returns>
-        //[HttpDelete]
-        //public ActionResult Delete(double reviewid)
-        //{
-        //    if (reviewid == null)
-        //        return BadRequest("Must have rating to modify");
-        //    var reviews = (_operationsBL.GetAllReviews());
-        //    var rev = reviews.Find(x => x.ReviewId.Equals(reviewid));
-        //    if (rev == null)
-        //        return NotFound("Rating not Found!");
-        //    reviews.Remove(rev);
-        //    return Ok($"The Rating {reviewid} is Deleted");
-        //}
+        [HttpDelete]
+        public ActionResult Delete(int reviewid, int restid)
+        {
+
+
+            try
+            {
+                if (_operationsBL.RemoveReview(reviewid,restid) == true)
+                    return Ok($"Restaurant review Deleted!");
+                else
+                    return BadRequest($"Restaurant review does not exist");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 
 }

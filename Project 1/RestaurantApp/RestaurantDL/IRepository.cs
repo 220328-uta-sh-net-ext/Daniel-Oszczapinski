@@ -20,17 +20,18 @@ namespace RestaurantDL
         /// </summary>
         /// <returns></returns>
         List<Restaurant> GetRestaurantInfo();
-        
-
         Review AddReview(Review reviewToAdd);
-       
         List<Review> GetReviewInfo();
-        
         bool IsDuplicate(Restaurant restaurant);
-
        User AddUser(User user);
        List<User> GetUsersInfo();
        List<AverageRating> GetAverage();
         Task<List<Restaurant>> GetRestaurantsAsync();
+        bool RemoveRestaurant(Restaurant restaurant);
+        bool RemoveUser(User user);
+        bool RemoveReview(Review review);
+        Restaurant ChangeRestaurant(Restaurant newRestaurant);
+        Review ChangeReview(Review newReview);
+        User ChangeUser(User newUser, string userId);
     }
 }

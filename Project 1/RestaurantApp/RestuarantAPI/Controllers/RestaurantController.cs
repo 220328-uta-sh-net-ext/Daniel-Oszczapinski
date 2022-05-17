@@ -6,6 +6,7 @@ using Microsoft.Extensions.Caching.Memory;
 using RestuarantAPI.Repository;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace RestuarantAPI.Controllers
 {
@@ -13,7 +14,7 @@ namespace RestuarantAPI.Controllers
     [ApiController]
     public class RestaurantController : ControllerBase
     {
-       
+
         private IBL _operationsBL;
         private IMemoryCache memoryCache;
         public RestaurantController(IBL _operationsBL, IMemoryCache memoryCache)
@@ -28,7 +29,7 @@ namespace RestuarantAPI.Controllers
         [HttpGet]
         public ActionResult<List<Restaurant>> Get()
         {
-            var restaurants= _operationsBL.GetAllRestaurants();
+            var restaurants = _operationsBL.GetAllRestaurants();
             return Ok(restaurants);
         }
         /// <summary>
@@ -40,7 +41,7 @@ namespace RestuarantAPI.Controllers
         public ActionResult<Restaurant> Get(string name)
         {
             var rest = _operationsBL.SearcheRstaurants(name);
-            if (rest.Count<=0)
+            if (rest.Count <= 0)
                 return NotFound($"Restaurant {name} is not in the database.");
             return Ok(rest);
         }
@@ -51,7 +52,7 @@ namespace RestuarantAPI.Controllers
         /// <returns></returns>
         [Authorize]
         [HttpPost]
-        
+
         public ActionResult Post([FromBody] Restaurant restaurant)
         {
             if (restaurant == null)
@@ -66,65 +67,63 @@ namespace RestuarantAPI.Controllers
         /// <param name="name"></param>
         /// <returns></returns>
         //[Authorize]
-        //[HttpPut]
-        
-        //public ActionResult Put([FromBody]Restaurant restaurant, [FromQuery]string name)
-        //{
-        //    if (name == null)
-        //        return BadRequest("Need name to modify");
-        //    try
-        //    {
+        [HttpPut]
 
-        //        var restaurants = _operationsBL.GetAllRestaurants();
-        //        var rest = restaurants.Find(x => x.Name.Contains(name));
-        //        if (rest == null)
-        //            return NotFound("Restaurant Not Found!");
-        //        rest.Name = restaurant.Name;
-        //        rest.State = restaurant.State;
-        //        rest.Address = restaurant.Address;
-        //        rest.City = restaurant.City;
-        //        rest.ZipCode = restaurant.ZipCode;
+        public ActionResult Put([FromQuery, BindRequired] int restid, [BindRequired] string name, [BindRequired] string state,[BindRequired] string address, [BindRequired] string city, [BindRequired] string zipcode)
+        {
+            Restaurant newRestaurant = new()
+            {
+                RestId = restid,
+                Name = name,
+                State = state,
+                Address = address,
+                City = city,
+                ZipCode = zipcode
+
+            };
+            if (newRestaurant.Name == null)
+                newRestaurant.Name = " ";
+            try
+            {
+                _operationsBL.ChangeRestaurant(newRestaurant);
+                return Created("GetAllRestaurants", newRestaurant);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
             
-                    
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-          
-        //    return Created("Get", restaurant);
 
-        //}
+        }
         /// <summary>
         /// Should delete restaurant by name
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
         //[Authorize]
-        //[HttpDelete]
+        [HttpDelete]
         
-        //public ActionResult Delete(string name)
-        //{
-        //    if (name == null)
-        //        return BadRequest("Must have name to modify");
+        public ActionResult Delete([FromQuery, BindRequired]string name)
+        {
+          
 
-        //    try
-        //    {
-        //        var restaurants = _operationsBL.GetAllRestaurants();
-        //        var rest = restaurants.Find(x => x.Name.Contains(name));
-        //        if (rest == null)
-        //            return NotFound("Restaurant Name not Found!");
-        //        restaurants.Remove(rest);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
+            try
+            {
                
-            
-             
-        //    return Ok($"The Restaurants {name} is Deleted");
-        //}
+                if (_operationsBL.RemoveRestaurant(name) == true)
+                    return Ok($"Restaurant {name} Deleted!");
+                else
+                    return BadRequest($"Restaurant {name} does not exist");
+            }
+            catch (Exception ex)
+            {
+               return BadRequest(ex.Message);
+            }
+ 
+           
+        }
        
     }
 }

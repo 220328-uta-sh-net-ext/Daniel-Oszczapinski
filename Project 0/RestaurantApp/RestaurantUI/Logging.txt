@@ -661,3 +661,19 @@
 2022-05-15 18:16:41.407 -05:00 [INF] Token Created
 2022-05-15 18:19:56.281 -05:00 [INF] Token Created
 2022-05-16 13:18:24.823 -05:00 [INF] Token Created
+2022-05-16 20:05:44.537 -05:00 [INF] SQL command "DELETE FROM Restaurants WHERE Name = @Name;" was used
+2022-05-16 20:08:04.042 -05:00 [INF] SQL command "DELETE FROM Restaurants WHERE Name = @Name;" was used
+2022-05-16 20:12:44.615 -05:00 [INF] SQL command "DELETE FROM Restaurants WHERE Name = @Name;" was used
+2022-05-16 20:14:51.177 -05:00 [INF] SQL command "DELETE FROM Restaurants WHERE Name = @Name;" was used
+2022-05-16 20:16:34.064 -05:00 [INF] SQL command "DELETE FROM Restaurant WHERE Name = @Name;" was used
+2022-05-16 20:17:12.519 -05:00 [INF] SQL command "DELETE FROM Review WHERE RestId = @restid AND ReviewId = @reviewid;" was used
+2022-05-16 20:17:59.632 -05:00 [INF] Token Created
+2022-05-16 20:20:04.426 -05:00 [INF] Token Created
+2022-05-16 20:21:40.294 -05:00 [INF] Token Created
+2022-05-16 20:26:14.051 -05:00 [INF] SQL command "DELETE FROM newUser WHERE Name = @Name;" was used
+2022-05-16 20:53:17.625 -05:00 [INF] SQL command "UPDATE Users SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCodeWHERE RestId = @restId;" was used
+2022-05-16 20:54:49.637 -05:00 [INF] SQL command "UPDATE Users SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCodeWHERE RestId = @restId;" was used
+2022-05-16 20:55:48.881 -05:00 [INF] SQL command "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCodeWHERE RestId = @restId;" was used
+2022-05-16 20:57:25.807 -05:00 [INF] SQL command "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCodeWHERE RestId = @restId;" was used
+2022-05-16 20:58:14.298 -05:00 [INF] SQL command "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCodeWHERE RestId = @restId;" was used
+2022-05-16 20:59:16.253 -05:00 [INF] SQL command "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCode WHERE RestId = @restId;" was used

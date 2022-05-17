@@ -19,9 +19,16 @@ namespace RestaurantBL
         Review AddReview(Review review);
         User AddUser(User user);
         List<Restaurant> SearcheRstaurants(string name);
+        bool RemoveRestaurant(string restaurantName);
+        bool RemoveUser(string user);
+        bool RemoveReview(int reviewId, int restId);
+        Restaurant ChangeRestaurant(Restaurant newRestaurant);
+        Review ChangeReview(Review newReview);
+        User ChangeUser(User newUser, string userId);
     }
     public interface IRestaurantSearch
     {
         List<Restaurant> SearchAll();
     }
+
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using RestaurantInfo;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -297,7 +298,7 @@ namespace RestaurantDL
 
         public async Task<List<Restaurant>> GetRestaurantsAsync()
         {
-            string commandString = "SELECT * FROM Restaurants;";
+            string commandString = "SELECT * FROM Restaurant;";
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new(commandString, connection);
              await connection.OpenAsync();
@@ -319,6 +320,116 @@ namespace RestaurantDL
                 });
             }
             return restaurants;
+        }
+
+        public bool RemoveRestaurant(Restaurant restaurant)
+        {
+            string commandString = "DELETE FROM Restaurant WHERE Name = @Name;";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            Log.Information($"SQL command \"{commandString}\" was used");
+            try
+            {
+                command.Parameters.AddWithValue("@Name", restaurant.Name);
+                connection.Open();
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+        }
+
+        public bool RemoveUser(User user)
+        {
+            string commandString = $"DELETE FROM newUser WHERE Name = @Name;";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            Log.Information($"SQL command \"{commandString}\" was used");
+            try
+            {
+                command.Parameters.AddWithValue("@Name", user.Name);
+                connection.Open();
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+        }
+
+        public bool RemoveReview(Review review)
+        {
+            string commandString = "DELETE FROM Review WHERE RestId = @restid AND ReviewId = @reviewid;";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            Log.Information($"SQL command \"{commandString}\" was used");
+            try
+            {
+                command.Parameters.AddWithValue("@restid", review.RestId);
+                command.Parameters.AddWithValue("@reviewid", review.ReviewId);
+                connection.Open();
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+        }
+
+        public Restaurant ChangeRestaurant(Restaurant newRestaurant)
+        {
+            string commandString = "UPDATE Restaurant SET Name = @newName, State = @newState, City = @newCity, Address = @newAddress, ZipCode = @newZipCode WHERE RestId = @restId;";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            Log.Information($"SQL command \"{commandString}\" was used");
+            try
+            {
+                command.Parameters.AddWithValue("@restId", newRestaurant.RestId);
+                command.Parameters.AddWithValue("@newName", newRestaurant.Name);
+                command.Parameters.AddWithValue("@newState", newRestaurant.State);
+                command.Parameters.AddWithValue("@newCity", newRestaurant.City);
+                command.Parameters.AddWithValue("@newAddress", newRestaurant.Address);
+                command.Parameters.AddWithValue("@newZipCode", newRestaurant.ZipCode);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return newRestaurant;
+        }
+
+        public Review ChangeReview(Review newReview)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User ChangeUser(User newUser, string userId)
+        {
+            string commandString = "UPDATE Users SET Name = @newName, Password = @newPassword, Email = @newEmail " +
+              "WHERE UserId = @userid;";
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new(commandString, connection);
+            Log.Information($"SQL command \"{commandString}\" was used");
+            try
+            {
+                command.Parameters.AddWithValue("@userid", userId);
+                command.Parameters.AddWithValue("@newName", newUser.Name);
+                command.Parameters.AddWithValue("@newPassword", newUser.Password);
+                command.Parameters.AddWithValue("@newPassword", newUser.Email);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            return newUser;
         }
     }
 }

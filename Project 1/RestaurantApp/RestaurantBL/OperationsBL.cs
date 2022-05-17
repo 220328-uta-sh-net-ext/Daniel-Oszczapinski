@@ -97,5 +97,57 @@ namespace RestaurantBL
             var filteredUser = users.Where(x => x.Name.Contains(name)).ToList();
             return filteredUser;
         }
+
+        public bool RemoveRestaurant(string restaurantName)
+        {
+            var restaurants = repo.GetRestaurantInfo();
+            foreach (var item in restaurants)
+                if(item.Name.Equals(restaurantName))
+                    if(repo.RemoveRestaurant(item)==true)
+                        return true;    
+            return false;
+        
+        }
+
+        public bool RemoveUser(string user)
+        {
+            var users = repo.GetUsersInfo();
+            foreach (var item in users)
+                if (item.Name.Equals(user))
+                    if (repo.RemoveUser(item) == true)
+                        return true;
+            return false;
+        }
+
+        public bool RemoveReview(int reviewId, int restId)
+        {
+            var reviews = repo.GetReviewInfo();
+            foreach (var item in reviews)
+                if (item.ReviewId.Equals(reviewId) && item.RestId.Equals(restId))
+                    if (repo.RemoveReview(item) == true)
+                        return true;
+            return false;
+        }
+
+        public Restaurant ChangeRestaurant(Restaurant newRestaurant)
+        {
+            var restaurants = repo.GetRestaurantInfo();
+            foreach (var item in restaurants)
+                if (item.RestId.Equals(newRestaurant.RestId))
+                    return repo.ChangeRestaurant(newRestaurant);
+                else
+                    continue;
+            throw new ArgumentException("Restaurant name not given");
+        }
+
+        public Review ChangeReview(Review newReview)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User ChangeUser(User newUser, string userId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

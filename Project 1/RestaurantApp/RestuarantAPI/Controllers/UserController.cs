@@ -81,24 +81,30 @@ namespace RestuarantAPI.Controllers
         //    }
 
         //    return Created("Get", user);
-           
+
         //}
         /// <summary>
         /// Delete user by name
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        //[HttpDelete]
-        //public ActionResult Delete(string name)
-        //{
-        //    if (name == null)
-        //        return BadRequest("Must have name to modify");
-        //    var users = (_operationsBL.GetUser());
-        //    var us = users.Find(x => x.Name.Contains(name));
-        //    if (us == null)
-        //        return NotFound("User Name not Found!");
-        //    users.Remove(us);
-        //    return Ok($"The User {name} is Deleted");
-        //}
+        [HttpDelete]
+        public ActionResult Delete(string name)
+        {
+
+            try
+            {
+
+                if (_operationsBL.RemoveUser(name) == true)
+                    return Ok($"User {name} Deleted!");
+                else
+                    return BadRequest($"User {name} does not exist");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
+    
 }
