@@ -24,7 +24,11 @@ Our plan for project is to create a translation application. This application ca
 ### API resources that may be used
 
 [VisionAPI](https://cloud.google.com/vision)
+
 [TextToSpeechAPI](https://cloud.google.com/text-to-speech)
+
 [CanvasAPI](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+
 [GoogleTranslate](https://www.blogofpi.com/using-google-translation-api-with-dotnet-core/)
+
 [GoogleSearchAPI](https://developers.google.com/custom-search/v1/introduction)
