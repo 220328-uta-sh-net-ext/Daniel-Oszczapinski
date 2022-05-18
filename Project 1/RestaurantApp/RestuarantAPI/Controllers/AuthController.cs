@@ -20,6 +20,7 @@ namespace RestuarantAPI.Controllers
         [Route("authenticate")]
         public IActionResult Authenticate(User user)
         {
+            Log.Information("get token");
             var token = repository.Authenticate(user);
             if (token == null)
                 return Unauthorized();

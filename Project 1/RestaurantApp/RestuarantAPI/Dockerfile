@@ -28,4 +28,12 @@ ENTRYPOINT ["dotnet", "RestuarantAPI.dll"]
 # check if the image is available - docker images
 # if the image created above is available, the run the image without creating a container (docker daemon is going to assign a container with a random generated name)
 # to run the image  - docker run -it --rm -p 5000:80 weather-api-image
+# docker images
+# docker build -t rest-api -f RestuarantAPI/Dockerfile .
+# docker run -it -p 5000:80 rest-api
+# docker container ls
+# docker ps -a
+#
+#
+#
 #

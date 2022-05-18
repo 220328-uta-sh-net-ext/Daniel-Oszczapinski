@@ -1,0 +1,2 @@
+2022-05-17 10:14:43.284 -05:00 [INF] Token Created
+2022-05-17 10:31:53.937 -05:00 [INF] Restaurant get all

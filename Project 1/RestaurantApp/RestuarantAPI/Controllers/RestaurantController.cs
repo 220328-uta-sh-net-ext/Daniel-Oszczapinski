@@ -29,6 +29,7 @@ namespace RestuarantAPI.Controllers
         [HttpGet]
         public ActionResult<List<Restaurant>> Get()
         {
+            Log.Information("Restaurant get all");
             var restaurants = _operationsBL.GetAllRestaurants();
             return Ok(restaurants);
         }
@@ -40,6 +41,7 @@ namespace RestuarantAPI.Controllers
         [HttpGet("name")]
         public ActionResult<Restaurant> Get(string name)
         {
+            Log.Information("Restaurant searched by name");
             var rest = _operationsBL.SearcheRstaurants(name);
             if (rest.Count <= 0)
                 return NotFound($"Restaurant {name} is not in the database.");
@@ -52,9 +54,9 @@ namespace RestuarantAPI.Controllers
         /// <returns></returns>
         [Authorize]
         [HttpPost]
-
         public ActionResult Post([FromBody] Restaurant restaurant)
         {
+            Log.Information("Restaurant added");
             if (restaurant == null)
                 return BadRequest("Invalid Resturant");
             _operationsBL.AddRestaurant(restaurant);
@@ -68,7 +70,6 @@ namespace RestuarantAPI.Controllers
         /// <returns></returns>
         //[Authorize]
         [HttpPut]
-
         public ActionResult Put([FromQuery, BindRequired] int restid, [BindRequired] string name, [BindRequired] string state,[BindRequired] string address, [BindRequired] string city, [BindRequired] string zipcode)
         {
             Restaurant newRestaurant = new()
@@ -81,6 +82,7 @@ namespace RestuarantAPI.Controllers
                 ZipCode = zipcode
 
             };
+            Log.Information("Restaurant changed");
             if (newRestaurant.Name == null)
                 newRestaurant.Name = " ";
             try
@@ -93,9 +95,6 @@ namespace RestuarantAPI.Controllers
             {
                 return BadRequest(ex.Message);
             }
-
-            
-
         }
         /// <summary>
         /// Should delete restaurant by name
@@ -104,11 +103,10 @@ namespace RestuarantAPI.Controllers
         /// <returns></returns>
         //[Authorize]
         [HttpDelete]
-        
         public ActionResult Delete([FromQuery, BindRequired]string name)
         {
-          
 
+            Log.Information("Restaurant deleted");
             try
             {
                

@@ -22,7 +22,6 @@ namespace RestaurantDL
         List<Restaurant> GetRestaurantInfo();
         Review AddReview(Review reviewToAdd);
         List<Review> GetReviewInfo();
-        bool IsDuplicate(Restaurant restaurant);
        User AddUser(User user);
        List<User> GetUsersInfo();
        List<AverageRating> GetAverage();

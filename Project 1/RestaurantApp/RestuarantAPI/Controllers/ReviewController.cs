@@ -13,7 +13,6 @@ namespace RestuarantAPI.Controllers
     public class ReviewController : ControllerBase
     {
 
-       
         private IBL _operationsBL;
         
         public ReviewController(IBL _operationsBL)
@@ -27,6 +26,7 @@ namespace RestuarantAPI.Controllers
         [HttpGet]
         public ActionResult<List<Review>> GetReview()
         {
+            Log.Information("Review seached");
             var reviews = _operationsBL.GetAllReviews();
             return Ok(reviews);
         }
@@ -38,10 +38,11 @@ namespace RestuarantAPI.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] Review review)
         {
+            Log.Information("Review added");
             if (review == null)
                 return BadRequest("Invalid Review");
             _operationsBL.AddReview(review);
-            return CreatedAtAction("Get", review);
+            return CreatedAtAction("Post", review);
         }
         /// <summary>
         /// Should edit review by id
@@ -52,6 +53,7 @@ namespace RestuarantAPI.Controllers
         [HttpPut]
         public ActionResult Put([FromQuery, BindRequired] int reviewid, [BindRequired] string note, [BindRequired] int rating, int restid)
         {
+            Log.Information("Review changed");
             Review newReview = new()
             {
                 RestId = restid,
@@ -82,7 +84,7 @@ namespace RestuarantAPI.Controllers
         public ActionResult Delete(int reviewid, int restid)
         {
 
-
+            Log.Information("Review deleted");
             try
             {
                 if (_operationsBL.RemoveReview(reviewid,restid) == true)

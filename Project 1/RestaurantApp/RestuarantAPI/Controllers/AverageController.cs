@@ -22,6 +22,7 @@ namespace RestuarantAPI.Controllers
         [HttpGet]
         public ActionResult<List<AverageRating>> Get()
         {
+            Log.Information("Get Average Rating");
             var average = _operationsBL.GetAverageRating();
             return Ok(average);
         }

@@ -20,17 +20,6 @@ namespace RestaurantDL
         {
             this.connectionString = connectionString;
         }
-        //readonly string connectionString;
-       // private const string connectionStringFilePath = "C:/Revature/dotnet-training-220328/Daniel-Oszczapinski/Project 1/RestaurantApp/RestaurantDL/connection-string.txt";
-       
-       
-        /// <summary>
-        /// Uses Sql connection to read the datbase and place it into a object.
-        /// </summary>
-        /*public SqlRepository()
-        {
-            connectionString = File.ReadAllText(connectionStringFilePath);
-        }*/
         /// <summary>
         /// Adds Restaurant Info into the database
         /// </summary>
@@ -277,13 +266,7 @@ namespace RestaurantDL
             return users;
         }
      
-        /// <summary>
-        /// Gets review information to use for the search option
-        /// </summary>
-        /// <param name="searchTerm"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-       
+
 
         /// <summary>
         /// Finding if there is duplicates 
@@ -291,11 +274,6 @@ namespace RestaurantDL
         /// <param name="restaurant"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public bool IsDuplicate(Restaurant restaurant)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<Restaurant>> GetRestaurantsAsync()
         {
             string commandString = "SELECT * FROM Restaurant;";

@@ -17,7 +17,7 @@ namespace RestaurantInfo
         {
             this.Rating = rating;
             this.Note = note;
-            
+            this.RestId = RestId;
            
         }
 
@@ -47,7 +47,7 @@ namespace RestaurantInfo
     
         public override string ToString()
         {
-            return $"Name:\tRating: {this.Rating}\t Note: {this.Note}";
+            return $"RestId:{RestId}\tRating: {this.Rating}\t Note: {this.Note}";
         }
 
     }

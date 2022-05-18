@@ -25,15 +25,20 @@ namespace RestuarantAPI.Controllers
         [HttpGet]
        public ActionResult<List<User>> GetUser()
        {
-           var users = _operationsBL.GetUser();
+            Log.Information("User get user");
+            var users = _operationsBL.GetUser();
            return Ok(users);
 
        }
-        [Authorize]
-        [HttpGet("name")]
+        /// <summary>
+        /// Search user by name users in database
+        /// </summary>
+        /// <returns></returns>
         
+        [HttpGet("name")]    
         public ActionResult<User> Get(string name)
         {
+            Log.Information("User searched");
             var users = _operationsBL.SearchUser(name);
             if (users.Count <= 0)
                 return NotFound($"Restaurant {name} is not in the database.");
@@ -48,6 +53,7 @@ namespace RestuarantAPI.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] User user)
         {
+            Log.Information("User added");
             if (user == null)
                 return BadRequest("Invalid User");
             _operationsBL.AddUser(user);
@@ -70,6 +76,7 @@ namespace RestuarantAPI.Controllers
                UserId = userid
 
             };
+            Log.Information("User Changed");
             if (newUser.Name == null)
                 newUser.Name = " ";
             try
@@ -95,7 +102,7 @@ namespace RestuarantAPI.Controllers
 
             try
             {
-
+                Log.Information("User Deleted");
                 if (_operationsBL.RemoveUser(name) == true)
                     return Ok($"User {name} Deleted!");
                 else
