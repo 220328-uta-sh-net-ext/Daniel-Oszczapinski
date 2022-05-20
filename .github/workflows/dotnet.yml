@@ -18,7 +18,7 @@ jobs: #step by step instruction
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore Project-1/RestaurantApp/RestuarantAPI #need to make sure it points to the correct app location
+      run: dotnet restore Project-1/RestaurantApp #need to make sure it points to the correct app location
     - name: Build
       run: dotnet build --no-restore
     - name: Test
