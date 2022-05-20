@@ -16,7 +16,7 @@ Our plan for project is to create a translation application. This application wi
   - HTML
 
 - API's:
-  - Canvas API - The Canvas API provides a means for drawing graphics via JavaScript and the HTML canvas element. Among other things, it can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing.
+  - Canva API - The Canva API provides a means for drawing graphics via JavaScript and the HTML canvas element. Among other things, it can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing.
   - Google Translation API - Google Translation API helps translate text from one language to another instantly.  It uses Google’s pre-trained neural machine translation to do the translation.
   - text-to-speech api - Improve customer interactions with intelligent, lifelike responses. Engage users with voice user interface in your devices and applications. Personalize your communication based on user preference of voice and language
   - Vision API - Use machine learning to understand your images with industry-leading prediction accuracy Train machine learning models that classify images by your custom labels using AutoML Vision. Detect objects and faces, read handwriting, and build valuable image metadata with Vision API

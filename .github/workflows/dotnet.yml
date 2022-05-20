@@ -1,0 +1,25 @@
+name: .NET
+# How do we want to run our project(triggers, auto when push or pull-request, on manual?(https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: 
+jobs: #step by step instruction 
+  build: #name of job
+
+    runs-on: ubuntu-latest #type of OS you want to run your build on (https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore Project%201/RestaurantApp/RestuarantAPI #need to make sure it points to the correct app location
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
