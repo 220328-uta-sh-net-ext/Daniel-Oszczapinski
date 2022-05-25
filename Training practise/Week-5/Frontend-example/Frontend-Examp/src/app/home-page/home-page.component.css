@@ -1,0 +1,9 @@
+.home-page{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.daniel-info{
+    display: block;
+}
