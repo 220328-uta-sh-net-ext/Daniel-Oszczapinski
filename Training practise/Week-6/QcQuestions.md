@@ -3,13 +3,13 @@
 ## 6 Stages of SDLC
 
 - [Planning/Requirement-Analysis] - The client defines a problem that needs to be solved, which further forms the basis for finalizing the requirements.
-- [Define-the-Project-Requirement] - You define and docuement that product requirements of the project and get them approved by the customer/client
+- [Define-the-Project-Requirement] - You define and document that product requirements of the project and get them approved by the customer/client
 - [Design-Product-Architecture] - This phase of the software development life cycle focuses on creating software architecture, prototype, and user experience design.
 - [Building/Developing-the-product] - This phase is executed by the coders who work on bringing the concept into reality. Build the application
 - [Testing-the-product] - This phase of the application development life cycle focuses on testing the written code for bugs and other inconsistencies. the testing and quality assurance team works together to test and report the bugs to the development team.
 - [Deployment-and-Maintenance] - This is when you finally deploy your app to the appropriate market
 
-## What Scrum and Agile
+## What is Scrum and Agile
 
 ### Agile
 
@@ -23,7 +23,7 @@
 - Scrum prescribes three specific roles: the product owner, the scrum master, and the scrum team.
   - Product-Owner - Responsible for what the team is building, and why they're building it. The product owner is responsible for keeping the backlog up-to-date and in priority order.
   - Scrum-master - Responsible to ensure the scrum process is followed by the team. Scrum masters are continually on the lookout for how the team can improve, while also resolving impediments and other blocking issues that arise during the sprint. Scrum masters are part coach, part team member, and part cheerleader.
-  - Scrum-Team - These are the individuals that actually build the product. The team owns the engineering of the product, and the quality that goes with it.
+  - Scrum-Team - These are the individuals that build the product. The team owns the engineering of the product, and the quality that goes with it.
 
 - [Product-Backlog] - The product backlog is a prioritized list of value the team can deliver. The product owner is responsible for the backlog and adds, changes, and reprioritizes as needed. The items at the top of the backlog should always be ready for the team to execute on.
 
@@ -32,9 +32,9 @@
 ## What is Cloud Computing?
 
 - computing services over the internet or the cloud
-  - this provides Scalability, flexibility and innovation
-  - The pros are the cost, scaling and seurity.
-- The types of cloud servie types are IaaS, PaaS, SaaS
+  - this provides Scalability, flexibility, and innovation
+  - The pros are the cost, scaling, and security.
+- The types of cloud service types are IaaS, PaaS, SaaS
   - [IaaS] - Infrastructure as a service is a type of cloud computing service that offers essential compute, storage, and networking resources on demand
   - [PaaS] - Platform as a service (PaaS) is a cloud environment in which customers can develop, manage, and deliver applications. Azure services is an example of PaaS
   - [SaaS] - Software as a service grants access to a vendor’s cloud-based software
@@ -42,7 +42,7 @@
 - Access Modifiers in Cloud Computing
   - [Private] - Only accessible by a certain organization
   - [Public] - Open for use by the general public
-  - [Hybrid] - Some resources are private and some resources are public
+  - [Hybrid] - Some resources are private, and some resources are public
   - [Community] - Sharing resources when you are part of a community
 
 ## What is Docker? How do you use it and why do you use it?
@@ -51,10 +51,10 @@
 
 ## What is Containerization and Virtualization
 
-- [Containerization] - Involved bundling an application together with all the configuration files, libraries, and dependencies required. Containers allocate resources dynamically use as much resources the container needs to run the application
+- [Containerization] - Involved bundling an application together with all the configuration files, libraries, and dependencies required. Containers allocate resources dynamically use as many resources the container needs to run the application
 - [Virtualization] - Virtual machine that simulates a real computer with an operating system. The allocated resources are static, so when you choose the amount of resources, they cannot change
 
-## What terminolgy is used in Docker?
+## What terminology is used in Docker?
 
 - [Images] - An image is a read-only template with instructions for creating a Docker container. They are immutable file and represents an application and its virtual environment at a specific point in time
 - [Container] - A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI.
@@ -83,7 +83,7 @@ DevOps influences the application lifecycle throughout its plan, develop deliver
 - Keywords
   - [Trigger] - Event that happens to execute the CI/CD process
   - [Job] - The work that need to be done to start the process
-  - [Steps] - operations that are required to finsih the job
+  - [Steps] - operations that are required to finish the job
   - [Approval] - checks if the process is working correctly
 
 ## What is HTML(Hypertext Markup Language) and the parts that are required?
@@ -116,7 +116,7 @@ Responsive Web Design - changes the deign based on the viewport like a phone or 
 
 - [Datatypes] - they are Numbers, Boolean, Strings, Objects, Null( Lack of value), Undefined(no value was set)
 
-- [Expressions] - is any valid unit of code that resolves to a value.they can appear anywhere in a program where JavaScript expects a value such as the arguments of a function invocation. example: Arithmetic expressions evaluate to a numeric value.
+- [Expressions] - is any valid unit of code that resolves to a value. They can appear anywhere in a program where JavaScript expects a value such as the arguments of a function invocation. example: Arithmetic expressions evaluate to a numeric value.
 
 - [Operators/keywords]
   - [this] keyword to refer to the current object. In general, [this] refers to the calling object in a method.
@@ -134,7 +134,7 @@ Responsive Web Design - changes the deign based on the viewport like a phone or 
 - [Declarations]
   - [var] - Declares a variable
   - [let] - Declares a block scope local variable
-  - [const] - Declares a read-only named constan
+  - [const] - Declares a read-only named constant
 
 - [Functions]
   - [function] - Declares a function with the specified parameters
@@ -147,7 +147,7 @@ Responsive Web Design - changes the deign based on the viewport like a phone or 
 
 ### JS Classes(OOP) and Inheritance
 
-- [Prototype] - Prototypes are the mechanism by which JavaScript objects inherit features from one another. 
+- [Prototype] - Prototypes are the mechanism by which JavaScript objects inherit features from one another.
 - You can declare a [class] using the class keyword
 - The [constructor] is defined using the constructor keyword. Just like a constructor outside a class definition
 - we can and often do create objects without any separate class definition. This can make working with objects much more lightweight than it is in classical OOP.
@@ -175,8 +175,9 @@ Three states of promise
 - Asynchronous JS and XML
   - Used to grab information only with XML type backend server hence the name, it is now updated that JSON is now used.
   AJAX's most appealing characteristic is its "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
-- [Fetch] - Similar to AJAX except less syntaxes or prepping needed to call on backend and the main difference from AJAX is it uses promises to achieve asynchrnous operations
+- [Fetch] - Similar to AJAX except less syntaxes or prepping needed to call on backend and the main difference from AJAX is it uses promises to achieve asynchronous operations
 
 ### what is JS ES6?
 
-- known as ECMAScript 2015 or ECMAScript 6 and is the newer version of JavaScript that was introduced.ECMAScript is the standard that JavaScript programming language uses. ECMAScript provides the specification on how JavaScript programming language should work.
+- known as ECMAScript 2015 or ECMAScript 6 and is the newer version of JavaScript that was introduced. ECMAScript is the standard that JavaScript programming language uses. ECMAScript provides the specification on how JavaScript programming language should work.
+
