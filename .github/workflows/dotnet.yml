@@ -6,20 +6,32 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch: 
+
+env:
+  WORKING_DIRECTORY: Project-1/RestaurantApp
 jobs: #step by step instruction 
-  build: #name of job
+  ci: #name of job
 
     runs-on: ubuntu-latest #type of OS you want to run your build on (https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v3 # source code
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore Project%201/RestaurantApp/RestuarantAPI #need to make sure it points to the correct app location
+      run: dotnet restore ${{env.WORKING_DIRECTORY}} #need to make sure it points to the correct app location
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore ${{env.WORKING_DIRECTORY}} #need to make sure it points to the correct app location
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal ${{env.WORKING_DIRECTORY}}/RestuarantAPI #need to make sure it points to the correct app location
+# These steps are for CD pipleline    
+# Create new jobs at this point like to doceker hub or azure.
+# for docker steps
+# 1. action/checkout@v3 - get source code
+# 2. user docker setup buildx
+# 3. Docker Login - need to use secret username${{secrets."NAME OF SECRET}} and password(access token on dockerhub). 
+# 4. build and push docker image, make push true
+
+# to add azure use azure webapp
