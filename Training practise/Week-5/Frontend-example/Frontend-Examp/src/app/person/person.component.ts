@@ -10,7 +10,11 @@ export class PersonComponent implements OnInit {
   @Input() peep:IPerson = {
     name: "",
     about: "",
-    intrest: ""
+    interest: ""
+  }
+  selected:boolean = false;
+  selectPerson():void{
+    this.selected = !this.selected;
   }
   constructor() { }
   ngOnInit(): void {

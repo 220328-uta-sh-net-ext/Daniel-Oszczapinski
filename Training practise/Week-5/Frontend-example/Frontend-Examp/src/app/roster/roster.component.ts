@@ -13,7 +13,7 @@ export class RosterComponent implements OnInit {
   singlePerson:IPerson ={
     name:"",
     about:"",
-    intrest: ""
+    interest: ""
   }
 
   getPerson($event : any):void{
