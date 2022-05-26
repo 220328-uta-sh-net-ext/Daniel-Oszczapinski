@@ -13,9 +13,11 @@ export class PersonComponent implements OnInit {
     interest: ""
   }
   selected:boolean = false;
+
   selectPerson():void{
     this.selected = !this.selected;
   }
+  
   constructor() { }
   ngOnInit(): void {
   }
