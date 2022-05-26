@@ -1,12 +1,12 @@
 # Docker, DevOp, HTML, CSS and, JavaScript Questions
 
-## 6 Stages of SDLC
+## 6 Stages of SDLC(The Software Development Life Cycle)
 
 - [Planning/Requirement-Analysis] - The client defines a problem that needs to be solved, which further forms the basis for finalizing the requirements.
-- [Define-the-Project-Requirement] - You define and document that product requirements of the project and get them approved by the customer/client
+- [Define-the-Project-Requirement] - You define and document that product requirements of the project and get them approved by the [customer/client]
 - [Design-Product-Architecture] - This phase of the software development life cycle focuses on creating software architecture, prototype, and user experience design.
 - [Building/Developing-the-product] - This phase is executed by the coders who work on bringing the concept into reality. Build the application
-- [Testing-the-product] - This phase of the application development life cycle focuses on testing the written code for bugs and other inconsistencies. the testing and quality assurance team works together to test and report the bugs to the development team.
+- [Testing-the-product] - This phase of the application development life cycle focuses on testing the written code for bugs and other inconsistencies. the testing and [quality-assurance] team works together to test and report the bugs to the development team.
 - [Deployment-and-Maintenance] - This is when you finally deploy your app to the appropriate market
 
 ## What is Scrum and Agile
@@ -14,19 +14,21 @@
 ### Agile
 
 - Agile is a mindset that drives an approach to software development.
-- Agile practices on the other hand, are techniques applied during phases of the software development lifecycle.
+- Agile uses techniques applied during phases of the software development lifecycle.
 - It is all about creating a working software than spending your time creating extensive documentation
+- Requires more knowlege to use correctly
 
 ### Scrum
 
 - Implementation of Agile concept
 - Scrum prescribes three specific roles: the product owner, the scrum master, and the scrum team.
   - Product-Owner - Responsible for what the team is building, and why they're building it. The product owner is responsible for keeping the backlog up-to-date and in priority order.
-  - Scrum-master - Responsible to ensure the scrum process is followed by the team. Scrum masters are continually on the lookout for how the team can improve, while also resolving impediments and other blocking issues that arise during the sprint. Scrum masters are part coach, part team member, and part cheerleader.
+  - Scrum-master - Responsible to ensure the scrum process is followed by the team. Scrum masters are continually on the lookout for how the team can improve, while also resolving impediments and other blocking issues that arise during the sprint. take care of daily standups, sprints , reviews and retrospective phases
   - Scrum-Team - These are the individuals that build the product. The team owns the engineering of the product, and the quality that goes with it.
 
-- [Product-Backlog] - The product backlog is a prioritized list of value the team can deliver. The product owner is responsible for the backlog and adds, changes, and reprioritizes as needed. The items at the top of the backlog should always be ready for the team to execute on.
-
+- [Product-Backlog] - is a prioritized list of value the team can deliver. The product owner is responsible for the backlog and adds, changes, and reprioritizes as needed. The items at the top of the backlog should always be ready for the team to execute on.
+- [Sprints] - It is a short period that completes a set amount of work, Usually lasts around 2-4 weeks of work
+During a sprint
 - [Daily-Standup] -daily scrum, often called the daily standup. The daily scrum is daily meeting limited to fifteen minutes. Team members often stand during the meeting to ensure it stays brief. Each team member briefly reports their progress since yesterday, the plans for today, and anything impeding their progress.
 
 ## What is Cloud Computing?
@@ -35,9 +37,9 @@
   - this provides Scalability, flexibility, and innovation
   - The pros are the cost, scaling, and security.
 - The types of cloud service types are IaaS, PaaS, SaaS
-  - [IaaS] - Infrastructure as a service is a type of cloud computing service that offers essential compute, storage, and networking resources on demand
+  - [IaaS] - Infrastructure as a service is a type of cloud computing service/server that offers essential compute, storage, and networking resources on demand
   - [PaaS] - Platform as a service (PaaS) is a cloud environment in which customers can develop, manage, and deliver applications. Azure services is an example of PaaS
-  - [SaaS] - Software as a service grants access to a vendor’s cloud-based software
+  - [SaaS] - Software as a service delivering applications and granting access over the Internet—as a service. Instead of installing and maintaining software, you simply access it via the Internet
 
 - Access Modifiers in Cloud Computing
   - [Private] - Only accessible by a certain organization
@@ -58,8 +60,8 @@
 
 - [Images] - An image is a read-only template with instructions for creating a Docker container. They are immutable file and represents an application and its virtual environment at a specific point in time
 - [Container] - A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI.
-- [Registry] - server-side or cloud application where you can store your images and make it easy to distribute
-- [ignore] - ignore files like you would for gitignore
+- [Registry/dockerhub] - server-side or cloud application where you can store your images and make it easy to distribute
+- [ignore] - ignore files like you would for gitignore/dockerignore
 - [Configuration] - information to tell the docker container on how to run the image
 - [daemon] - listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes
 
@@ -77,7 +79,7 @@ DevOps influences the application lifecycle throughout its plan, develop deliver
 ## What is a CI/CD Pipeline(Trigger, Job, Approval, Step)
 
 - [Continuous-Integration] - is the process of automating the building and testing of an application after each incremental and functional change to the code base.
-- [Continuous-Delivery] - it is the automated process of delivering the new changes in the main branch to the people, release manager that will check on everything
+- [Continuous-Delivery] - it is the process of delivering the new changes in the main branch to the people, release manager that will check on everything makes it a manual process
 - [Continuous-Deployment] - start deploying it after all the testing are done and passed, no release manager is needed.
 
 - Keywords
@@ -85,6 +87,10 @@ DevOps influences the application lifecycle throughout its plan, develop deliver
   - [Job] - The work that need to be done to start the process
   - [Steps] - operations that are required to finish the job
   - [Approval] - checks if the process is working correctly
+
+## YML
+
+- Another mark up language that just tells the computer what to do so it can build, test, and deploy our application to setup a CI/CD pipeline
 
 ## What is HTML(Hypertext Markup Language) and the parts that are required?
 
@@ -107,6 +113,10 @@ DevOps influences the application lifecycle throughout its plan, develop deliver
     - [Element] - is sometimes referred to as a tag name selector or element selector because it selects an HTML tag/element in your document.
     - [Class] - that will target specific elements with the class applied.
     - [Id] - an ID can be used only once per page, and elements can only have a single id value applied to them. It can select an element that has the id set on it
+- Ways to Include CSS
+  - [External] CSS  - Creating an external .css file to apply css to multiple HTML docs, HTML doc must use the link tag to reference the external css, Used to apply multiple css to multiple elements in multiple HTML docs
+  - [Internal] CSS - Applies CSS by using the style tag inside of a HTML doc, Used to apply multiple css to multiple elements
+  - [Inline] CSS - Inline CSS is used to style a specific HTML element.
 
 Responsive Web Design - changes the deign based on the viewport like a phone or computer. we are using bootstrap
 
@@ -126,6 +136,11 @@ Responsive Web Design - changes the deign based on the viewport like a phone or 
 
 ### Control flow with statements id JS
 
+The [scope] of a variable determines where it has access to
+Block
+Function
+Global
+
 - [Statements] - are used in JavaScript to control its program flow. statements are designed to work independently of any JavaScript object. That means you can use a statement whether you're working with the object
   - [Block] - A block statement is used to group zero or more statements
   - [throw] - Throws a user-defined exception.
@@ -133,10 +148,10 @@ Responsive Web Design - changes the deign based on the viewport like a phone or 
 
 - [Declarations]
   - [var] - Declares a variable
-  - [let] - Declares a block scope local variable
+  - [let] - Declares a local variable
   - [const] - Declares a read-only named constant
 
-- [Functions]
+- [Functions] - Each function you create is a new scope
   - [function] - Declares a function with the specified parameters
   - [async-function] - Declares an async function with the specified parameter
   - [return] - Specifies the value to be returned by a function
@@ -145,10 +160,10 @@ Responsive Web Design - changes the deign based on the viewport like a phone or 
 
 - It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page
 
-### JS Classes(OOP) and Inheritance
+### JS Classes(OOP) and Inheritance except abstraction
 
-- [Prototype] - Prototypes are the mechanism by which JavaScript objects inherit features from one another.
-- You can declare a [class] using the class keyword
+- [Prototype] -It is like a field in C# in a form of a key-value pair, 
+- [protoype-inheritance] - Prototypes are the mechanism by which JavaScript objects inherit features from one another.
 - The [constructor] is defined using the constructor keyword. Just like a constructor outside a class definition
 - we can and often do create objects without any separate class definition. This can make working with objects much more lightweight than it is in classical OOP.
 Implements OOP  easily except abstraction
@@ -181,3 +196,8 @@ Three states of promise
 
 - known as ECMAScript 2015 or ECMAScript 6 and is the newer version of JavaScript that was introduced. ECMAScript is the standard that JavaScript programming language uses. ECMAScript provides the specification on how JavaScript programming language should work.
 
+### Security w/ HTTP
+
+[CORS]- its a mechanism that checks the current origin of where that request comes from and see if they have permission to access your resource
+[CSRF]- Cross-Site Request Forgery-a web security vulnerability that attackers use
+[XSS]- A hidden segment of JS coupled with HTML and CSS to emulate a harmless website
