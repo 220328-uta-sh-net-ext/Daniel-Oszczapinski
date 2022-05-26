@@ -1,9 +1,16 @@
 .home-page{
-    display:flex;
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
-.daniel-info{
-    display: block;
+
+.home-message{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
 }
